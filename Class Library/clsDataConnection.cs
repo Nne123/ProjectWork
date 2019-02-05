@@ -37,7 +37,6 @@ namespace Class_Library
             GetConString(DBLocation);
         }
 
-
         private string GetConString(string SomePath)
         {
             //build up the connection string for the sql server database Visual Studio 2010
