@@ -2,5 +2,6 @@
 {
     public class clsAppointment
     {
+        public string CarRegNo { get; set; }
     }
 }
