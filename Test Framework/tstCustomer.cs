@@ -64,16 +64,12 @@ namespace Test_Framework
         {
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
-            // New testing variable TestCarRegNo with some test data
-            Int32 TestCarRegNo = 123456;
+            // New testing variable TestSearch with blank test data
+            String TestSearch = "somesearch";
             // New variable Error
             String Error = "";
-            ///
-            ///
-
-            ///
-            ///
-            Error = ACustomer.Find(TestCarRegNo);
+            // Check if there is an error message returned
+            Error = ACustomer.Find(TestSearch);
             // Check whether there is an error
             Assert.AreEqual(Error, "");
         }
