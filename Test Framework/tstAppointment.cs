@@ -15,5 +15,18 @@ namespace Test_Framework
             // check to see that the class is not null
             Assert.IsNotNull(AnAppointment);
         }
+
+        [TestMethod]
+        public void CarRegNoOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            string SomeCarRegNo = "123 6GH";
+            // assign the data to the property
+            AnAppointment.CarRegNo = SomeCarRegNo;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.CarRegNo, SomeCarRegNo);
+        }
     }
 }
