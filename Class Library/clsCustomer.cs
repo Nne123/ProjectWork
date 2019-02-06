@@ -37,5 +37,10 @@ namespace Class_Library
             }
             return Error;
         }
+
+        public string Find(int CarRegNo)
+        {
+            return "";
+        }
     }
 }
