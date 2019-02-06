@@ -46,9 +46,18 @@ namespace Class_Library
             return Error;
         }
 
-        public string Find(int CarRegNo)
+        public string Find(string Search)
         {
-            return "";
+            // New variable Error
+            string Error = "";
+            // If Search is blank
+            if (Search.ToString().Length == 0)
+            {
+                // Return an error message
+                Error = "Search field cannot be blank";
+            }
+            // Return the result
+            return Error;
         }
     }
 }
