@@ -53,6 +53,7 @@
     <Compile Include="tstAppointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstCustomer.cs" />
+    <Compile Include="tstStaff.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Class Library\Class Library.csproj">
