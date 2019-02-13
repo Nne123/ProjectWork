@@ -58,7 +58,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void CarRegNoMinLessOne()
+        public void CarRegNoMinLessOne()         // empty
         {
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -66,6 +66,113 @@ namespace Test_Framework
             String Error = "";
             // create some test data to test the method
             string CarRegNo = "";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMinBoundary()         // 8 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMinPlusOne()         // 9 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMaxLessOne()         // 49 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMaxBoundary()         // 50 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMaxPlusOne()         // 51 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMid()         // 25 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoExtremeMax()         // 300 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "";
+            // pad the string with characters
+            CarRegNo = CarRegNo.PadRight(300, 'a');
             // invoke the method
             Error = AnAppointment.Valid(CarRegNo);
             //test to see that the result is NOT OK i.e there should be an error message
