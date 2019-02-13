@@ -9,17 +9,23 @@ namespace Class_Library
 
         public string Valid(string carRegNo)
         {
-            // if the carRegNo is not blank
-            if (carRegNo != "")
+            // string variable to store the error message
+            string Error = "";
+            // create a temporary variable to store date values
+            //DateTime DateTemp;
+            // if the name of the car reg no is not blank
+            if (carRegNo.Length > 8)
             {
-                // return a blank string
-                return "";
+                // return an error message
+                Error = "The car reg no cannot have more than 8 characters";
             }
-            else
+            if (carRegNo.Length == 0)
             {
-                // else return an error message
-                return "The Car Reg No may not be blank!";
+                // return an error message
+                Error = "The car reg no may not be blank";
             }
+
+            return Error;
         }
     }
 }
