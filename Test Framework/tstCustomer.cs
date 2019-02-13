@@ -136,20 +136,23 @@ namespace Test_Framework
             Assert.AreEqual(Error, "");
         }
 
-        [TestMethod]
-        public void FindMethodOK()
-        {
-            // New instance of clsCustomer class
-            clsCustomer ACustomer = new clsCustomer();
-            // New testing variable TestSearch with blank test data
-            String TestSearch = "somesearch";
-            // New variable Error
-            String Error = "";
-            // Check if there is an error message returned
-            Error = ACustomer.Find(TestSearch);
-            // Check whether there is an error
-            Assert.AreEqual(Error, "");
-        }
+        //[TestMethod]
+        //public void FindMethodOK()
+        //{
+        //    // New instance of clsCustomer class
+        //    clsCustomer ACustomer = new clsCustomer();
+        //    // New testing variable TestSearch with blank test data
+        //    String TestSearch = "somesearch";
+        //    // New variable Error
+        //    String Error = "";
+        //    // Check if there is an error message returned
+        /// <summary>
+        ///  SHOULD BE A CUSTOMERID
+        /// </summary>
+        //    Error = ACustomer.Find(TestSearch);
+        //    // Check whether there is an error
+        //    Assert.AreEqual(Error, "");
+        //}
 
         [TestMethod]
         public void CarRegNoMinLessOne()
@@ -492,6 +495,111 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 2000 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(2000, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2MinBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestAddressLine2 with blank test data
+            TestAddressLine2 = "";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2MinPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestAddressLine2 with some test data
+            TestAddressLine2 = "a";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2MaxLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 99 times to a variable for testing
+            TestAddressLine2 = TestAddressLine2.PadRight(99, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2MaxBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 100 times to a variable for testing
+            TestAddressLine2 = TestAddressLine2.PadRight(100, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2MaxPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 101 times to a variable for testing
+            TestAddressLine2 = TestAddressLine2.PadRight(101, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2Mid()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 50 times to a variable for testing
+            TestAddressLine2 = TestAddressLine2.PadRight(50, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine2ExtremeMax()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 20 000 times to a variable for testing
+            TestAddressLine2 = TestAddressLine2.PadRight(20000, 'a');
             // New variable Error
             String Error = "";
             // Check if there is an error message returned

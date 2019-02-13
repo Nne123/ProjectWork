@@ -36,6 +36,12 @@ namespace Class_Library
                 // Return an error message
                 Error = "AddressLine1 cannot have more than 50 characters";
             }
+            // If AddressLine2 is more than 100 characters long
+            if (AddressLine2.Length > 100)
+            {
+                // Return an error message
+                Error = "AddressLine2 cannot have more than 100 characters";
+            }
             // If LastName is blank
             else if (LastName.Length == 0)
             {
@@ -58,18 +64,18 @@ namespace Class_Library
             return Error;
         }
 
-        public string Find(string Search)
-        {
-            // New variable Error
-            string Error = "";
-            // If Search is blank
-            if (Search.ToString().Length == 0)
-            {
-                // Return an error message
-                Error = "Search field cannot be blank";
-            }
-            // Return the result
-            return Error;
-        }
+        //public string Find(Int32 CustomerID)
+        //{
+        //    // New variable Error
+        //    string Error = "";
+        //    // If Search is blank
+        //    if (Search.ToString().Length == 0)
+        //    {
+        //        // Return an error message
+        //        Error = "Search field cannot be blank";
+        //    }
+        //    // Return the result
+        //    return Error;
+        //}
     }
 }
