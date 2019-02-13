@@ -493,7 +493,7 @@ namespace Test_Framework
         {
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
-            // Add letter 'a' 2000 times to a variable for testing
+            // Add letter 'a' 2 000 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(2000, 'a');
             // New variable Error
             String Error = "";
@@ -600,6 +600,126 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 20 000 times to a variable for testing
             TestAddressLine2 = TestAddressLine2.PadRight(20000, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMinLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestEmail with some test data
+            TestEmail = "a@a.";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMinBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestEmail with some test data
+            TestEmail = "a@a.a";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMinPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestEmail with some test data
+            TestEmail = "a@a.aa";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 59 times to a variable for testing
+            TestEmail = TestEmail.PadRight(59, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 60 times to a variable for testing
+            TestEmail = TestEmail.PadRight(60, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 61 times to a variable for testing
+            TestEmail = TestEmail.PadRight(61, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMid()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 30 times to a variable for testing
+            TestEmail = TestEmail.PadRight(30, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailExtremeMax()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 2 000 times to a variable for testing
+            TestEmail = TestEmail.PadRight(2000, 'a');
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
