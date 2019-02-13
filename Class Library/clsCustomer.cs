@@ -30,6 +30,12 @@ namespace Class_Library
                 // Return an error message
                 Error = "Car registration number must be 6 numbers";
             }
+            // If AddressLine1 is more than 50 characters long
+            if (AddressLine1.Length > 50)
+            {
+                // Return an error message
+                Error = "AddressLine1 cannot have more than 50 characters";
+            }
             // If LastName is blank
             else if (LastName.Length == 0)
             {

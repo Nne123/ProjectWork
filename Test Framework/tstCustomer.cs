@@ -609,7 +609,34 @@ namespace Test_Framework
         // Where the invalid type for LastNameWouldGo
 
         [TestMethod]
-        public void AddressLine1MinLessOne()
+        public void AddressLine1MinBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestAddressLine1 with blank test data
+            String TestAddressLine1 = "";
+            // New testing variable TestAddressLine2 with some test data
+            String TestAddressLine2 = "a";
+            // New testing variable TestEmail with some test data
+            String TestEmail = "a@a.com";
+            // New testing variable TestFirstName with some test data
+            String TestFirstName = "a";
+            // New testing variable TestLastName with some test data
+            String TestLastName = "aa";
+            // New testing variable TestPhoneNo with some test data
+            String TestPhoneNo = "1";
+            // New testing variable TestCarRegNo with some test data
+            Int32 TestCarRegNo = 123456;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine1MinPlusOne()
         {
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
@@ -622,7 +649,152 @@ namespace Test_Framework
             // New testing variable TestFirstName with some test data
             String TestFirstName = "a";
             // New testing variable TestLastName with some test data
-            String TestLastName = "a";
+            String TestLastName = "aa";
+            // New testing variable TestPhoneNo with some test data
+            String TestPhoneNo = "1";
+            // New testing variable TestCarRegNo with some test data
+            Int32 TestCarRegNo = 123456;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine1MaxLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestAddressLine1 with blank test data
+            String TestAddressLine1 = "";
+            // Add letter 'a' 49 times to that variable for testing
+            TestAddressLine1 = TestAddressLine1.PadRight(49, 'a');
+            // New testing variable TestAddressLine2 with some test data
+            String TestAddressLine2 = "a";
+            // New testing variable TestEmail with some test data
+            String TestEmail = "a@a.com";
+            // New testing variable TestFirstName with some test data
+            String TestFirstName = "a";
+            // New testing variable TestLastName with some test data
+            String TestLastName = "aa";
+            // New testing variable TestPhoneNo with some test data
+            String TestPhoneNo = "1";
+            // New testing variable TestCarRegNo with some test data
+            Int32 TestCarRegNo = 123456;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine1MaxBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestAddressLine1 with blank test data
+            String TestAddressLine1 = "";
+            // Add letter 'a' 50 times to that variable for testing
+            TestAddressLine1 = TestAddressLine1.PadRight(50, 'a');
+            // New testing variable TestAddressLine2 with some test data
+            String TestAddressLine2 = "a";
+            // New testing variable TestEmail with some test data
+            String TestEmail = "a@a.com";
+            // New testing variable TestFirstName with some test data
+            String TestFirstName = "a";
+            // New testing variable TestLastName with some test data
+            String TestLastName = "aa";
+            // New testing variable TestPhoneNo with some test data
+            String TestPhoneNo = "1";
+            // New testing variable TestCarRegNo with some test data
+            Int32 TestCarRegNo = 123456;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine1MaxPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestAddressLine1 with blank test data
+            String TestAddressLine1 = "";
+            // Add letter 'a' 51 times to that variable for testing
+            TestAddressLine1 = TestAddressLine1.PadRight(51, 'a');
+            // New testing variable TestAddressLine2 with some test data
+            String TestAddressLine2 = "a";
+            // New testing variable TestEmail with some test data
+            String TestEmail = "a@a.com";
+            // New testing variable TestFirstName with some test data
+            String TestFirstName = "a";
+            // New testing variable TestLastName with some test data
+            String TestLastName = "aa";
+            // New testing variable TestPhoneNo with some test data
+            String TestPhoneNo = "1";
+            // New testing variable TestCarRegNo with some test data
+            Int32 TestCarRegNo = 123456;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine1Mid()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestAddressLine1 with blank test data
+            String TestAddressLine1 = "";
+            // Add letter 'a' 25 times to that variable for testing
+            TestAddressLine1 = TestAddressLine1.PadRight(25, 'a');
+            // New testing variable TestAddressLine2 with some test data
+            String TestAddressLine2 = "a";
+            // New testing variable TestEmail with some test data
+            String TestEmail = "a@a.com";
+            // New testing variable TestFirstName with some test data
+            String TestFirstName = "a";
+            // New testing variable TestLastName with some test data
+            String TestLastName = "aa";
+            // New testing variable TestPhoneNo with some test data
+            String TestPhoneNo = "1";
+            // New testing variable TestCarRegNo with some test data
+            Int32 TestCarRegNo = 123456;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void AddressLine1ExtremeMax()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestAddressLine1 with blank test data
+            String TestAddressLine1 = "";
+            // Add letter 'a' 25 times to that variable for testing
+            TestAddressLine1 = TestAddressLine1.PadRight(2000, 'a');
+            // New testing variable TestAddressLine2 with some test data
+            String TestAddressLine2 = "a";
+            // New testing variable TestEmail with some test data
+            String TestEmail = "a@a.com";
+            // New testing variable TestFirstName with some test data
+            String TestFirstName = "a";
+            // New testing variable TestLastName with some test data
+            String TestLastName = "aa";
             // New testing variable TestPhoneNo with some test data
             String TestPhoneNo = "1";
             // New testing variable TestCarRegNo with some test data
