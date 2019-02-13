@@ -7,8 +7,14 @@ namespace Class_Library
         // Private?
         public int CarRegNo { get; set; }
         public string LastName { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string Email { get; set; }
+        public string FirstName { get; set; }
+        public string PhoneNo { get; set; }
+        public int CustomerID { get; set; }
 
-        public string Valid(string LastName, int CarRegNo)
+        public string Valid(string AddressLine1, string AddressLine2, string Email, string FirstName, string LastName, string PhoneNo, int CarRegNo)
         {
             // New variable Error
             string Error = "";
