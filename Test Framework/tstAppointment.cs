@@ -17,6 +17,19 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void AppointmentIDPropertyOK()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Int32 AppointmentID = 1;
+            // assign the data to the property
+            AnAppointment.AppointmentID = AppointmentID;
+            // test to see that the values are the same
+            Assert.AreEqual(AnAppointment.AppointmentID, AppointmentID);
+        }
+
+        [TestMethod]
         public void CarRegNoOK()
         {
             // create an instance of clsAppointment
