@@ -1,4 +1,6 @@
-﻿namespace Class_Library
+﻿using System;
+
+namespace Class_Library
 {
     public class clsStaff
     {
@@ -19,10 +21,10 @@
                 Error = "";
             }
             //if last name is less then 4 characters long, display error
-            if (LastName.ToString().Length > 4 || LastName.ToString().Length < 4)
+            if (LastName.ToString().Length > 2 || LastName.ToString().Length < 4)
             {
                 //last name must be 4 characters or more
-                Error = "LasttName must be 4 letters long";
+                Error = "LasttName must be 2 letters long";
             }
             // firstName is blank
             else if (FirstName.Length == 0)
@@ -148,7 +150,7 @@
             return Error;
         }
 
-         public string Add(string StaffID)
+        public string Add(string StaffID)
          {
             //new variable error
             string Error = "";
@@ -157,6 +159,7 @@
                 //display an error message
                 Error = "The StaffID can't be blank";
             }
+            //
             //return the results
             return Error;
         }
