@@ -15,5 +15,29 @@ namespace Test_Framework
             //check to see that the class is not null
             Assert.IsNotNull(AnStaff);
         }
+
+        [TestMethod]
+        public void FirstNameOK()
+        {
+            //A new instance of  clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstFirstName
+            String TestFirstName = "";
+            AStaff.FirstName = TestFirstName;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.FirstName, TestFirstName);
+        }
+
+        [TestMethod]
+        public void LastNameOK()
+        {
+            //A new instance of  clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstFirstName
+            String TestLastName = "";
+            AStaff.LastName = TestLastName;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.LastName, TestLastName);
+        }
     }
 }
