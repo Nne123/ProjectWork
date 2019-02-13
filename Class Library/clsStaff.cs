@@ -24,7 +24,7 @@
                 //last name must be 4 characters or more
                 Error = "LasttName must be 4 letters long";
             }
-            //if firstName is blank
+            // firstName is blank
             else if (FirstName.Length == 0)
             {
                 //return an error message
@@ -47,11 +47,16 @@
         }
         public string Find(string Search)
         {
+            //new variable error
             string Error = "";
+
+            //if Last Name is blank or up to 15 charactrs long
             if (LastName.ToString().Length == 15 || LastName.ToString().Length == 0)
             {
+                //display an error message
                 Error = "";
             }
+            //if last name is less then 4 characters long, display error
             if (LastName.ToString().Length > 4 || LastName.ToString().Length < 4)
             {
                 //display a message that last name must be 4 characters or more
@@ -59,13 +64,13 @@
             }
 
 
-            //if firstName is blank
+            // firstName is blank
             else if (FirstName.Length == 0)
             {
                 //return an error message
                 Error = "First Name cant be blank";
             }
-            //if FirstName is less than 4 characters long, display error message
+            //i  FirstName is less than 4 characters long, display error message
             else if (FirstName.Length < 4)
             {
                 //display an error message
@@ -78,23 +83,23 @@
                 Error = "First Name can't have 50 characters, too long.";
             }
 
-
+            // PhoneNo is blank
             else if (PhoneNo.Length == 0)
             {
                 //return an error message
-                Error = "PhoneNo cant be blank";
+                Error = "Phone No cant be blank";
             }
-            //if FirstName is less than 4 characters long, display error message
-            else if (PhoneNo.Length < 4)
+            //if PhoneNo is less than 8 numbers long, display error message
+            else if (PhoneNo.Length < 8)
             {
                 //display an error message
-                Error = "PhoneNo must be at least 4 characters long or more";
+                Error = "Phone No must be at least 8 digits long or more";
             }
-            //if first name is more than 50 characters display an error message
+            //if PhoneNo is more than 50 characters display an error message
             else if (PhoneNo.Length > 50)
             {
                 //display an error message
-                Error = "PhoneNo can't have 50 characters, too long.";
+                Error = "Phone No can't have 50 numbers, too long.";
             }
 
 
@@ -103,11 +108,11 @@
                 //return an error message
                 Error = "Email can't be blank";
             }
-            //if Email is less than 4 characters long, display error message
-            else if (Email.Length < 4)
+            //if Email is less than 8 characters long, display error message
+            else if (Email.Length < 8)
             {
                 //display an error message
-                Error = "Email must be at least 4 characters long or more";
+                Error = "Email must be at least 8 characters long or more";
             }
             //if Email is more than 50 characters display an error message
             else if (Email.Length > 50)
@@ -115,8 +120,10 @@
                 //display an error message
                 Error = "Email can't have 50 characters, too long.";
             }
+            //if Search is more than 50 characters display an error message
             else if (Search.ToString().Length == 0)
             {
+                //display an error message
                 Error = "The search field has to contain something";
             }
 
@@ -143,11 +150,14 @@
 
          public string Add(string StaffID)
          {
+            //new variable error
             string Error = "";
             if (StaffID.ToString().Length == 0)
             {
+                //display an error message
                 Error = "The StaffID can't be blank";
             }
+            //return the results
             return Error;
         }
     }
