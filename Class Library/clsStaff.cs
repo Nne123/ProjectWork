@@ -10,13 +10,18 @@
 
         public string Valid(string FirstName, string LastName)
         {
+            //new variable error
             string Error = "";
+            //if Last Name is blank or up to 15 charactrs long
             if (LastName.ToString().Length == 15 || LastName.ToString().Length == 0)
             {
+                //return error message as blank
                 Error = "";
             }
+            //if last name is less then 4 characters long, display error
             if (LastName.ToString().Length > 4 || LastName.ToString().Length < 4)
             {
+                //last name must be 4 characters or more
                 Error = "LasttName must be 4 letters long";
             }
             //if firstName is blank
@@ -49,6 +54,7 @@
             }
             if (LastName.ToString().Length > 4 || LastName.ToString().Length < 4)
             {
+                //display a message that last name must be 4 characters or more
                 Error = "LasttName must be 4 letters long";
             }
 
@@ -132,7 +138,6 @@
                 Error = "StaffID can't have 50 characters, too long.";
             }
             //return the results
-            //
             return Error;
         }
 
