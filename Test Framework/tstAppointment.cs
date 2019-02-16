@@ -378,7 +378,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void JobIDPropertyOK()
+        public void JobIDPropertyOK()  // if automated - this the only test we need
         {
             // create an instance of the class we want to create
             clsAppointment AnAppointment = new clsAppointment();
