@@ -376,5 +376,18 @@ namespace Test_Framework
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        public void JobIDPropertyOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Int32 JobID = 1;
+            // assign the data to the property
+            AnAppointment.JobID = JobID;
+            // test to see that the values are the same
+            Assert.AreEqual(AnAppointment.JobID, JobID);
+        }
     }
 }
