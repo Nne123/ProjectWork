@@ -6,6 +6,7 @@ namespace Class_Library
     {
         public string CarRegNo { get; set; }
         public int AppointmentID { get; set; }
+        public DateTime MOTDate { get; set; }
 
         public string Valid(string carRegNo)
         {

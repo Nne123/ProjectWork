@@ -30,7 +30,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void CarRegNoOK()
+        public void CarRegNoPropertyOK()
         {
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -178,5 +178,20 @@ namespace Test_Framework
             //test to see that the result is NOT OK i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
+
+        [TestMethod]
+        public void MOTDatePropertyOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            DateTime TestData = DateTime.Now.Date;
+            // assign te data to the property
+            AnAppointment.MOTDate = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.MOTDate, TestData);
+        }
+
+
     }
 }
