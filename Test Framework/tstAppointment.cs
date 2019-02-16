@@ -192,6 +192,25 @@ namespace Test_Framework
             Assert.AreEqual(AnAppointment.MOTDate, TestData);
         }
 
-
+        [TestMethod]
+        public void MOTDateMinLessOne()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(-1);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(MOTDate);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
