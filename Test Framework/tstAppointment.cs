@@ -10,6 +10,7 @@ namespace Test_Framework
         // create some test data to pass the method
         string carRegNo = "123 6GH";
         string MOTDate = DateTime.Now.ToString();
+        //string JobID = Convert.ToString(1);
 
         [TestMethod]
         public void InstanceOK()
@@ -389,5 +390,46 @@ namespace Test_Framework
             // test to see that the values are the same
             Assert.AreEqual(AnAppointment.JobID, JobID);
         }
+
+        [TestMethod]
+        public void CustomerIDPropertyOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Int32 CustomerID = 1;
+            // assign the data to the property
+            AnAppointment.CustomerID = CustomerID;
+            // test to see that the values are the same
+            Assert.AreEqual(AnAppointment.CustomerID, CustomerID);
+        }
+
+        [TestMethod]
+        public void StaffIDPropertyOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Int32 StaffID = 1;
+            // assign the data to the property
+            AnAppointment.StaffID = StaffID;
+            // test to see that the values are the same
+            Assert.AreEqual(AnAppointment.StaffID, StaffID);
+        }
+
+        //[TestMethod]
+        //public void JobIDInvalidData()
+        //{
+        //    // create an instance of the class we want to create
+        //    clsAppointment AnAppointment = new clsAppointment();
+        //    // string variable to store the any error message
+        //    String Error = "";
+        //    // store the error message in the string variable
+        //    string JobID = "This is not a number!";
+        //    // invoke the method
+        //    Error = AnAppointment.Valid(JobID);
+        //    // test to see that the result is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
     }
 }
