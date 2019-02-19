@@ -55,5 +55,24 @@ namespace Test_Framework
             // test to see that the two values are the same
             Assert.AreEqual(AllAppointments.Count, SomeCount);
         }
+
+        [TestMethod]
+        public void ThisAppointmentPropertyOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
+            // create some test data to assign to the property
+            clsAppointment TestAppointment = new clsAppointment();
+            TestAppointment.AppointmentID = 1;
+            TestAppointment.CarRegNo = "123 9GH";
+            TestAppointment.CustomerID = 1;
+            TestAppointment.StaffID = 1;
+            TestAppointment.JobID = 1;
+            TestAppointment.MOTDate = DateTime.Now.Date;
+            // assign the data to the property
+            AllAppointments.ThisAppointment = TestAppointment;
+            // test to see that the two values are the same
+            Assert.AreEqual(AllAppointments.ThisAppointment, TestAppointment);
+        }
     }
 }

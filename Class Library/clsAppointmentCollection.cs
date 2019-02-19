@@ -6,5 +6,6 @@ namespace Class_Library
     {
         public List<clsAppointment> AppointmentList { get; set; }
         public int Count { get; set; }
+        public clsAppointment ThisAppointment { get; set; }
     }
 }
