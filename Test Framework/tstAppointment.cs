@@ -217,6 +217,26 @@ namespace Test_Framework
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+        //[TestMethod]
+        //public void TimeTesting()
+        //{
+        //    // create an instance of clsAppointment
+        //    clsAppointment AnAppointment = new clsAppointment();
+        //    // string variable to store any error message
+        //    String Error = "";
+        //    // create a variable to store the test data
+        //    DateTime TestTime;
+        //    // set the date to todays date
+        //    TestTime = DateTime.Now.ToShortTimeString("h:mm tt");
+        //    // change the time to whatever the date is less one day
+        //    TestTime = TestTime;
+        //    // convert the date variable to a string variable
+        //    string MOTDate = TestTime.ToString();
+        //    // invoke the method
+        //    Error = AnAppointment.Valid(carRegNo, MOTDate);
+        //    // test to see that the result is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
         [TestMethod]
         public void MOTDateMinBoundary() // todays date
