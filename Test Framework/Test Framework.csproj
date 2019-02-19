@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="tstAppointment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tstAppointmentCollection.cs" />
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstStaff.cs" />
   </ItemGroup>

@@ -8,6 +8,8 @@ namespace Class_Library
         public int AppointmentID { get; set; }
         public DateTime MOTDate { get; set; }
         public int JobID { get; set; }
+        public int CustomerID { get; set; }
+        public int StaffID { get; set; }
 
         public string Valid(string carRegNo, string mOTDate)
         {
