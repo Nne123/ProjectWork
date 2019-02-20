@@ -7,7 +7,17 @@ namespace Test_Framework
     [TestClass]
     public class tstStaff
     {
-        public string TestFirstName;
+        public string TestStaff;
+
+        String TestAddressLine1 = "";
+        String TestAddressLine2 = "";
+        String TestFirstName = "";
+        String TestLastName = "";
+        Int32 TestStaffID = 1;
+        String TestEmail = "";
+        String TestPhoneNo = "";
+
+
 
         [TestMethod]
         public void InstanceOK()
@@ -42,17 +52,17 @@ namespace Test_Framework
             Assert.AreEqual(AStaff.LastName, TestLastName);
         }
 
-       // [TestMethod]
-      //  public void StaffIDOK()
-        //{
-       //     //A new instance of  clsStaff class
-       //     clsStaff AStaff = new clsStaff();
-       //     //new varible to be tested tstStaffID
-       //     Int32 TestStaffID = "";
-       //     AStaff.StaffID = TestStaffID;
-       //     //check to see that the class matches
-       //     Assert.AreEqual(AStaff.StaffID, TestStaffID);
-       // }
+        [TestMethod]
+        public void StaffIDOK()
+        {
+            //A new instance of  clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstStaffID
+            Int32 TestStaffID = 1;
+            AStaff.StaffID = TestStaffID;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.StaffID, TestStaffID);
+        }
 
         [TestMethod]
         public void EmailOK()
@@ -103,121 +113,335 @@ namespace Test_Framework
             Assert.AreEqual(AStaff.AddressLine2, TestAddressLine2);
         }
 
-        // [TestMethod]
-        //public void ValidMethodOK()
-        //{
-        // New instance of clsStaff class
-        //  clsStaff AStaff = new clsStaff();
+         [TestMethod]
+        public void ValidMethodOK()
+        {
+         //New instance of clsStaff class
+          clsStaff AStaff = new clsStaff();
         // New variable Error
-        //String Error = "";
+        String Error = "";
         // Check if there is an error message returned
-        //Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo);
+        Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
         // Check whether there is an error
-        //Assert.AreEqual(Error, "");
-        //}
+        Assert.AreEqual(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+        }
 
-       // [TestMethod]
-        //public void FirstNameMinLessOne()         // empty
-       // {
-         //   // New instance of clsStaff class
-           // clsStaff AStaff = new clsStaff();
+        [TestMethod]
+        public void FirstNameMinLessOne()         
+        {
+           // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
             // Variable TestLastName with some test data
-            //TestFirstName = "a";
+            TestFirstName = "a";
             // New variable Error
-            //String Error = "";
+            String Error = "";
             // Check if there is an error message returned
-            //Error = AStaff.Valid(TestFirstName);
+             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            //Assert.AreNotEqual(Error, "");
-        //}
+            Assert.AreNotEqual(Error, "");
+        }
 
-    //    [TestMethod]
-      //  public void FirstNameMinBoundary()         // 9 characters
-        //{
+         [TestMethod]
+         public void FirstNameMinBoundary()         // 9 characters
+        {
             // create an instance of clsStaff
-          //  clsStaff AStaff = new clsStaff();
+            clsStaff AStaff = new clsStaff();
             // create a string variable to store the result of the validation
-            //String Error = "";
+            String Error = "";
             // create some test data to test the method
-            //string FirstName = "aaaaaaaaa";
-            // invoke the method
-            //Error = AStaff.Valid(FirstName);
+            string FirstName = "aaaaaaaaa";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-         //   Assert.AreEqual(Error, "");
-        //}
+            Assert.AreNotEqual(Error, "");
+        }
 
-       // [TestMethod]
-       // public void FirstNameMinPlusOne()         // 10 characters
-       // {
+         [TestMethod]
+         public void FirstNameMinPlusOne()         // 10 characters
+         {
+        // create an instance of clsStaff
+           clsStaff AStaff = new clsStaff();
+        // create a string variable to store the result of the validation
+        String Error = "";
+        // create some test data to test the method
+          string FirstName = "aaaaaaaaaa";
+        // invoke the method
+           Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+        //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+           [TestMethod]
+         public void FirstNameMaxLessOne()         // 49 characters
+         {
             // create an instance of clsStaff
-         //   clsStaff AStaff = new clsStaff();
-            // create a string variable to store the result of the validation
-            ///String Error = "";
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
             // create some test data to test the method
-          //  string FirstName = "aaaaaaaaa";
+            string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             // invoke the method
-         //   Error = AStaff.Valid(FirstName);
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-        //    Assert.AreNotEqual(Error, "");
-        //}
+            Assert.AreNotEqual(Error, "");
+          }
 
-     //   [TestMethod]
-       // public void FirstNameMaxLessOne()         // 49 characters
-       // {
+         [TestMethod]
+        public void FirstNameMaxBoundary()         // 50 characters
+         {
+        // create an instance of clsStaff
+        clsStaff AStaff = new clsStaff();
+        //create a string variable to store the result of the validation
+        String Error = "";
+        // create some test data to test the method
+        string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        // invoke the method
+        Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+        //test to see that the result is NOT OK i.e there should be an error message
+           Assert.AreNotEqual(Error, "");
+          }
+
+    [TestMethod]
+     public void FirstNameMaxPlusOne()         // 51 characters
+    {
             // create an instance of clsStaff
-        //    clsStaff AStaff = new clsStaff();
-            // create a string variable to store the result of the validation
-         //   String Error = "";
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
             // create some test data to test the method
-         //   string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             // invoke the method
-         //   Error = AStaff.Valid(FirstName);
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-         //   Assert.AreNotEqual(Error, "");
-      //  }
+            Assert.AreNotEqual(Error, "");
+        }
 
-       // [TestMethod]
-        //public void FirstNameMaxBoundary()         // 50 characters
-       // {
-           // create an instance of clsStaff
-         //   clsStaff AStaff = new clsStaff();
-            // create a string variable to store the result of the validation
-         //   String Error = "";
-            // create some test data to test the method
-          //  string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            // invoke the method
-         //   Error = AStaff.Valid(FirstName);
-            //test to see that the result is NOT OK i.e there should be an error message
-          //  Assert.AreNotEqual(Error, "");
-      //  }
-
-        //[TestMethod]
-       // public void FirstNameMaxPlusOne()         // 51 characters
-        //{
+         [TestMethod]
+         public void FirstNameMid()         // 25 characters
+         {
             // create an instance of clsStaff
-          //  clsStaff AStaff = new clsStaff();
-           // TestFirstName = TestFirstName.PadRight(51, 'a');
+            clsStaff AStaff = new clsStaff();
             // create a string variable to store the result of the validation
-            //String Error = "";
-            //string FirstName = "";
-           // Error = AStaff.Valid(FirstName);
-            //test to see that the result is NOT OK i.e there should be an error message
-           // Assert.AreNotEqual(Error, "");
-       // }
-
-       // [TestMethod]
-       // public void FirstNameMid()         // 25 characters
-       // {
-            // create an instance of clsStaff
-         //   clsStaff AStaff = new clsStaff();
-            // create a string variable to store the result of the validation
-           // String Error = "";
+            String Error = "";
             // create some test data to test the method
-            //string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaa";
             // invoke the method
-           // Error = AStaff.Valid(FirstName);
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-          //  Assert.AreNotEqual(Error, "");
-        //}
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+
+        [TestMethod]
+        public void LastNameMinLessOne()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // Variable TestLastName with some test data
+            TestLastName = "a";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMinBoundary()         // 9 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string LastName = "aaaaaaaaa";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastMinPlusOne()         // 10 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string LastName = "aaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMaxLessOne()         // 49 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string LastName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMaxBoundary()         // 50 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string LastName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMaxPlusOne()         // 51 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string LastName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void LastNameMid()         // 25 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string LastName = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMinLessOne()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // Variable TestLastName with some test data
+            TestStaffID = 1;
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMinBoundary()         // 9 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string StaffID = "aaaaaaaaa";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMinPlusOne()         // 10 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string StaffID = "aaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMaxLessOne()         // 49 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string StaffID = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMaxBoundary()         // 50 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string StaffID = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMaxPlusOne()         // 51 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string StaffID = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMid()         // 25 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string StaffID = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }

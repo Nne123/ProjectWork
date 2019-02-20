@@ -19,22 +19,22 @@ namespace Class_Library
             if (AddressLine1.Length > 50)
             {
                 // Return an error message
-                Error = "AddressLine1 cannot have more than 50 characters";
+                Error = "AddressLine1 cant have more than 50 characters";
             }
             // If AddressLine2 is more than 100 characters long
             if (AddressLine2.Length > 100)
             {
                 // Return an error message
-                Error = "AddressLine2 cannot have more than 100 characters";
+                Error = "AddressLine2 cant have more than 100 characters";
             }
             // If FirstName is blank
             else if (FirstName.Length == 0)
             {
                 // Return an error message
-                Error = "First name cannot be blank";
+                Error = "First name cant be blank";
             }
             // If FirstName is less than 2 characters long
-            else if (FirstName.Length < 9)
+            else if (FirstName.Length < 2)
             {
                 // Return an error message
                 Error = "First name must be at least 2 characters long";
@@ -65,16 +65,6 @@ namespace Class_Library
             }
             // Return the result
             return Error;
-        }
-
-        public string Valid()
-        {
-            throw new NotImplementedException();
-        }
-
-        public string Valid(string firstName)
-        {
-            throw new NotImplementedException();
         }
     }
 }
