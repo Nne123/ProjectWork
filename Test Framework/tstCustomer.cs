@@ -135,23 +135,23 @@ namespace Test_Framework
             Assert.AreEqual(Error, "");
         }
 
-        //[TestMethod]
-        //public void FindMethodOK()
-        //{
-        //    // New instance of clsCustomer class
-        //    clsCustomer ACustomer = new clsCustomer();
-        //    // New testing variable TestSearch with blank test data
-        //    String TestSearch = "somesearch";
-        //    // New variable Error
-        //    String Error = "";
-        //    // Check if there is an error message returned
-        /// <summary>
-        ///  SHOULD BE A CUSTOMERID
-        /// </summary>
-        //    Error = ACustomer.Find(TestSearch);
-        //    // Check whether there is an error
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New testing variable TestSearch with blank test data
+            String TestSearch = "somesearch";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+        / < summary >
+        / SHOULD BE A CUSTOMERID
+       / </ summary >
+           Error = ACustomer.Find(TestSearch);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
 
         [TestMethod]
         public void CarRegNoMinLessOne()
