@@ -5,7 +5,8 @@ namespace Class_Library
     public class clsCustomer
     {
         // Private?
-        public int CarRegNo { get; set; }
+        // Also needs comment editing and else ifs
+        public string CarRegNo { get; set; }
         public string LastName { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
@@ -14,7 +15,7 @@ namespace Class_Library
         public string PhoneNo { get; set; }
         public int CustomerID { get; set; }
 
-        public string Valid(string AddressLine1, string AddressLine2, string Email, string FirstName, string LastName, string PhoneNo, int CarRegNo)
+        public string Valid(string AddressLine1, string AddressLine2, string Email, string FirstName, string LastName, string PhoneNo, string CarRegNo)
         {
             // New variable Error
             string Error = "";
@@ -42,6 +43,36 @@ namespace Class_Library
                 // Return an error message
                 Error = "AddressLine2 cannot have more than 100 characters";
             }
+            // If Email is more than 60 characters long
+            if (Email.Length > 60)
+            {
+                // Return an error message
+                Error = "Email cannot have more than 60 characters";
+            }
+            // If Email is less than 5 characters long
+            else if (Email.Length < 5)
+            {
+                // Return an error message
+                Error = "Email must be at least 5 characters long";
+            }
+            // If FirstName is blank
+            else if (FirstName.Length == 0)
+            {
+                // Return an error message
+                Error = "First name cannot be blank";
+            }
+            // If FirstName is less than 2 characters long
+            else if (FirstName.Length < 2)
+            {
+                // Return an error message
+                Error = "First name must be at least 2 characters long";
+            }
+            // If FirstName is more than 40 characters long
+            else if (FirstName.Length > 25)
+            {
+                // Return an error message
+                Error = "First name cannot have more than 25 characters";
+            }
             // If LastName is blank
             else if (LastName.Length == 0)
             {
@@ -59,6 +90,24 @@ namespace Class_Library
             {
                 // Return an error message
                 Error = "Last name cannot have more than 40 characters";
+            }
+            // If PhoneNo is blank
+            else if (PhoneNo.Length == 0)
+            {
+                // Return an error message
+                Error = "Phone number cannot be blank";
+            }
+            // If PhoneNo is less than 5 characters long
+            else if (PhoneNo.Length < 5)
+            {
+                // Return an error message
+                Error = "Phone number must be at least 5 characters long";
+            }
+            // If PhoneNo is more than 30 characters long
+            else if (PhoneNo.Length > 30)
+            {
+                // Return an error message
+                Error = "Phone number cannot have more than 30 characters";
             }
             // Return the result
             return Error;
