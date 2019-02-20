@@ -6,7 +6,7 @@ namespace Class_Library
     {
         // Private?
         // Also needs comment editing and else ifs
-        public int CarRegNo { get; set; }
+        public string CarRegNo { get; set; }
         public string LastName { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
@@ -15,7 +15,7 @@ namespace Class_Library
         public string PhoneNo { get; set; }
         public int CustomerID { get; set; }
 
-        public string Valid(string AddressLine1, string AddressLine2, string Email, string FirstName, string LastName, string PhoneNo, int CarRegNo)
+        public string Valid(string AddressLine1, string AddressLine2, string Email, string FirstName, string LastName, string PhoneNo, string CarRegNo)
         {
             // New variable Error
             string Error = "";

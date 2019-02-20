@@ -23,7 +23,7 @@ namespace Test_Framework
         // New testing variable TestPhoneNo with some test data
         String TestPhoneNo = "+444656446641";
         // New testing variable TestCarRegNo with some test data
-        Int32 TestCarRegNo = 123456;
+        String TestCarRegNo = "AF3E4E";
 
         [TestMethod]
         public void InstanceOK()
@@ -159,7 +159,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 12345;
+            TestCarRegNo = "AF3E4";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -174,7 +174,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 123456;
+            TestCarRegNo = "AF3E4E";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -189,7 +189,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 1234567;
+            TestCarRegNo = "AF3E4E3";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -204,7 +204,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 12345;
+            TestCarRegNo = "AF3E4";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -219,7 +219,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 123456;
+            TestCarRegNo = "AF3E4E";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -234,7 +234,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 1234567;
+            TestCarRegNo = "AF3E4E3";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -249,7 +249,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 123;
+            TestCarRegNo = "AF3";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -264,7 +264,7 @@ namespace Test_Framework
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
-            TestCarRegNo = 1234567891;
+            TestCarRegNo = "AF3E4ED69A";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
