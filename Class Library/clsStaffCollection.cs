@@ -2,6 +2,7 @@
 
 namespace Class_Library
 {
+    //this is a test class for clsStaffCollection
     public class clsStaffCollection
     {
         public List<clsStaff> StaffList { get; set; }
