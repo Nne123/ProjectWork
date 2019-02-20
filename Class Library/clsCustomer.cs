@@ -55,6 +55,24 @@ namespace Class_Library
                 // Return an error message
                 Error = "Email must be at least 5 characters long";
             }
+            // If FirstName is blank
+            else if (FirstName.Length == 0)
+            {
+                // Return an error message
+                Error = "First name cannot be blank";
+            }
+            // If FirstName is less than 2 characters long
+            else if (FirstName.Length < 2)
+            {
+                // Return an error message
+                Error = "First name must be at least 2 characters long";
+            }
+            // If FirstName is more than 40 characters long
+            else if (FirstName.Length > 25)
+            {
+                // Return an error message
+                Error = "First name cannot have more than 25 characters";
+            }
             // If LastName is blank
             else if (LastName.Length == 0)
             {
@@ -72,6 +90,24 @@ namespace Class_Library
             {
                 // Return an error message
                 Error = "Last name cannot have more than 40 characters";
+            }
+            // If PhoneNo is blank
+            else if (PhoneNo.Length == 0)
+            {
+                // Return an error message
+                Error = "Phone number cannot be blank";
+            }
+            // If PhoneNo is less than 5 characters long
+            else if (PhoneNo.Length < 5)
+            {
+                // Return an error message
+                Error = "Phone number must be at least 5 characters long";
+            }
+            // If PhoneNo is more than 30 characters long
+            else if (PhoneNo.Length > 30)
+            {
+                // Return an error message
+                Error = "Phone number cannot have more than 30 characters";
             }
             // Return the result
             return Error;

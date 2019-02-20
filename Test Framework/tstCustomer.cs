@@ -6,26 +6,25 @@ namespace Test_Framework
 {
     [TestClass]
     public class tstCustomer
-    { 
+    {
+        // Correct test data
+        // New testing variable TestAddressLine1 with blank test data
+        String TestAddressLine1 = "Grange 51a";
+        // New testing variable TestAddressLine2 with some test data
+        String TestAddressLine2 = "Leicester";
+        // New testing variable TestCustomerID with some test data
+        Int32 TestCustomerID = 1;
+        // New testing variable TestEmail with some test data
+        String TestEmail = "test@test.com";
+        // New testing variable TestFirstName with some test data
+        String TestFirstName = "John";
+        // New testing variable TestLastName with some test data
+        String TestLastName = "Smith";
+        // New testing variable TestPhoneNo with some test data
+        String TestPhoneNo = "+444656446641";
+        // New testing variable TestCarRegNo with some test data
+        Int32 TestCarRegNo = 123456;
 
-    // Correct test data
-    // New testing variable TestAddressLine1 with blank test data
-    String TestAddressLine1 = "Grange 51a";
-    // New testing variable TestAddressLine2 with some test data
-    String TestAddressLine2 = "Leicester";
-    // New testing variable TestCustomerID with some test data
-    Int32 TestCustomerID = 1;
-    // New testing variable TestEmail with some test data
-    String TestEmail = "test@test.com";
-    // New testing variable TestFirstName with some test data
-    String TestFirstName = "John";
-    // New testing variable TestLastName with some test data
-    String TestLastName = "Smith";
-    // New testing variable TestPhoneNo with some test data
-    String TestPhoneNo = "+444656446641";
-    // New testing variable TestCarRegNo with some test data
-    Int32 TestCarRegNo = 123456;
-    
         [TestMethod]
         public void InstanceOK()
         {
@@ -274,8 +273,6 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
-        // Where the invalid type for CarRegWouldGo
-
         [TestMethod]
         public void LastNameMinLessOne()
         {
@@ -395,8 +392,6 @@ namespace Test_Framework
             // Check whether there is an error
             Assert.AreNotEqual(Error, "");
         }
-
-        // Where the invalid type for LastNameWouldGo
 
         [TestMethod]
         public void AddressLine1MinBoundary()
@@ -720,6 +715,246 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 2 000 times to a variable for testing
             TestEmail = TestEmail.PadRight(2000, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMinLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestFirstName with some test data
+            TestFirstName = "a";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMinBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestFirstName with some test data
+            TestFirstName = "ab";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMinPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestFirstName with some test data
+            TestFirstName = "abc";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 24 times to a variable for testing
+            TestFirstName = TestFirstName.PadRight(24, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 25 times to a variable for testing
+            TestFirstName = TestFirstName.PadRight(25, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 26 times to a variable for testing
+            TestFirstName = TestFirstName.PadRight(26, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMid()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 12 times to a variable for testing
+            TestFirstName = TestFirstName.PadRight(12, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameExtremeMax()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 5 000 000 times to a variable for testing
+            TestFirstName = TestFirstName.PadRight(5000000, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMinLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestPhoneNo with some test data
+            TestPhoneNo = "1234";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMinBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestPhoneNo with some test data
+            TestPhoneNo = "12345";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMinPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Variable TestPhoneNo with some test data
+            TestPhoneNo = "123456";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMaxLessOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 29 times to a variable for testing
+            TestPhoneNo = TestPhoneNo.PadRight(29, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMaxBoundary()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 30 times to a variable for testing
+            TestPhoneNo = TestPhoneNo.PadRight(30, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMaxPlusOne()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 31 times to a variable for testing
+            TestPhoneNo = TestPhoneNo.PadRight(31, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMid()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 15 times to a variable for testing
+            TestPhoneNo = TestPhoneNo.PadRight(15, 'a');
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoExtremeMax()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // Add letter 'a' 2 000 times to a variable for testing
+            TestPhoneNo = TestPhoneNo.PadRight(2000, 'a');
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
