@@ -112,19 +112,5 @@ namespace Class_Library
             // Return the result
             return Error;
         }
-
-        //public string Find(Int32 CustomerID)
-        //{
-        //    // New variable Error
-        //    string Error = "";
-        //    // If Search is blank
-        //    if (Search.ToString().Length == 0)
-        //    {
-        //        // Return an error message
-        //        Error = "Search field cannot be blank";
-        //    }
-        //    // Return the result
-        //    return Error;
-        //}
     }
 }

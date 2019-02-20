@@ -2,5 +2,6 @@
 {
     public class clsCustomerCollection
     {
+        public int Count { get; set; }
     }
 }
