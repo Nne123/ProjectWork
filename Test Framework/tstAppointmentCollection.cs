@@ -16,7 +16,7 @@ namespace Test_Framework
             // test to see that it exists
             Assert.IsNotNull(AllAppointments);
         }
-    
+
         [TestMethod]
         public void AppointmentListOK()
         {
