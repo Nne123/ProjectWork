@@ -53,11 +53,11 @@ namespace Class_Library
             try
             {
                 CustomerIDTemp = Convert.ToInt32(CustomerID);
-                if (CustomerIDTemp > 1111)
+                if (CustomerIDTemp < 1)
                 {
                     Error = Error + "The CustomerID must be four digits : ";
                 }
-                if (CustomerIDTemp < 1111)
+                if (CustomerIDTemp > 600)
                 {
                     Error = Error + "The CustomerID must be four digits : ";
                 }
