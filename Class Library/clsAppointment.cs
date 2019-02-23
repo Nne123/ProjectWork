@@ -53,11 +53,11 @@ namespace Class_Library
             try
             {
                 CustomerIDTemp = Convert.ToInt32(CustomerID);
-                if (CustomerIDTemp > 1111)
+                if (CustomerIDTemp < 1)
                 {
                     Error = Error + "The CustomerID must be four digits : ";
                 }
-                if (CustomerIDTemp < 1111)
+                if (CustomerIDTemp > 600)
                 {
                     Error = Error + "The CustomerID must be four digits : ";
                 }
@@ -70,11 +70,11 @@ namespace Class_Library
             try
             {
                 StaffIDTemp = Convert.ToInt32(StaffID);
-                if (StaffIDTemp > 1111)
+                if (StaffIDTemp < 1)
                 {
                     Error = Error + "The Staff ID must be four digits : ";
                 }
-                if (StaffIDTemp < 1111)
+                if (StaffIDTemp > 600)
                 {
                     Error = Error + "The Staff ID must be four digits : ";
                 }
@@ -87,11 +87,11 @@ namespace Class_Library
             try
             {
                 JobIDTemp = Convert.ToInt32(JobID);
-                if (JobIDTemp > 1111)
+                if (JobIDTemp < 1)
                 {
                     Error = Error + "The Job ID must be four digits : ";
                 }
-                if (JobIDTemp < 1111)
+                if (JobIDTemp > 600)
                 {
                     Error = Error + "The Job ID must be four digits : ";
                 }
