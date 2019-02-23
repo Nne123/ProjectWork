@@ -38,6 +38,19 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void MOTDatePropertyOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            DateTime TestData = DateTime.Now.Date;
+            // assign te data to the property
+            AnAppointment.MOTDate = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.MOTDate, TestData);
+        }
+
+        [TestMethod]
         public void MOTTimePropertyOK()
         {
             // create an instance of our class clsAppointment
@@ -87,6 +100,19 @@ namespace Test_Framework
             AnAppointment.StaffID = StaffID;
             // test to see that the values are the same
             Assert.AreEqual(AnAppointment.StaffID, StaffID);
+        }
+
+        [TestMethod]
+        public void ActivePropertyOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Boolean TestData = true;
+            // assign the data to the property
+            AnAppointment.Active = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.Active, TestData);
         }
 
         [TestMethod]
@@ -476,19 +502,6 @@ namespace Test_Framework
             Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
             //test to see that the result is NOT OK i.e there should be an error message
             Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDatePropertyOK()
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create some test data to assign to the property
-            DateTime TestData = DateTime.Now.Date;
-            // assign te data to the property
-            AnAppointment.MOTDate = TestData;
-            // test to see that the two values are the same
-            Assert.AreEqual(AnAppointment.MOTDate, TestData);
         }
 
         [TestMethod]
