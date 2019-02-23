@@ -443,5 +443,216 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
+
+        [TestMethod]
+        public void EmailinLessOne()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // Variable TestLastName with some test data
+            TestEmail = "";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMinBoundary()         // 9 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaa";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMinPlusOne()         // 10 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxLessOne()         // 49 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxBoundary()         // 50 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMaxPlusOne()         // 51 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EmailMid()         // 25 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMinLessOne()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // Variable TestLastName with some test data
+            TestPhoneNo = "";
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMinBoundary()         // 9 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestPhoneNo  = "aaaaaaaaa";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMinPlusOne()         // 10 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestEmail = "aaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMaxLessOne()         // 49 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestPhoneNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMaxBoundary()         // 50 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestPhoneNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMaxPlusOne()         // 51 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestPhoneNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PhoneNoMid()         // 25 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string TestPhoneNo = "aaaaaaaaaaaaaaaaaaaaaaaaa";
+            // invoke the method
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
     }
 }
