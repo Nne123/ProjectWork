@@ -12,7 +12,10 @@ namespace Test_Framework
         string carRegNo = "1234 6GH";
         string MOTDate = DateTime.Now.AddDays(1).ToString();
         string MOTTime = Convert.ToString(10);
+
         string CustomerID = Convert.ToString(1111);
+        //Int32 CustomerID2 = Convert.ToInt32("4524");
+
         string StaffID = Convert.ToString(1111);
         string JobID = Convert.ToString(1111);
         
@@ -578,6 +581,9 @@ namespace Test_Framework
 
 
 
+
+
+
         [TestMethod]
         public void CustomerIDMinLessOne()
         {
@@ -586,7 +592,7 @@ namespace Test_Framework
             //create a string variable to store the result of the validation
             String Error = "";
             // create some test data to assign to the property
-            Int32 testCustomerID = 123;
+            Int32 testCustomerID = Convert.ToInt32(" 1234");
             // create some test data to assign to the property
             string CustomerID = testCustomerID.ToString();
             // assign the data to the property
@@ -602,10 +608,7 @@ namespace Test_Framework
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
             Int32 CustomerID = Convert.ToInt32("1234");
-            // assign the data to the property
-            AnAppointment.CustomerID = CustomerID;
-            // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.CustomerID, CustomerID);
+            //
         }
 
         [TestMethod]
