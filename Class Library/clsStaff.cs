@@ -15,6 +15,8 @@ namespace Class_Library
 
         public string Valid(string FirstName, string LastName, string AddressLine1, string AddressLine2, string PhoneNo, string Email, int StaffID)
         {
+            //new variable Error
+            string Error = "";
             // If AddressLine1 is more than 50 characters long
             if (AddressLine1.Length > 50)
             {
@@ -22,13 +24,13 @@ namespace Class_Library
                 Error = "AddressLine1 cant have more than 50 characters";
             }
             // If AddressLine2 is more than 100 characters long
-            if (AddressLine2.Length > 100)
+           else  if (AddressLine2.Length > 100)
             {
                 // Return an error message
                 Error = "AddressLine2 cant have more than 100 characters";
             }
             // If FirstName is blank
-            else if (FirstName.Length == 0)
+            if (FirstName.Length == 0)
             {
                 // Return an error message
                 Error = "First name cant be blank";
@@ -46,7 +48,7 @@ namespace Class_Library
                 Error = "First name cannot have more than 40 characters";
             }
             // If LastName is blank
-            else if (LastName.Length == 0)
+            if (LastName.Length == 0)
             {
                 // Return an error message
                 Error = "Last name cannot be blank";
@@ -62,6 +64,36 @@ namespace Class_Library
             {
                 // Return an error message
                 Error = "Last name cannot have more than 40 characters";
+            }
+            //if email is more than 40 characters long 
+            if (Email.Length > 40)
+            {
+                //return an error message saying 
+                Error = "Email cant be 40 characters long";
+            }
+            //if email is less than 6 characters long 
+            else if (Email.Length > 6)
+            {
+                //return an error message saying 
+                Error = "Email cant be less than 6 characters long";
+            }
+            //if phone number is blank
+            if (PhoneNo.Length == 0)
+            {
+                //return an error message saying 
+                Error = "Phone Number cant be blank";
+            }
+            //if phone number is less than 11 characters long 
+            else if (PhoneNo.Length < 11)
+            {
+                //return an error message saying 
+                Error = "Phone number must be at least 11 characters long";
+            }
+            //if phone number is more than 25 characters long 
+            else if (PhoneNo.Length > 25)
+            {
+                //return an error message saying 
+                Error = "Phone number cant be 25 characters long";
             }
             // Return the result
             return Error;

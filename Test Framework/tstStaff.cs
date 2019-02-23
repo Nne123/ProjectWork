@@ -9,14 +9,13 @@ namespace Test_Framework
     {
         public string TestStaff;
 
-        String TestAddressLine1 = "";
-        String TestAddressLine2 = "";
-        String TestFirstName = "";
-        String TestLastName = "";
+        String TestAddressLine1 = "Wainwright Road";
+        String TestAddressLine2 = "Leicestershire";
+        String TestFirstName = "Shefika";
+        String TestLastName = "Sheta";
         Int32 TestStaffID = 1;
-        String TestEmail = "";
-        String TestPhoneNo = "";
-
+        String TestEmail = "test41@hotmail.com";
+        String TestPhoneNo = "079684372653";
 
 
         [TestMethod]
@@ -113,17 +112,17 @@ namespace Test_Framework
             Assert.AreEqual(AStaff.AddressLine2, TestAddressLine2);
         }
 
-         [TestMethod]
+        [TestMethod]
         public void ValidMethodOK()
         {
-         //New instance of clsStaff class
-          clsStaff AStaff = new clsStaff();
-        // New variable Error
-        String Error = "";
-        // Check if there is an error message returned
-        Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
-        // Check whether there is an error
-        Assert.AreEqual(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestFirstName, TestLastName, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -132,7 +131,7 @@ namespace Test_Framework
            // New instance of clsStaff class
             clsStaff AStaff = new clsStaff();
             // Variable TestLastName with some test data
-            TestFirstName = "a";
+            TestFirstName = "S";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
@@ -149,7 +148,7 @@ namespace Test_Framework
             // create a string variable to store the result of the validation
             String Error = "";
             // create some test data to test the method
-            string FirstName = "aaaaaaaaa";
+            string FirstName = "Shefikaaa";
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
@@ -450,7 +449,7 @@ namespace Test_Framework
             // New instance of clsStaff class
             clsStaff AStaff = new clsStaff();
             // Variable TestLastName with some test data
-            TestEmail = "";
+            TestEmail = "test41@hotmail.com";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
