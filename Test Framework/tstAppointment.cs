@@ -7,9 +7,10 @@ namespace Test_Framework
     [TestClass]
     public class tstAppointment
     {
+        // good test data
         // create some test data to pass the method
         string carRegNo = "123 6GH";
-        string MOTDate = DateTime.Now.ToString();
+        string MOTDate = DateTime.Now.AddDays(1).ToString();
         string CustomerID = Convert.ToString(1111);
         string StaffID = Convert.ToString(1111);
         string JobID = Convert.ToString(1111);
@@ -38,13 +39,26 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void CarRegNoPropertyOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            string TestData = "123 6GH";
+            // assign the data to the property
+            AnAppointment.CarRegNo = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.CarRegNo, TestData);
+        }
+
+        [TestMethod]
         public void MOTDatePropertyOK()
         {
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
             DateTime TestData = DateTime.Now.Date;
-            // assign te data to the property
+            // assign the data to the property
             AnAppointment.MOTDate = TestData;
             // test to see that the two values are the same
             Assert.AreEqual(AnAppointment.MOTDate, TestData);
@@ -56,11 +70,11 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 MOTTime = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.MOTTime = MOTTime;
+            AnAppointment.MOTTime = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.MOTTime, MOTTime);
+            Assert.AreEqual(AnAppointment.MOTTime, TestData);
         }
 
         [TestMethod]
@@ -69,11 +83,11 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 JobID = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.JobID = JobID;
+            AnAppointment.JobID = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.JobID, JobID);
+            Assert.AreEqual(AnAppointment.JobID, TestData);
         }
 
         [TestMethod]
@@ -82,11 +96,11 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 CustomerID = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.CustomerID = CustomerID;
+            AnAppointment.CustomerID = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.CustomerID, CustomerID);
+            Assert.AreEqual(AnAppointment.CustomerID, TestData);
         }
 
         [TestMethod]
@@ -95,11 +109,11 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 StaffID = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.StaffID = StaffID;
+            AnAppointment.StaffID = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.StaffID, StaffID);
+            Assert.AreEqual(AnAppointment.StaffID, TestData);
         }
 
         [TestMethod]
@@ -114,6 +128,9 @@ namespace Test_Framework
             // test to see that the two values are the same
             Assert.AreEqual(AnAppointment.Active, TestData);
         }
+
+        //end PropertyOK for TestData
+
 
         [TestMethod]
         public void MOTTimeMinLessOne()
@@ -354,18 +371,6 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
-        [TestMethod]
-        public void CarRegNoPropertyOK()
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create some test data to assign to the property
-            string SomeCarRegNo = "123 6GH";
-            // assign the data to the property
-            AnAppointment.CarRegNo = SomeCarRegNo;
-            // test to see that the two values are the same
-            Assert.AreEqual(AnAppointment.CarRegNo, SomeCarRegNo);
-        }
 
         [TestMethod]
         public void ValidMethodOK()
