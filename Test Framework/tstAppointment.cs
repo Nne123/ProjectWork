@@ -7,13 +7,20 @@ namespace Test_Framework
     [TestClass]
     public class tstAppointment
     {
+        // good test data
         // create some test data to pass the method
-        string carRegNo = "123 6GH";
-        string MOTDate = DateTime.Now.ToString();
+        string carRegNo = "1234 6GH";
+        string MOTDate = DateTime.Now.AddDays(1).ToString();
+        string MOTTime = Convert.ToString(10);
+
         string CustomerID = Convert.ToString(1111);
+        //Int32 CustomerID2 = Convert.ToInt32("4524");
+
         string StaffID = Convert.ToString(1111);
         string JobID = Convert.ToString(1111);
-        string MOTTime = Convert.ToString(10);
+        
+        
+        
 
         [TestMethod]
         public void InstanceOK()
@@ -38,16 +45,42 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void CarRegNoPropertyOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            string TestData = "123 6GH";
+            // assign the data to the property
+            AnAppointment.CarRegNo = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.CarRegNo, TestData);
+        }
+
+        [TestMethod]
+        public void MOTDatePropertyOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            DateTime TestData = DateTime.Now.Date;
+            // assign the data to the property
+            AnAppointment.MOTDate = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.MOTDate, TestData);
+        }
+
+        [TestMethod]
         public void MOTTimePropertyOK()
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 MOTTime = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.MOTTime = MOTTime;
+            AnAppointment.MOTTime = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.MOTTime, MOTTime);
+            Assert.AreEqual(AnAppointment.MOTTime, TestData);
         }
 
         [TestMethod]
@@ -56,11 +89,11 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 JobID = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.JobID = JobID;
+            AnAppointment.JobID = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.JobID, JobID);
+            Assert.AreEqual(AnAppointment.JobID, TestData);
         }
 
         [TestMethod]
@@ -69,11 +102,11 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 CustomerID = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.CustomerID = CustomerID;
+            AnAppointment.CustomerID = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.CustomerID, CustomerID);
+            Assert.AreEqual(AnAppointment.CustomerID, TestData);
         }
 
         [TestMethod]
@@ -82,15 +115,320 @@ namespace Test_Framework
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 StaffID = 1;
+            Int32 TestData = 1;
             // assign the data to the property
-            AnAppointment.StaffID = StaffID;
+            AnAppointment.StaffID = TestData;
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.StaffID, StaffID);
+            Assert.AreEqual(AnAppointment.StaffID, TestData);
         }
 
         [TestMethod]
-        public void MOTTimeMinLessOne()
+        public void ActivePropertyOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Boolean TestData = true;
+            // assign the data to the property
+            AnAppointment.Active = TestData;
+            // test to see that the two values are the same
+            Assert.AreEqual(AnAppointment.Active, TestData);
+        }
+
+
+
+
+
+        //end PropertyOK for TestData
+
+        [TestMethod]
+        public void CarRegNoExtremeMin()         // 1 character
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "a";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMinLessOne()         // 7 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMinBoundary()         // 8 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CarRegNoMinPlusOne()         // 9 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "aaaaaaaaa";
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void CarRegNoExtremeMax()         // 300 characters
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to test the method
+            string CarRegNo = "";
+            // pad the string with characters
+            CarRegNo = CarRegNo.PadRight(300, 'a');
+            // invoke the method
+            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateExtremeMin()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(-100);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateMinLessOne()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void MOTDateMinBoundary() // min tomorrow's date
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(1);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateMinPlusOne() // min todays date + 2
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(2);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void MOTDateMaxLessOne() // max todays date + 20
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(20);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateMaxBoundary()   // max today + 21
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(21);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateMaxPlusOne()      // todays date + 22
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(22);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateMid()     // middle date, today + 10
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(10);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateExtremeMax()      // extreme max date
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // create a variable to store the test data
+            DateTime TestDate;
+            // set the date to todays date
+            TestDate = DateTime.Now.Date;
+            // change the date to whatever the date is less one day
+            TestDate = TestDate.AddDays(100);
+            // convert the date variable to a string variable
+            string MOTDate = TestDate.ToString();
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTDateInvalidData()   // invalid date
+        {
+            // create an instance of the class we want to create
+            clsAppointment AnAppointment = new clsAppointment();
+            // string variable to store any error message
+            String Error = "";
+            // store the error message in the string variable
+            string MOTDate = "this is not a date!";
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+
+
+
+        [TestMethod]
+        public void MOTTimeMinLessOne()     // 9am
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -107,7 +445,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTTimeMinBoundary()
+        public void MOTTimeMinBoundary()    // 10am
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -124,7 +462,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTTimeMinPlusOne()
+        public void MOTTimeMinPlusOne()     // 11am
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -141,7 +479,24 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTTimeMaxBoundary()
+        public void MOTTimeMaxLessOne()          // 15:00 / 3pm
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testMOTTime = 15;
+            //create some test data to test the method
+            string MOTTime = testMOTTime.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTTimeMaxBoundary()     // 16:00  / 4 pm
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -158,7 +513,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTTimeMaxPlusOne()
+        public void MOTTimeMaxPlusOne()        // 17:00 / 5 pm
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -168,6 +523,103 @@ namespace Test_Framework
             Int32 testMOTTime = 17;
             //create some test data to test the method
             string MOTTime = testMOTTime.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTTimeMid()        // 13:00 / 1pm
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testMOTTime = 13;
+            //create some test data to test the method
+            string MOTTime = testMOTTime.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTTimeExtremeMax()        // 20:00 / 8pm
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testMOTTime = 20;
+            //create some test data to test the method
+            string MOTTime = testMOTTime.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void MOTTimeInvalidData()        // string, datetime etc
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            string MOTTime = "This is not an integer number!";
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
+
+
+
+
+
+
+
+        [TestMethod]
+        public void CustomerIDMinLessOne()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testCustomerID = Convert.ToInt32(" 1234");
+            // create some test data to assign to the property
+            string CustomerID = testCustomerID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void CustomerIDMinBoundary()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // create some test data to assign to the property
+            Int32 CustomerID = Convert.ToInt32("1234");
+            //
+        }
+
+        [TestMethod]
+        public void CustomerIDMinPlusOne()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testCustomerID = 12345;
+            string CustomerID = testCustomerID.ToString();
             // assign the data to the property
             Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
             // test to see that the values are the same
@@ -285,61 +737,8 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
-        [TestMethod]
-        public void CustomerIDMinLessOne()
-        {
-            // create an instance of our class clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            String Error = "";
-            // create some test data to assign to the property
-            Int32 testCustomerID = 123;
-            string CustomerID = testCustomerID.ToString();
-            // assign the data to the property
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the values are the same
-            Assert.AreNotEqual(Error, "");
-        }
+       
 
-        [TestMethod]
-        public void CustomerIDMinBoundary()
-        {
-            // create an instance of our class clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create some test data to assign to the property
-            Int32 CustomerID = 1234;
-            // assign the data to the property
-            AnAppointment.CustomerID = CustomerID;
-            // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.CustomerID, CustomerID);
-        }
-
-        [TestMethod]
-        public void CustomerIDMinPlusOne()
-        {
-            // create an instance of our class clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            String Error = "";
-            // create some test data to assign to the property
-            Int32 testCustomerID = 12345;
-            string CustomerID = testCustomerID.ToString();
-            // assign the data to the property
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the values are the same
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoPropertyOK()
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create some test data to assign to the property
-            string SomeCarRegNo = "123 6GH";
-            // assign the data to the property
-            AnAppointment.CarRegNo = SomeCarRegNo;
-            // test to see that the two values are the same
-            Assert.AreEqual(AnAppointment.CarRegNo, SomeCarRegNo);
-        }
 
         [TestMethod]
         public void ValidMethodOK()
@@ -348,329 +747,15 @@ namespace Test_Framework
             clsAppointment AnAppointment = new clsAppointment();
             // create a string variable to store the result of the validation
             String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "123 G6H";
             // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
             // test to see that the result is OK i.e. there was no error message returned
             Assert.AreEqual(Error, "");
         }
 
-        [TestMethod]
-        public void CarRegNoMinLessOne()         // empty
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
+       
 
-        [TestMethod]
-        public void CarRegNoMinBoundary()         // 8 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "aaaaaaaa";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoMinPlusOne()         // 9 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "aaaaaaaaa";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoMaxLessOne()         // 49 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoMaxBoundary()         // 50 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoMaxPlusOne()         // 51 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoMid()         // 25 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "aaaaaaaaaaaaaaaaaaaaaaaaa";
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void CarRegNoExtremeMax()         // 300 characters
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create a string variable to store the result of the validation
-            String Error = "";
-            // create some test data to test the method
-            string CarRegNo = "";
-            // pad the string with characters
-            CarRegNo = CarRegNo.PadRight(300, 'a');
-            // invoke the method
-            Error = AnAppointment.Valid(CarRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDatePropertyOK()
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // create some test data to assign to the property
-            DateTime TestData = DateTime.Now.Date;
-            // assign te data to the property
-            AnAppointment.MOTDate = TestData;
-            // test to see that the two values are the same
-            Assert.AreEqual(AnAppointment.MOTDate, TestData);
-        }
-
-        [TestMethod]
-        public void MOTDateMinLessOne()
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(-1);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateMinBoundary() // todays date
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateMinPlusOne() // min todays date + 1
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(1);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateMaxLessOne() // max todays date + 19
-        {
-            // create an instance of clsAppointment
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(19);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateMaxBoundary()   // max today + 20
-        {
-            // create an instance of the class we want to create
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(20);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateMaxPlusOne()      // todays date + 21
-        {
-            // create an instance of the class we want to create
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(21);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateMid()     // middle date, today + 10
-        {
-            // create an instance of the class we want to create
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(10);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateExtremeMax()      // extreme max date
-        {
-            // create an instance of the class we want to create
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // create a variable to store the test data
-            DateTime TestDate;
-            // set the date to todays date
-            TestDate = DateTime.Now.Date;
-            // change the date to whatever the date is less one day
-            TestDate = TestDate.AddDays(300);
-            // convert the date variable to a string variable
-            string MOTDate = TestDate.ToString();
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
-
-        [TestMethod]
-        public void MOTDateInvalidData()   // invalid date
-        {
-            // create an instance of the class we want to create
-            clsAppointment AnAppointment = new clsAppointment();
-            // string variable to store any error message
-            String Error = "";
-            // store the error message in the string variable
-            string MOTDate = "this is not a date!";
-            // invoke the method
-            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
-            // test to see that the result is correct
-            Assert.AreNotEqual(Error, "");
-        }
+       
 
     }
 }

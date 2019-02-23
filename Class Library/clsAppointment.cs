@@ -11,6 +11,7 @@ namespace Class_Library
         public int CustomerID { get; set; }
         public int StaffID { get; set; }
         public int MOTTime { get; set; }
+        public bool Active { get; set; }
 
         public string Valid(string carRegNo, string mOTDate, string CustomerID, string StaffID, string JobID, string MOTTime)
         {
@@ -26,17 +27,28 @@ namespace Class_Library
             Int32 JobIDTemp;
             // create a temporary variable to store the staff id
             Int32 MOTTimeTemp;
+
+
             // if the name of the car reg no is not blank
             if (carRegNo.Length > 8)
             {
                 // return an error message
                 Error = "The car reg no cannot have more than 8 characters";
             }
+
+            // if the name of the car reg no is not blank
+            if (carRegNo.Length < 7)
+            {
+                // return an error message
+                Error = "The car reg no cannot have more than 8 characters";
+            }
+
             if (carRegNo.Length == 0)
             {
                 // return an error message
                 Error = "The car reg no may not be blank";
             }
+
 
             try
             {
