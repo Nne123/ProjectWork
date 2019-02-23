@@ -18,7 +18,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void AppointmentListOK()
+        public void AppointmentListOK() // AllAppointmentsOK()
         {
             // create an instance of the class we want to create
             clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
@@ -30,11 +30,13 @@ namespace Test_Framework
             clsAppointment TestItem = new clsAppointment();
             // set its properties
             TestItem.AppointmentID = 1;
-            TestItem.CarRegNo = "123 9GH";
+            TestItem.CarRegNo = "1234 9GH";
             TestItem.CustomerID = 1;
             TestItem.StaffID = 1;
             TestItem.JobID = 1;
-            TestItem.MOTDate = DateTime.Now.Date;
+            TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
+            TestItem.MOTTime = 10;
+            TestItem.Active = true;
             // add the item to the test list
             TestList.Add(TestItem);
             // assign the data to the property
@@ -54,6 +56,34 @@ namespace Test_Framework
             AllAppointments.Count = SomeCount;
             // test to see that the two values are the same
             Assert.AreEqual(AllAppointments.Count, SomeCount);
+        }
+
+        [TestMethod]
+        public void CountMatchesList()
+        {
+            // create an instance of the class we want to create
+            clsAppointmentCollection Appointments = new clsAppointmentCollection();
+            // create some test data to assign to the property
+            // in this case the data needs to be a list of objects
+            List<clsAppointment> TestList = new List<clsAppointment>();
+            // add an item to the list
+            // create the item of tets data
+            clsAppointment TestItem = new clsAppointment();
+            // set its properties
+            TestItem.AppointmentID = 1;
+            TestItem.CarRegNo = "1234 9GH";
+            TestItem.CustomerID = 1;
+            TestItem.StaffID = 1;
+            TestItem.JobID = 1;
+            TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
+            TestItem.MOTTime = 10;
+            TestItem.Active = true;
+            // add the item to the test list
+            TestList.Add(TestItem);
+            // assign the data to the property
+            Appointments.AppointmentList = TestList;
+            // test to see that the two values are the same
+            Assert.AreEqual(Appointments.Count, TestList.Count);
         }
 
         [TestMethod]
