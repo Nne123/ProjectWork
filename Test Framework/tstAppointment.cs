@@ -13,8 +13,8 @@ namespace Test_Framework
         string MOTDate = DateTime.Now.AddDays(1).ToString();
         string MOTTime = Convert.ToString(10);
         string CustomerID = Convert.ToString(25);
-        string StaffID = Convert.ToString(1111);
-        string JobID = Convert.ToString(1111);
+        string StaffID = Convert.ToString(35);
+        string JobID = Convert.ToString(60);
         
         
         
@@ -745,7 +745,7 @@ namespace Test_Framework
             //create a string variable to store the result of the validation
             String Error = "";
             // create some test data to assign to the property
-            Int32 testStaffID = 123;
+            Int32 testStaffID = 0;
             //create some test data to test the method
             string StaffID = testStaffID.ToString();
             // assign the data to the property
@@ -759,12 +759,16 @@ namespace Test_Framework
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
             // create some test data to assign to the property
-            Int32 StaffID = 1234;
+            Int32 testStaffID = 1;
+            //create some test data to test the method
+            string StaffID = testStaffID.ToString();
             // assign the data to the property
-            AnAppointment.StaffID = StaffID;
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
             // test to see that the values are the same
-            Assert.AreEqual(AnAppointment.StaffID, StaffID);
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -775,12 +779,112 @@ namespace Test_Framework
             //create a string variable to store the result of the validation
             String Error = "";
             // create some test data to assign to the property
-            Int32 testStaffID = 12345;
+            Int32 testStaffID = 2;
             //create some test data to test the method
             string StaffID = testStaffID.ToString();
             // assign the data to the property
             Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
             // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMaxLessOne()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testStaffID = 599;
+            //create some test data to test the method
+            string StaffID = testStaffID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMaxBoundary()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testStaffID = 600;
+            //create some test data to test the method
+            string StaffID = testStaffID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMaxPlusOne()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testStaffID = 601;
+            //create some test data to test the method
+            string StaffID = testStaffID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDMid()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testStaffID = 300;
+            //create some test data to test the method
+            string StaffID = testStaffID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDExtremeMax()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testStaffID = 6000;
+            //create some test data to test the method
+            string StaffID = testStaffID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void StaffIDInvalidData()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // set the customer id to a no integer value
+            string StaffID = "this is not an integer value!";
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
 
@@ -793,7 +897,7 @@ namespace Test_Framework
             //create a string variable to store the result of the validation
             String Error = "";
             // create some test data to assign to the property
-            Int32 testJobID = 123;
+            Int32 testJobID = 0;
             //create some test data to test the method
             string JobID = testJobID.ToString();
             // assign the data to the property
@@ -802,35 +906,22 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
-        //[TestMethod]
-        //public void JobIDMinBoundary() // def. not this one
-        //{
-        //    // create an instance of our class clsAppointment
-        //    clsAppointment AnAppointment = new clsAppointment();
-        //    // create some test data to assign to the property
-        //    Int32 JobID = 1234;
-        //    // assign the data to the property
-        //    AnAppointment.JobID = JobID;
-        //    // test to see that the values are the same
-        //    Assert.AreEqual(AnAppointment.JobID, JobID);
-        //}
-
-        //[TestMethod]
-        //public void JobIDMinBoundary()
-        //{
-        //    // create an instance of our class clsAppointment
-        //    clsAppointment AnAppointment = new clsAppointment();
-        //    // create a string variable to ...
-        //    String Error = "";
-        //    // create some teset data to test the method
-        //    Int32 testJobID = 1111;  // not what I mean
-        //    //create some test data to test the method
-        //    string JobID = testJobID.ToString();
-        //    // invoke the method
-        //    Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID);
-        //    // test to see ...
-        //    Assert.AreEqual(Error, "");
-        //}
+        [TestMethod]
+        public void JobIDMinBoundary()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testJobID = 1;
+            //create some test data to test the method
+            string JobID = testJobID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
 
         [TestMethod]
         public void JobIDMinPlusOne()
@@ -840,7 +931,58 @@ namespace Test_Framework
             //create a string variable to store the result of the validation
             String Error = "";
             // create some test data to assign to the property
-            Int32 testJobID = 12345;
+            Int32 testJobID = 2;
+            //create some test data to test the method
+            string JobID = testJobID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void JobIDMaxLessOne()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testJobID = 599;
+            //create some test data to test the method
+            string JobID = testJobID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void JobIDMaxBoundary()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testJobID = 600;
+            //create some test data to test the method
+            string JobID = testJobID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void JobIDMaxPlusOne()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testJobID = 601;
             //create some test data to test the method
             string JobID = testJobID.ToString();
             // assign the data to the property
@@ -849,9 +991,54 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
+        [TestMethod]
+        public void JobIDMid()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testJobID = 300;
+            //create some test data to test the method
+            string JobID = testJobID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreEqual(Error, "");
+        }
 
-       
+        [TestMethod]
+        public void JobIDExtremeMax()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // create some test data to assign to the property
+            Int32 testJobID = 6000;
+            //create some test data to test the method
+            string JobID = testJobID.ToString();
+            // assign the data to the property
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the values are the same
+            Assert.AreNotEqual(Error, "");
+        }
 
+        [TestMethod]
+        public void JobIDInvalidData()
+        {
+            // create an instance of our class clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // set the customer id to a no integer value
+            string StaffID = "this is not an integer value!";
+            // invoke the method
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID, MOTTime);
+            // test to see that the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
 
         [TestMethod]
         public void ValidMethodOK()
