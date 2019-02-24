@@ -58,14 +58,14 @@ namespace Test_Framework
             Assert.AreEqual(AllAppointments.Count, SomeCount);
         }
 
-        [TestMethod]
-        public void TwoAppointmentsPresent()
-        {
-            // create an instance of the class we want to create
-            clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
-            // test to see that the two values are the same
-            Assert.AreEqual(AllAppointments.Count, 2);
-        }
+        //[TestMethod]
+        //public void TwoAppointmentsPresent()
+        //{
+        //    // create an instance of the class we want to create
+        //    clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
+        //    // test to see that the two values are the same
+        //    Assert.AreEqual(AllAppointments.Count, 2);
+        //}
 
         [TestMethod]
         public void CountMatchesList()
