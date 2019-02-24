@@ -1,2 +1,38 @@
 ﻿body {
+    background-color: #D4EEF1;
+}
+
+header {
+    background-color: #FD9C72;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+footer {
+    background-color: #FD9C72;
+    height: 10%;
+    position: fixed;
+    width: 100%;
+    top: 90%;
+    left: 0%;
+}
+
+nav {
+    background-color: #D2D2D2;
+    position: fixed;
+    width: 20%;
+    height: 90%;
+    top: 10%;
+    left: 0%;
+}
+
+article {
+    background-color: #EA8169;
+    position: fixed;
+    width: 80%;
+    top: 10%;
+    left: 20%;
 }
