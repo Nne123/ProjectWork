@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="EasyFixBank.master.cs" Inherits="PBFrontEnd.EasyFixBank" %>
+
+<!DOCTYPE html>
+
+<html>
+    <head id="Head1" runat="server">
+        <title>Sample Master Page</title>
+        <link href="EasyFixBank.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <form id="form1" runat="server">
+ 
+             <header>
+                Header text here
+            </header>
+ 
+            <article>
+                Your text here
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </article>
+ 
+            <nav>
+                Navigation links here
+            </nav>
+ 
+            <footer>
+                Footer text here
+            </footer>
+        </form>
+    </body>
+</html>
