@@ -13,6 +13,7 @@ namespace Class_Library
         {
             get
             {
+                // return the count property for the private list
                 return mAppointmentList.Count;
             }
             set
