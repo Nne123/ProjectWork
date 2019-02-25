@@ -35,7 +35,7 @@ namespace Test_Framework
             TestItem.StaffID = 1;
             TestItem.JobID = 1;
             TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
-            TestItem.MOTTime = 10;
+            TestItem.MOTTimeID = 10;
             TestItem.Active = true;
             // add the item to the test list
             TestList.Add(TestItem);
@@ -85,7 +85,7 @@ namespace Test_Framework
             TestItem.StaffID = 1;
             TestItem.JobID = 1;
             TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
-            TestItem.MOTTime = 10;
+            TestItem.MOTTimeID = 10;
             TestItem.Active = true;
             // add the item to the test list
             TestList.Add(TestItem);
@@ -108,6 +108,7 @@ namespace Test_Framework
             TestAppointment.StaffID = 1;
             TestAppointment.JobID = 1;
             TestAppointment.MOTDate = DateTime.Now.Date;
+            TestAppointment.MOTTimeID = 1;
             // assign the data to the property
             AllAppointments.ThisAppointment = TestAppointment;
             // test to see that the two values are the same

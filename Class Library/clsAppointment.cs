@@ -10,7 +10,7 @@ namespace Class_Library
         public int JobID { get; set; }
         public int CustomerID { get; set; }
         public int StaffID { get; set; }
-        public int MOTTime { get; set; }
+        public int MOTTimeID { get; set; }
         public bool Active { get; set; }
 
         public string Valid(string carRegNo, string mOTDate, string CustomerID, string StaffID, string JobID)
