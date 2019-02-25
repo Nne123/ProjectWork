@@ -13,7 +13,7 @@ namespace Class_Library
         public int MOTTime { get; set; }
         public bool Active { get; set; }
 
-        public string Valid(string carRegNo, string mOTDate, string CustomerID, string StaffID, string JobID, string MOTTime)
+        public string Valid(string carRegNo, string mOTDate, string CustomerID, string StaffID, string JobID)
         {
             // string variable to store the error message
             string Error = "";
@@ -24,9 +24,7 @@ namespace Class_Library
             // create a temporary variable to store the staff id
             Int32 StaffIDTemp;
             // create a temporary variable to store the staff id
-            Int32 JobIDTemp;
-            // create a temporary variable to store the staff id
-            Int32 MOTTimeTemp;
+            Int32 JobIDTemp;            
 
 
             // if the name of the car reg no is not blank
@@ -99,23 +97,6 @@ namespace Class_Library
             catch
             {
                 Error = Error + "The Job ID was not valid";
-            }
-
-            try
-            {
-                MOTTimeTemp = Convert.ToInt32(MOTTime);
-                if (MOTTimeTemp < 10)
-                {
-                    Error = Error + "The MOT Time must be 10 or later ";
-                }
-                if (MOTTimeTemp > 16)
-                {
-                    Error = Error + "The MOT Time must be four digits : ";
-                }
-            }
-            catch
-            {
-                Error = Error + "The MOT Time was not valid";
             }
 
             try
