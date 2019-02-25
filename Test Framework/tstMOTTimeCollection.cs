@@ -23,7 +23,7 @@ namespace Test_Framework
             //create an instance of the class we want to create
             clsMOTTimeCollection AllMOTTimes = new clsMOTTimeCollection();
             // create some test data to assign to the property
-            Int32 SomeCount = 2;
+            Int32 SomeCount = 8;
             // assign the data to the property
             AllMOTTimes.Count = SomeCount;
             // test to see that the two values are the same
@@ -74,14 +74,14 @@ namespace Test_Framework
             Assert.AreEqual(MOTTimes.Count, TestList.Count);
         }
 
-        [TestMethod]
-        public void TwoMOTTimesPresent()
-        {
-            //create an instance of the class we want to create
-            clsMOTTimeCollection MOTTimes = new clsMOTTimeCollection();
-            //test to see that the two values are the same
-            Assert.AreEqual(MOTTimes.Count, 2);
-        }
+        //[TestMethod]
+        //public void TwoMOTTimesPresent()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsMOTTimeCollection MOTTimes = new clsMOTTimeCollection();
+        //    //test to see that the two values are the same
+        //    Assert.AreEqual(MOTTimes.Count, 2);
+        //}
 
     }
 }

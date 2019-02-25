@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Class_Library
 {
@@ -9,19 +10,28 @@ namespace Class_Library
         // public constructor for the class
         public clsMOTTimeCollection()
         {
-            // create an instance of the class we want to create
-            clsMOTTime AMOTTime = new clsMOTTime();
-            // set the MOTTime to 13
-            AMOTTime.MOTTime = 13;
-            // add the MOTTime to the private list of MOTTimes
-            mAllMOTTimes.Add(AMOTTime);
-            // re initialise the AMOTTime object to accept a new item
-            AMOTTime = new clsMOTTime();
-            // set the MOTTime 16
-            AMOTTime.MOTTime = 16;
-            // add the seconf mot time to the private list of MOTTimes
-            mAllMOTTimes.Add(AMOTTime);
-            // the private list now contains two counties
+            // create an is instance of the dataconnecction 
+            clsDataConnection DB = new clsDataConnection();
+            // execute the stored procedure to get the list of data
+            DB.Execute("sproc_tblMOTTime_SelectAll");
+            // get the count of records
+            Int32 RecordCount = DB.Count;
+            // set up the index for the loop
+            Int32 Index = 0;
+            // while there are records to process
+            while (Index < RecordCount)
+            {
+                // create an instance of the class we want to create
+                clsMOTTime AMOTTime = new clsMOTTime();
+                // get the mot time
+                AMOTTime.MOTTime = Convert.ToInt32(DB.DataTable.Rows[Index]["MOTTime"]);
+                // get the primary key
+                AMOTTime.MOTTimeID = Convert.ToInt32(DB.DataTable.Rows[Index]["MOTTimeID"]);
+                // add the seconf mot time to the private list of MOTTimes
+                mAllMOTTimes.Add(AMOTTime);
+                // increment the index
+                Index++;
+            }            
         }
 
         // public property for Count
