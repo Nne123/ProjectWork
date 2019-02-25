@@ -7,7 +7,7 @@ namespace Class_Library
         public int MOTTimeID { get; set; }
         public int MOTTime { get; set; }
 
-        public string Valid(int someMOTTime)
+        public string Valid(string someMOTTime)
         {
             //string variable to store the error message
             string Error = "";
@@ -15,7 +15,7 @@ namespace Class_Library
             Int32 MOTTimeTemp;
             try
             {
-                MOTTimeTemp = Convert.ToInt32(MOTTime);
+                MOTTimeTemp = Convert.ToInt32(someMOTTime);
                 if (MOTTimeTemp < 10)
                 {
                     Error = Error + "The MOT Time must be 10 or later ";
