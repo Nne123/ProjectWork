@@ -11,13 +11,10 @@ namespace Test_Framework
         // create some test data to pass the method
         string carRegNo = "1234 6GH";
         string MOTDate = DateTime.Now.AddDays(1).ToString();
-        //string MOTTime = Convert.ToString(10);
         string CustomerID = Convert.ToString(25);
         string StaffID = Convert.ToString(35);
         string JobID = Convert.ToString(60);
-        
-        
-        
+                
 
         [TestMethod]
         public void InstanceOK()
@@ -68,12 +65,12 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTTimePropertyOK()
+        public void MOTTimeIDPropertyOK()
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            Int32 TestData = 1;
+            Int32 TestData = 10;
             // assign the data to the property
             AnAppointment.MOTTimeID = TestData;
             // test to see that the values are the same
@@ -897,5 +894,181 @@ namespace Test_Framework
             Assert.AreEqual(Error, "");
         }       
 
+
+
+
+
+        /// Methods Below
+        /// 
+
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the validation
+            Boolean Found = false;
+            // create some test data to use with the method
+            Int32 AppointmentID = 1;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // test to see that the result is correct
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestAppointmentIDFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.AppointmentID != 3)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCustomerIDFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.CustomerID != 34)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestStaffIDFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.StaffID != 2)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestJobIDFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.JobID != 6)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestMOTTimeIDFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.MOTTimeID != 13)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestMOTDateFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.MOTDate != Convert.ToDateTime("26/03/2019"))
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            // create an instance of clsAppointment
+            clsAppointment AnAppointment = new clsAppointment();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 AppointmentID = 3;
+            // invoke the method
+            Found = AnAppointment.Find(AppointmentID);
+            // check the appointment no
+            if (AnAppointment.Active != true)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }
 }

@@ -7,7 +7,6 @@ namespace Test_Framework
     [TestClass]
     public class tstMOTTime
     {
-        //string MOTTime = Convert.ToString(10);
 
         [TestMethod]
         public void InstanceOK()

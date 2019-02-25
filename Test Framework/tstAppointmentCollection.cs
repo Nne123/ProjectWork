@@ -51,7 +51,7 @@ namespace Test_Framework
             // create an instance of the class we want to create
             clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
             // create some test data to assign to the property
-            Int32 SomeCount = 2;
+            Int32 SomeCount = 3;
             // assign the data to the property
             AllAppointments.Count = SomeCount;
             // test to see that the two values are the same
