@@ -68,6 +68,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\EasyFix_DB.mdf" />
+    <Content Include="App_Data\EasyFix_DB_log.ldf">
+      <DependentUpon>EasyFix_DB.mdf</DependentUpon>
+    </Content>
     <Content Include="DefaultAppointment.aspx" />
     <Content Include="EasyFixBank.css" />
     <Content Include="Global.asax" />
@@ -104,7 +108,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
