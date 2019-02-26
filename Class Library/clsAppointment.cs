@@ -234,17 +234,34 @@ namespace Class_Library
 
         public bool Find(int AppointmentID)
         {
-            // set the private data member for the AppointmentID property
-            mAppointmentID = 3;
-            mCarRegNo = "4352 7GF";
-            mCustomerID = 34;
-            mStaffID = 2;
-            mJobID = 6;
-            mMOTDate = Convert.ToDateTime("26/03/2019");
-            mMOTTimeID = 13;
-            mActive = true;
-            // always return true
-            return true; // test push
+            // create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the appointment no to search for
+            DB.AddParameter("@AppointmentID", AppointmentID);
+            // execute the stored procedure
+            DB.Execute("sproc_tblAppointment_FilterByAppointmentID");
+            // if one record is found (there should be either one or zero)
+            if (DB.Count == 1)
+            {
+                // set the private data member for the AppointmentID property
+                mAppointmentID = Convert.ToInt32(DB.DataTable.Rows[0]["AppointmentID"]);
+                mCarRegNo = Convert.ToString(DB.DataTable.Rows[0]["CarRegNo"]);
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+                mJobID = Convert.ToInt32(DB.DataTable.Rows[0]["JobID"]);
+                mMOTDate = Convert.ToDateTime(DB.DataTable.Rows[0]["MOTDate"]);
+                mMOTTimeID = Convert.ToInt32(DB.DataTable.Rows[0]["MOTTimeID"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                // return that everything worked OK
+                return true; 
+            }
+            // if no record was found
+            else
+            {
+                // return false indicating a problem
+                return false;
+            }
+            
         }
     }
 }
