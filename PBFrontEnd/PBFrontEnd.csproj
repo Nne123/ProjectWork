@@ -68,22 +68,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\EasyFix_DB.mdf" />
-    <Content Include="App_Data\EasyFix_DB_log.ldf">
-      <DependentUpon>EasyFix_DB.mdf</DependentUpon>
-    </Content>
+    <Content Include="AnAppointment.aspx" />
     <Content Include="DefaultAppointment.aspx" />
+    <Content Include="DeleteAppointment.aspx" />
     <Content Include="EasyFixBank.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnAppointment.aspx.cs">
+      <DependentUpon>AnAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnAppointment.aspx.designer.cs">
+      <DependentUpon>AnAppointment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DefaultAppointment.aspx.cs">
       <DependentUpon>DefaultAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DefaultAppointment.aspx.designer.cs">
       <DependentUpon>DefaultAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAppointment.aspx.cs">
+      <DependentUpon>DeleteAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteAppointment.aspx.designer.cs">
+      <DependentUpon>DeleteAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="EasyFixBank.Master.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>
@@ -108,7 +120,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Class Library\Class Library.csproj">
+      <Project>{30029452-ba29-46eb-b9f5-bbf30b1f03b3}</Project>
+      <Name>Class Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
