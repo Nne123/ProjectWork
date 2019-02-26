@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.UI.WebControls; 
 
 namespace PBFrontEnd
 {
@@ -23,6 +23,8 @@ namespace PBFrontEnd
         void DisplayAppointments()
         {
             // create an instance of the Appointment collection
+            Class_Library.clsAppointmentCollection Appointments = new Class_Library.clsAppointmentCollection();
+            // set the data source to the list of appointments in the collection
             
         }
     }
