@@ -11,23 +11,30 @@ namespace Class_Library
         // public constructor for the class
         public clsAppointmentCollection()
         {
+            // set up the index for the loop
+            Int32 Index = 0;
+            // get the count of records
+            Int32 RecordCount = 0;           
             // create an instance of the dataconnection
             clsDataConnection DB = new clsDataConnection();
             // execute the stored procedure to get the list of data
             DB.Execute("sproc_tblAppointment_SelectAll");
             // get the count of records
-            Int32 RecordCount = DB.Count;
-            // set up the index for the loop
-            Int32 Index = 0;
+            RecordCount = DB.Count;
             // while there are records to process
             while (Index < RecordCount)
             {
                 // create an instance of the appointment class to store the appointment
                 clsAppointment AnAppointment = new clsAppointment();
-                // get the appointment name / car reg no
-                AnAppointment.CarRegNo = DB.DataTable.Rows[Index]["CarRegNo"].ToString();
-                // get the primary key
+                // read in the fields from the current record
                 AnAppointment.AppointmentID = Convert.ToInt32(DB.DataTable.Rows[Index]["AppointmentID"]);
+                AnAppointment.CarRegNo = Convert.ToString( DB.DataTable.Rows[Index]["CarRegNo"]);
+                AnAppointment.MOTDate = Convert.ToDateTime(DB.DataTable.Rows[Index]["MOTDate"]);
+                AnAppointment.JobID = Convert.ToInt32(DB.DataTable.Rows[Index]["JobID"]);
+                AnAppointment.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["CustomerID"]);
+                AnAppointment.StaffID = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffID"]);
+                AnAppointment.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
+                AnAppointment.MOTTimeID = Convert.ToInt32(DB.DataTable.Rows[Index]["MOTTimeID"]);
                 // add the appointment to the private data member
                 mAppointmentList.Add(AnAppointment);
                 // increment the index
@@ -35,21 +42,7 @@ namespace Class_Library
             }
 
         }
-
-        // public property for Count
-        public int Count
-        {
-            get
-            {
-                // return the count property for the private list
-                return mAppointmentList.Count;
-            }
-            set
-            {
-                // we'll come back to
-            }
-        }
-
+        
         // public property for AppointmentList
         public List<clsAppointment> AppointmentList
         {
@@ -66,10 +59,24 @@ namespace Class_Library
                 mAppointmentList = value;
             }
         }
-        
-        public clsAppointment ThisAppointment { get; set; }
+
+        // public property for Count
+        public int Count
+        {
+            get
+            {
+                // return the count property for the private list
+                return mAppointmentList.Count;
+            }
+            set
+            {
+                // we'll come back to
+            }
+        }
 
         
+        
+        public clsAppointment ThisAppointment { get; set; }        
            
             
 
