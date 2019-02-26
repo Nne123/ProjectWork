@@ -68,18 +68,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.aspx" />
+    <Content Include="App_Data\EasyFix.mdf" />
+    <Content Include="App_Data\EasyFix_log.ldf">
+      <DependentUpon>EasyFix.mdf</DependentUpon>
+    </Content>
+    <Content Include="DefaultAppointment.aspx" />
     <Content Include="EasyFixBank.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="DefaultAppointment.aspx.cs">
+      <DependentUpon>DefaultAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
+    <Compile Include="DefaultAppointment.aspx.designer.cs">
+      <DependentUpon>DefaultAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="EasyFixBank.Master.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>
@@ -104,7 +108,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
