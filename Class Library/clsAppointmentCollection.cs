@@ -120,6 +120,24 @@ namespace Class_Library
             DB.Execute("sproc_tblAppointment_Delete");
         }
 
+        public void Update()
+        {
+            // update an existing record based on the values of this appointment
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored procedure
+            DB.AddParameter("@AppointmentID", mThisAppointment.AppointmentID);
+            DB.AddParameter("@MOTTimeID", mThisAppointment.MOTTimeID);
+            DB.AddParameter("@MOTDate", mThisAppointment.MOTDate);
+            DB.AddParameter("@CarRegNo", mThisAppointment.CarRegNo);
+            DB.AddParameter("@CustomerID", mThisAppointment.CustomerID);
+            DB.AddParameter("@StaffID", mThisAppointment.StaffID);
+            DB.AddParameter("@JobID", mThisAppointment.JobID);
+            DB.AddParameter("@Active", mThisAppointment.Active);
+            // execute the stored procedure
+            DB.Execute("sproc_tblAppointment_Update");
+        }
+
 
 
 

@@ -17,7 +17,7 @@
         <br />
         <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="75px" />
 &nbsp;&nbsp;
-        <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="73px" />
+        <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="73px" OnClick="btnEdit_Click" />
 &nbsp;&nbsp;
         <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="68px" OnClick="btnDelete_Click" />
         <br />
