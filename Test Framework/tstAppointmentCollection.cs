@@ -107,5 +107,69 @@ namespace Test_Framework
             // test to see that the two values are the same
             Assert.AreEqual(AllAppointments.ThisAppointment, TestAppointment);
         }
+
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
+            // create the item of the test data
+            clsAppointment TestItem = new clsAppointment();
+            // var to store the primary key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            TestItem.Active = true;
+            TestItem.AppointmentID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.StaffID = 1;
+            TestItem.JobID = 1;
+            TestItem.CarRegNo = "1234 6GH";
+            TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
+            TestItem.MOTTimeID = 1;
+            // set ThisAppointment to the test data
+            AllAppointments.ThisAppointment = TestItem;
+            // add the record
+            PrimaryKey = AllAppointments.Add();
+            // set the primary key of the test data
+            TestItem.AppointmentID = PrimaryKey;
+            // find the record
+            AllAppointments.ThisAppointment.Find(PrimaryKey);
+            // test to see that the two values are the same
+            Assert.AreEqual(AllAppointments.ThisAppointment, TestItem);
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            // create an instance of the class we want to create
+            clsAppointmentCollection AllAppointments = new clsAppointmentCollection();
+            // create the item of the test data
+            clsAppointment TestItem = new clsAppointment();
+            // var to store the primary key
+            Int32 PrimaryKey = 0;
+            // set its properties
+            TestItem.Active = true;
+            TestItem.AppointmentID = 1;
+            TestItem.CustomerID = 1;
+            TestItem.StaffID = 1;
+            TestItem.JobID = 1;
+            TestItem.CarRegNo = "1234 6GH";
+            TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
+            TestItem.MOTTimeID = 1;
+            // set ThisAppointment to the test data
+            AllAppointments.ThisAppointment = TestItem;
+            // add the record
+            PrimaryKey = AllAppointments.Add();
+            // set the primary key of the test data
+            TestItem.AppointmentID = PrimaryKey;
+            // find the record
+            AllAppointments.ThisAppointment.Find(PrimaryKey);
+            // delete the record
+            AllAppointments.Delete();
+            // now find the record
+            Boolean Found = AllAppointments.ThisAppointment.Find(PrimaryKey);
+            // test to see that the two values are the same
+            Assert.IsFalse(Found);
+        }
     }
 }

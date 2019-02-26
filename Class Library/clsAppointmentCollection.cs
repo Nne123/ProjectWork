@@ -7,6 +7,8 @@ namespace Class_Library
     {
         // private data member for the AllAppointments List
         private List<clsAppointment> mAppointmentList = new List<clsAppointment>();
+        // private data member thisAppointment
+        clsAppointment mThisAppointment = new clsAppointment();
 
         // public constructor for the class
         public clsAppointmentCollection()
@@ -75,25 +77,65 @@ namespace Class_Library
         }
 
         
-        
-        public clsAppointment ThisAppointment { get; set; }        
-           
-            
+        // public property for ThisAppointment
+        public clsAppointment ThisAppointment
+        {
+            get
+            {
+                // return the private data
+                return mThisAppointment;
+            }
+            set
+            {
+                // set the private data
+                mThisAppointment = value;
+            }
+        }
 
-            
-            //// set the car reg no to 1234 GHY
-            //AnAppointment.CarRegNo = "1234 6GH";
-            //// add the appointment to the private list of appointments
-            //mAppointmentList.Add(AnAppointment);
-            //// re initialise the AnAppointment object to accept a new item
-            //AnAppointment = new clsAppointment();
-            //// set the appointment to 4321 6FG
-            //AnAppointment.CarRegNo = "4321 6FG";
-            //// add the seconf appointment to the private list of appointments
-            //mAppointmentList.Add(AnAppointment);
-            //// the private list now contains to appointments
-            //// this assumes we have a working database that contains a table called tblAppointment
+        public int Add()
+        {
+            // adds a new record to the database based on the values of mAppointment
+            // set the primary key value of the new record
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored procedure
+            DB.AddParameter("@MOTDate", mThisAppointment.MOTDate);
+            DB.AddParameter("@MOTTimeID", mThisAppointment.MOTTimeID);
+            DB.AddParameter("@CarRegNo", mThisAppointment.CarRegNo);
+            DB.AddParameter("@CustomerID", mThisAppointment.CustomerID);
+            DB.AddParameter("@StaffID", mThisAppointment.StaffID);
+            DB.AddParameter("@JobID", mThisAppointment.JobID);
+            DB.AddParameter("@Active", mThisAppointment.Active);
+            // execute the query returing the primary key value
+            return DB.Execute("sproc_tblAppointment_Insert");
+        }
 
-        
+        public void Delete()
+        {
+            // deletes the record poined to by thisAppointment
+            // connect to the database
+            clsDataConnection DB = new clsDataConnection();
+            // set the parameters for the stored proecdure
+            DB.AddParameter("@AppointmentID", mThisAppointment.AppointmentID);
+            // execute the stored procedure
+            DB.Execute("sproc_tblAppointment_Delete");
+        }
+
+
+
+
+        //// set the car reg no to 1234 GHY
+        //AnAppointment.CarRegNo = "1234 6GH";
+        //// add the appointment to the private list of appointments
+        //mAppointmentList.Add(AnAppointment);
+        //// re initialise the AnAppointment object to accept a new item
+        //AnAppointment = new clsAppointment();
+        //// set the appointment to 4321 6FG
+        //AnAppointment.CarRegNo = "4321 6FG";
+        //// add the seconf appointment to the private list of appointments
+        //mAppointmentList.Add(AnAppointment);
+        //// the private list now contains to appointments
+        //// this assumes we have a working database that contains a table called tblAppointment
+
+
     }
 }

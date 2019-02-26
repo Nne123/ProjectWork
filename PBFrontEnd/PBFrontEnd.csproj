@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AnAppointment.aspx" />
     <Content Include="DefaultAppointment.aspx" />
+    <Content Include="DeleteAppointment.aspx" />
     <Content Include="EasyFixBank.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -88,6 +89,13 @@
     </Compile>
     <Compile Include="DefaultAppointment.aspx.designer.cs">
       <DependentUpon>DefaultAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAppointment.aspx.cs">
+      <DependentUpon>DeleteAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteAppointment.aspx.designer.cs">
+      <DependentUpon>DeleteAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="EasyFixBank.Master.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>

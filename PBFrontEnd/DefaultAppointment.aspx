@@ -10,16 +10,19 @@
         <asp:TextBox ID="TextBox1" runat="server" Width="210px"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="btnApply" runat="server" Text="Apply" Width="130px" />
+        <asp:Button ID="btnApply" runat="server" Text="Apply" Width="130px" OnClick="btnApply_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnDisplayAll" runat="server" Text="Display All" Width="125px" />
         <br />
         <br />
-        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="75px" />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="75px" />
 &nbsp;&nbsp;
         <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="73px" />
 &nbsp;&nbsp;
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="68px" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="68px" OnClick="btnDelete_Click" />
+        <br />
+        <br />
+        <asp:Label ID="lblError" runat="server" Text="lblError"></asp:Label>
 </p>
     <p style="height: 396px">
         <br />
