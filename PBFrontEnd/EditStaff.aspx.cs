@@ -13,5 +13,10 @@ namespace PBFrontEnd
         {
 
         }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

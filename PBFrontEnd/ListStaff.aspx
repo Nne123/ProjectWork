@@ -27,7 +27,7 @@
             <br />
             <asp:Button ID="btnOk" runat="server" OnClick="btnOk_Click" Text="Ok" Width="130px" />
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="btnListAll" runat="server" Text="List All" Width="165px" />
+            <asp:Button ID="btnListAll" runat="server" Text="List All" Width="165px" OnClick="btnListAll_Click" />
             <br />
             <br />
             <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" Width="135px" />

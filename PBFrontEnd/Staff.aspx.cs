@@ -25,5 +25,17 @@ namespace PBFrontEnd
             // Temporary
             Response.Redirect("AddStaff.aspx");
         }
+
+        protected void btnSignIn_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("Listtaff.aspx");
+        }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("StaffNewAccount.aspx");
+        }
     }
 }
