@@ -74,6 +74,8 @@
     <Content Include="EasyFixBank.css" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
+    <Content Include="DefaultCustomer.aspx" />
+    <Content Include="DefaultCustomer_StaffSide.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnAppointment.aspx.cs">
@@ -108,6 +110,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DefaultCustomer.aspx.cs">
+      <DependentUpon>DefaultCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultCustomer.aspx.designer.cs">
+      <DependentUpon>DefaultCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultCustomer_StaffSide.aspx.cs">
+      <DependentUpon>DefaultCustomer_StaffSide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultCustomer_StaffSide.aspx.designer.cs">
+      <DependentUpon>DefaultCustomer_StaffSide.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="EasyFixBank.Master" />

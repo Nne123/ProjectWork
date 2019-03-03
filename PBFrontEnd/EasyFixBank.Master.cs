@@ -13,5 +13,15 @@ namespace PBFrontEnd
         {
 
         }
+
+        protected void btnCustomerDetails_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DefaultCustomer.aspx");
+        }
+
+        protected void btnManageCustomers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DefaultCustomer_StaffSide.aspx");
+        }
     }
 }
