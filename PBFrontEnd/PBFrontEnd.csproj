@@ -80,6 +80,7 @@
     <Content Include="ListStaff.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Staff.aspx" />
+    <Content Include="StaffNewAccount.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer.aspx" />
     <Content Include="Customer_StaffSide.aspx" />
@@ -179,6 +180,13 @@
     </Compile>
     <Compile Include="Staff.aspx.designer.cs">
       <DependentUpon>Staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffNewAccount.aspx.cs">
+      <DependentUpon>StaffNewAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffNewAccount.aspx.designer.cs">
+      <DependentUpon>StaffNewAccount.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
