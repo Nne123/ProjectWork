@@ -3,31 +3,47 @@
 <!DOCTYPE html>
 
 <html>
-    <head id="Head1" runat="server">
-        <title>Sample Master Page</title>
-        <link href="EasyFixBank.css" rel="stylesheet" type="text/css" />
-    </head>
+<head id="Head1" runat="server">
+    <title>EasyFix</title>
+    <link href="EasyFixBank.css" rel="stylesheet" type="text/css" />
+</head>
 
-    <body>
-        <form id="form1" runat="server">
- 
-             <header>
-                Header text here
-            </header>
- 
-            <article>
-                Your text here
-                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <h1>EasyFix</h1>
+        </header>
+
+        <article>
+            Your text here
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
-            </article>
- 
-            <nav>
-                Navigation links here
-            </nav>
- 
-            <footer>
-                Footer text here
-            </footer>
-        </form>
-    </body>
+        </article>
+
+        <nav>
+            <br />
+            <br />
+            [Customer Name]
+            <br />
+            <br />
+            <asp:Button ID="btnCustomerDetails" runat="server" Text="Customer Details" Width="200px" OnClick="btnCustomerDetails_Click" />
+            <br />
+            <br />
+            Staff:
+            <br />
+            <br />
+            <asp:Button ID="btnManageCustomers" runat="server" Text="Manage Customers" Width="200px" OnClick="btnManageCustomers_Click"/>
+            <br />
+            <br />
+            <br />
+            <asp:Button ID="btnHelp" runat="server" Text="Help" />
+            <asp:Button ID="btnLogOut" runat="server" Text="Log Out" />
+        </nav>
+
+        <footer>
+            Footer text here
+        </footer>
+    </form>
+</body>
 </html>
