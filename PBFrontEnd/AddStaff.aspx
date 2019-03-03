@@ -12,30 +12,39 @@
         <form id="form1" runat="server">
         <div>
             <h1>EasyFix</h1>
+    <h2>Add New Staff:</h2>
+    <p>
+        <asp:Label ID="StaffID" runat="server" Text="Staff ID:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblFirstName" runat="server" Text="First Name:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblLastName" runat="server" Text="Last Name:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblAddressLn1" runat="server" Text="Address Line 1:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblAddressLn2" runat="server" Text="Address Line 2:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblPhoneNo" runat="server" Text="Phone Number:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblEmailAddress" runat="server" Text="Email Address:" Width="200px"></asp:Label>
+        <asp:TextBox ID="TextBox6" runat="server"></asp:TextBox>
+        <br />
+    </p>
+    <br />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="220px" Height="45px" /> 
             <br />
-            <h2>Add Staff</h2>
-            <table>
-                <tr>
-                    <td><asp:Label ID="lblEmail" runat="server" Text="Email Address"></asp:Label></td>
-                    <td><asp:TextBox ID="txtEMail" runat="server" Width="250px" Height="25px"></asp:TextBox></td>
-                </tr>
-                <tr>
-                    <td><asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label></td>
-                    <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="250px" Height="25px"></asp:TextBox></td>
-                </tr>
-            </table>
-        </div>
             <br />
-            <br />
-            <asp:Label ID="lblError" runat="server"></asp:Label>
-            <br />
-            <br />
-        <asp:Button ID="btnSignIn" runat="server" Text="Sign-in" Width="368px" Height="40px" OnClick="btnSignIn_Click"/>
-            <br />
-            <br />
-        <asp:Button ID="btnSignUp" runat="server" Text="Create a new account"/>
-        </form>
-    </center>
+        <asp:Button ID="btnSave" runat="server" Text="Save" Width="220px" Height="45px" />
+        <br />
+        <br />
+</form>
+</center>
 </body>
 </asp:Content>
 </html>
