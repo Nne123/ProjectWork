@@ -13,5 +13,23 @@ namespace PBFrontEnd
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("AddStaff.aspx");
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("EditStaff.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("DeleteStaff.aspx");
+        }
     }
 }
