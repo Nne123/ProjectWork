@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="DefaultCustomer_StaffSide.aspx.cs" Inherits="PBFrontEnd.WebForm2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="Customer_StaffSide.aspx.cs" Inherits="PBFrontEnd.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4>Search:</h4>
