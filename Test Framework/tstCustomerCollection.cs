@@ -18,19 +18,6 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void CountOK()
-        {
-            // New instance of clsCustomerCollection class
-            clsCustomerCollection AllCustomers = new clsCustomerCollection();
-            // Variable SomeCount with some test data
-            Int32 SomeCount = 0;
-            // Assign the test variable into the real one
-            AllCustomers.Count = SomeCount;
-            // Check whether they match
-            Assert.AreEqual(AllCustomers.Count, SomeCount);
-        }
-
-        [TestMethod]
         public void ThisCustomerOK()
         {
             // New instance of clsCustomerCollection class
