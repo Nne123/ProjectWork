@@ -15,7 +15,7 @@ namespace Test_Framework
         String TestLastName = "Sheta";
         Int32 TestStaffID = 1;
         String TestEmail = "test41@hotmail.com";
-        String TestPhoneNo = "079684372653";
+        String TestPhoneNo = "+079684372653";
 
 
         [TestMethod]
@@ -230,8 +230,6 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
-
-
         [TestMethod]
         public void LastNameMinLessOne()
         {
@@ -441,7 +439,6 @@ namespace Test_Framework
             //test to see that the result is NOT OK i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
-
 
         [TestMethod]
         public void EmailinLessOne()
