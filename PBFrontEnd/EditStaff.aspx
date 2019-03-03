@@ -19,13 +19,15 @@
         <br />
         <br />
         Enter staff to search:<br />
-        <asp:TextBox ID="txtSearchField" runat="server" Width="332px"></asp:TextBox>  
-    </p>
-        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="132px" OnClick="btnSearch_Click" />
+        <asp:TextBox ID="txtSearchField" runat="server" Width="332px" Height= "45px"></asp:TextBox>      
+                        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="132px" Height= "45px" OnClick="btnSearch_Click" />
         <br />
         <br />
-        <asp:Button ID="btnDisplayAll" runat="server" Text="Display All" Width="202px" />
+        <asp:Button ID="btnDisplayAll" runat="server" Text="Display All" Width="220px" Height="45px" />
+                        &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnAdd" runat="server" Text="Add" Width="220px" Height="45px" /> 
+                        &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="220px" Height="45px" />
         <br />
         <br />

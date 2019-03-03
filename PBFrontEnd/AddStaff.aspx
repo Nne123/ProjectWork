@@ -38,8 +38,7 @@
     </p>
     <br />
         <asp:Button ID="btnAdd" runat="server" Text="Add" Width="220px" Height="45px" /> 
-            <br />
-            <br />
+                        &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="220px" Height="45px" />
         <br />
         <br />
