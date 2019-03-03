@@ -68,18 +68,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddStaff.aspx" />
     <Content Include="AnAppointment.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
     <Content Include="DeleteAppointment.aspx" />
+    <Content Include="DeleteStaff.aspx" />
     <Content Include="EasyFixBank.css" />
+    <Content Include="EditStaff.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ListStaff.aspx" />
     <Content Include="MainPage.aspx" />
+    <Content Include="Staff.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer.aspx" />
     <Content Include="Customer_StaffSide.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddStaff.aspx.cs">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddStaff.aspx.designer.cs">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnAppointment.aspx.cs">
       <DependentUpon>AnAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -108,6 +120,13 @@
     <Compile Include="DeleteAppointment.aspx.designer.cs">
       <DependentUpon>DeleteAppointment.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DeleteStaff.aspx.cs">
+      <DependentUpon>DeleteStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteStaff.aspx.designer.cs">
+      <DependentUpon>DeleteStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EasyFixBank.Master.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -115,8 +134,22 @@
     <Compile Include="EasyFixBank.Master.designer.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>
     </Compile>
+    <Compile Include="EditStaff.aspx.cs">
+      <DependentUpon>EditStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditStaff.aspx.designer.cs">
+      <DependentUpon>EditStaff.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListStaff.aspx.cs">
+      <DependentUpon>ListStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListStaff.aspx.designer.cs">
+      <DependentUpon>ListStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
@@ -139,6 +172,13 @@
     </Compile>
     <Compile Include="Customer_StaffSide.aspx.designer.cs">
       <DependentUpon>Customer_StaffSide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.aspx.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff.aspx.designer.cs">
+      <DependentUpon>Staff.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
