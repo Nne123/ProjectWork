@@ -96,7 +96,7 @@ namespace Test_Framework
         //{
         //    // New instance of clsCustomerCollection class
         //    clsCustomerCollection Customers = new clsCustomerCollection();
-        //    // New variable Error
+        //    // New variable for the Error
         //    String Error = "";
         //    // Check if there is an error message returned
         //    Error = Customers.Add(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -109,7 +109,7 @@ namespace Test_Framework
         //{
         //    // New instance of clsCustomerCollection class
         //    clsCustomerCollection Customers = new clsCustomerCollection();
-        //    // New variable Error
+        //    // New variable for the Error
         //    String Error = "";
         //    // Check if there is an error message returned
         //    Error = Customers.Update(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);

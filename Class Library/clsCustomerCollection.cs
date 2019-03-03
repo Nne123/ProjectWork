@@ -5,11 +5,13 @@ namespace Class_Library
 {
     public class clsCustomerCollection
     {
+        public clsCustomer ThisCustomer { get; set; }
+
         public clsCustomerCollection()
         {
-            // Variable for the index
+            // New variable for the index
             Int32 Index = 0;
-            // Variable to store the record count
+            // New variable to store the record count
             Int32 RecordCount = 0;
             // New instance of clsDataConnection class
             clsDataConnection DB = new clsDataConnection();
@@ -38,9 +40,9 @@ namespace Class_Library
             }
         }
 
-        public clsCustomer ThisCustomer { get; set; }
         // Private data member for the list
         List<clsCustomer> mCustomerList = new List<clsCustomer>();
+
         // Public property for the customer list
         public List<clsCustomer> CustomerList
         {

@@ -127,7 +127,7 @@ namespace Test_Framework
         {
             // New instance of clsCustomer class
             clsCustomer ACustomer = new clsCustomer();
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -142,7 +142,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -157,7 +157,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4E";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -172,7 +172,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4E3";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -187,7 +187,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -202,7 +202,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4E";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -217,7 +217,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4E3";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -232,7 +232,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -247,7 +247,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestCarRegNo with some test data
             TestCarRegNo = "AF3E4ED69A";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -262,7 +262,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestLastName with some test data
             TestLastName = "a";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -277,7 +277,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestLastName with some test data
             TestLastName = "ab";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -292,7 +292,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestLastName with some test data
             TestLastName = "abc";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -307,7 +307,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 39 times to a variable for testing
             TestLastName = TestLastName.PadRight(39, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -322,7 +322,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 40 times to a variable for testing
             TestLastName = TestLastName.PadRight(40, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -337,7 +337,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 41 times to a variable for testing
             TestLastName = TestLastName.PadRight(41, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -352,7 +352,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 20 times to a variable for testing
             TestLastName = TestLastName.PadRight(20, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -367,7 +367,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 5 000 000 times to a variable for testing
             TestLastName = TestLastName.PadRight(5000000, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -382,7 +382,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestAddressLine1 with blank test data
             TestAddressLine1 = "";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -397,7 +397,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestAddressLine1 with some test data
             TestAddressLine1 = "a";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -412,7 +412,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 49 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(49, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -427,7 +427,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 50 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(50, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -442,7 +442,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 51 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(51, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -457,7 +457,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 25 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(25, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -472,7 +472,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 2 000 times to a variable for testing
             TestAddressLine1 = TestAddressLine1.PadRight(2000, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -487,7 +487,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestAddressLine2 with blank test data
             TestAddressLine2 = "";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -502,7 +502,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestAddressLine2 with some test data
             TestAddressLine2 = "a";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -517,7 +517,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 99 times to a variable for testing
             TestAddressLine2 = TestAddressLine2.PadRight(99, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -532,7 +532,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 100 times to a variable for testing
             TestAddressLine2 = TestAddressLine2.PadRight(100, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -547,7 +547,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 101 times to a variable for testing
             TestAddressLine2 = TestAddressLine2.PadRight(101, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -562,7 +562,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 50 times to a variable for testing
             TestAddressLine2 = TestAddressLine2.PadRight(50, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -577,7 +577,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 20 000 times to a variable for testing
             TestAddressLine2 = TestAddressLine2.PadRight(20000, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -592,7 +592,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestEmail with some test data
             TestEmail = "a@a.";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -607,7 +607,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestEmail with some test data
             TestEmail = "a@a.a";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -622,7 +622,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestEmail with some test data
             TestEmail = "a@a.aa";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -637,7 +637,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 59 times to a variable for testing
             TestEmail = TestEmail.PadRight(59, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -652,7 +652,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 60 times to a variable for testing
             TestEmail = TestEmail.PadRight(60, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -667,7 +667,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 61 times to a variable for testing
             TestEmail = TestEmail.PadRight(61, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -682,7 +682,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 30 times to a variable for testing
             TestEmail = TestEmail.PadRight(30, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -697,7 +697,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 2 000 times to a variable for testing
             TestEmail = TestEmail.PadRight(2000, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -712,7 +712,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestFirstName with some test data
             TestFirstName = "a";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -727,7 +727,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestFirstName with some test data
             TestFirstName = "ab";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -742,7 +742,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestFirstName with some test data
             TestFirstName = "abc";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -757,7 +757,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 24 times to a variable for testing
             TestFirstName = TestFirstName.PadRight(24, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -772,7 +772,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 25 times to a variable for testing
             TestFirstName = TestFirstName.PadRight(25, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -787,7 +787,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 26 times to a variable for testing
             TestFirstName = TestFirstName.PadRight(26, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -802,7 +802,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 12 times to a variable for testing
             TestFirstName = TestFirstName.PadRight(12, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -817,7 +817,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 5 000 000 times to a variable for testing
             TestFirstName = TestFirstName.PadRight(5000000, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -832,7 +832,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestPhoneNo with some test data
             TestPhoneNo = "1234";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -847,7 +847,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestPhoneNo with some test data
             TestPhoneNo = "12345";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -862,7 +862,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Variable TestPhoneNo with some test data
             TestPhoneNo = "123456";
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -877,7 +877,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 29 times to a variable for testing
             TestPhoneNo = TestPhoneNo.PadRight(29, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -892,7 +892,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 30 times to a variable for testing
             TestPhoneNo = TestPhoneNo.PadRight(30, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -907,7 +907,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 31 times to a variable for testing
             TestPhoneNo = TestPhoneNo.PadRight(31, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -922,7 +922,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 15 times to a variable for testing
             TestPhoneNo = TestPhoneNo.PadRight(15, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
@@ -937,7 +937,7 @@ namespace Test_Framework
             clsCustomer ACustomer = new clsCustomer();
             // Add letter 'a' 2 000 times to a variable for testing
             TestPhoneNo = TestPhoneNo.PadRight(2000, 'a');
-            // New variable Error
+            // New variable for the Error
             String Error = "";
             // Check if there is an error message returned
             Error = ACustomer.Valid(TestAddressLine1, TestAddressLine2, TestEmail, TestFirstName, TestLastName, TestPhoneNo, TestCarRegNo);
