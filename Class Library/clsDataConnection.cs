@@ -226,6 +226,17 @@ namespace Class_Library
         }
     }
 
+    public class List<T>
+    {
+        public int Count;
 
+        public List()
+        {
+        }
 
+        public void Add(clsStaff testItem)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
