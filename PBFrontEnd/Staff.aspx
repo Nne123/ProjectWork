@@ -33,36 +33,9 @@
         <asp:Button ID="btnSignIn" runat="server" Text="Sign-in" Width="368px" Height="40px" OnClick="btnSignIn_Click"/>
             <br />
             <br />
-        <asp:Button ID="btnSignUp" runat="server" Text="Create a new account"/>
+        <asp:Button ID="btnSignUp" runat="server" Text="Create a new account" OnClick="btnSignUp_Click"/>
         </form>
     </center>
 </body>
-         <p style="height: 396px">
-        <asp:ListBox ID="lstStaff" runat="server" Height="189px" Width="301px"></asp:ListBox>
-&nbsp;&nbsp;
-        <br />
-        <br />
-        <asp:Label ID="lblSearchStaff" runat="server" Text="Search Staff"></asp:Label>
-        <br />
-        <asp:TextBox ID="TextBox1" runat="server" Width="210px"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Button ID="btnOk" runat="server" Text="Ok" Width="130px" OnClick="btnOk_Click" />
-&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnListAll" runat="server" Text="List All" Width="165px" />
-        <br />
-        <br />
-        <asp:Button ID="btnAdd" runat="server" Text="Add" OnClick="btnAdd_Click" Width="135px" />
-&nbsp;&nbsp;
-        <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="133px" OnClick="btnEdit_Click" />
-&nbsp;&nbsp;
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="135px" OnClick="btnDelete_Click" />
-        <br />
-        <br />
-        <asp:Label ID="Label1" runat="server" Text="lblError"></asp:Label>
-</p>
-    <p style="height: 396px">
-        <br />
-</p>
 </html>
 
