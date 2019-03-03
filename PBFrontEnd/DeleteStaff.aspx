@@ -15,7 +15,7 @@
         <asp:Label ID="lblAreYouSure" runat="server" Text="Are you sure you want to delete staff?"></asp:Label>
         <br />
         <br />
-        <asp:Button ID="btnYes" runat="server" Text="Yes" OnClick="btnYes_Click" Width="89px" />
+        <asp:Button ID="btnYes" runat="server" Text="Yes" OnClick="btnYes_Click" Width="189px" />
     &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnNo" runat="server" OnClick="btnNo_Click" Text="No" Width="80px" />
     </p>
