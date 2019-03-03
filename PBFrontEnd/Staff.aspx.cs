@@ -14,13 +14,13 @@ namespace PBFrontEnd
 
         }
 
-        protected void btnSignIn_Click(object sender, EventArgs e)
+        protected void BtnSignIn_Click(object sender, EventArgs e)
         {
             // Temporary
             Response.Redirect("ListStaff.aspx");
         }
 
-        protected void btnSignUp_Click(object sender, EventArgs e)
+        protected void BtnSignUp_Click(object sender, EventArgs e)
         {
             // Temporary
             Response.Redirect("AddStaff.aspx");

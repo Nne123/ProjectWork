@@ -10,7 +10,7 @@
 <body>
     <center>
         <form id="form1" runat="server">
-        <div>
+        <div/>
     <h1>EasyFix</h1>
                 <p>
             <h1>Edit Staff:</h1>
