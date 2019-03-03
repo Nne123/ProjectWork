@@ -38,7 +38,7 @@
             <br />
             <br />
             <asp:Button ID="btnHelp" runat="server" Text="Help" />
-            <asp:Button ID="btnLogOut" runat="server" Text="Log Out" />
+            <asp:Button ID="btnLogOut" runat="server" Text="Log Out" OnClick="btnLogOut_Click" />
         </nav>
 
         <footer>
