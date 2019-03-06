@@ -68,6 +68,10 @@
   <ItemGroup>
     <Content Include="AddStaff.aspx" />
     <Content Include="AnAppointment.aspx" />
+    <Content Include="App_Data\EasyFix.mdf" />
+    <Content Include="App_Data\EasyFix_log.ldf">
+      <DependentUpon>EasyFix.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
     <Content Include="DeleteAppointment.aspx" />
@@ -82,6 +86,7 @@
     <Content Include="Web.config" />
     <Content Include="Customer.aspx" />
     <Content Include="Customer_StaffSide.aspx" />
+    <Content Include="StaffAppointment.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddStaff.aspx.cs">
@@ -186,6 +191,13 @@
     <Compile Include="StaffNewAccount.aspx.designer.cs">
       <DependentUpon>StaffNewAccount.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StaffAppointment.aspx.cs">
+      <DependentUpon>StaffAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffAppointment.aspx.designer.cs">
+      <DependentUpon>StaffAppointment.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="EasyFixBank.Master" />
@@ -198,7 +210,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -35,9 +35,9 @@
         <br />
     </p>
     <br />
-        <asp:Button ID="btnAddNewAccount" runat="server" Text="Add Account" Width="220px" Height="45px" OnClick="btnAddNewAccount_Click" /> 
+        <asp:Button ID="btnAddNewAccount" runat="server" Text="Add Account" Width="120px" Height="25px" OnClick="btnAddNewAccount_Click" /> 
                         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnSave" runat="server" Text="Save" Width="220px" Height="45px" />
+        <asp:Button ID="btnSave" runat="server" Text="Save" Width="120px" Height="25px" />
         <br />
         <br />
 </form>
