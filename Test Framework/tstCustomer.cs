@@ -151,6 +151,28 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void TestCustomerIDFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the CustomerID
+            if (ACustomer.CustomerID != 2)
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
         public void CarRegNoMinLessOne()
         {
             // New instance of clsCustomer class
