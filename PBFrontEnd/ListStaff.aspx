@@ -22,7 +22,7 @@
             <br />
             <br />
             <asp:Label ID="lblSearchStaff" runat="server" Text="Search Staff :"></asp:Label>             &nbsp;&nbsp;
-            <asp:TextBox ID="TextBox1" runat="server" Width="310px" Height="30"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" Width="310px" Height="25"></asp:TextBox>
             <br />
             <br />
             <asp:Button ID="btnOk" runat="server" OnClick="btnOk_Click" Text="Ok" Width="130px" />

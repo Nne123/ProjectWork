@@ -68,6 +68,10 @@
   <ItemGroup>
     <Content Include="AddStaff.aspx" />
     <Content Include="AnAppointment.aspx" />
+    <Content Include="App_Data\EasyFix.mdf" />
+    <Content Include="App_Data\EasyFix_log.ldf">
+      <DependentUpon>EasyFix.mdf</DependentUpon>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
     <Content Include="DeleteAppointment.aspx" />
@@ -206,7 +210,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
