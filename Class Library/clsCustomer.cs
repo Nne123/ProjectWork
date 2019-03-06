@@ -115,8 +115,16 @@ namespace Class_Library
 
         public bool Find(int customerID)
         {
-            // temporary
+            // Set the private data members to the test data value
+            mAddressLine1 = "Test AddressLine1";
+            mAddressLine2 = "Test AddressLine2";
             mCustomerID = 2;
+            mEmail = "Test Email";
+            mFirstName = "Test FirstName";
+            mLastName = "Test LastName";
+            mPhoneNo = "Test PhoneNo";
+            mCarRegNo = "Test C";
+            // Always return true
             return true;
         }
 
