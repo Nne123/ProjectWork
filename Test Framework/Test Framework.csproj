@@ -57,6 +57,7 @@
     <Compile Include="tstCustomerCollection.cs" />
     <Compile Include="tstMOTTime.cs" />
     <Compile Include="tstMOTTimeCollection.cs" />
+    <Compile Include="tstParts.cs" />
     <Compile Include="tstStaff.cs" />
     <Compile Include="tstStaffCollection.cs" />
   </ItemGroup>
