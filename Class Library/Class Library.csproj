@@ -46,6 +46,7 @@
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsMOTTime.cs" />
     <Compile Include="clsMOTTimeCollection.cs" />
+    <Compile Include="clsPart.cs" />
     <Compile Include="clsStaff.cs" />
     <Compile Include="clsStaffCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
