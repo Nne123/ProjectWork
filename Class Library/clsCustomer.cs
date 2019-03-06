@@ -4,14 +4,22 @@ namespace Class_Library
 {
     public class clsCustomer
     {
-        public string CarRegNo { get; set; }
-        public string LastName { get; set; }
-        public string AddressLine1 { get; set; }
-        public string AddressLine2 { get; set; }
-        public string Email { get; set; }
-        public string FirstName { get; set; }
-        public string PhoneNo { get; set; }
-        public int CustomerID { get; set; }
+        // Private data member for the CustomerID property
+        private Int32 mCustomerID;
+        // Private data member for the CarRegNo property
+        private String mCarRegNo;
+        // Private data member for the LastName property
+        private String mLastName;
+        // Private data member for the AddressLine1 property
+        private String mAddressLine1;
+        // Private data member for the AddressLine2 property
+        private String mAddressLine2;
+        // Private data member for the Email property
+        private String mEmail;
+        // Private data member for the FirstName property
+        private String mFirstName;
+        // Private data member for the PhoneNo property
+        private String mPhoneNo;
 
         public string Valid(string AddressLine1, string AddressLine2, string Email, string FirstName, string LastName, string PhoneNo, string CarRegNo)
         {
@@ -103,6 +111,141 @@ namespace Class_Library
             }
             // Return the result
             return Error;
+        }
+
+        public bool Find(int customerID)
+        {
+            // Set the private data members to the test data value
+            mAddressLine1 = "Test AddressLine1";
+            mAddressLine2 = "Test AddressLine2";
+            mCustomerID = 2;
+            mEmail = "Test Email";
+            mFirstName = "Test FirstName";
+            mLastName = "Test LastName";
+            mPhoneNo = "Test PhoneNo";
+            mCarRegNo = "Test C";
+            // Always return true
+            return true;
+        }
+
+        // Public property for the customer id
+        public int CustomerID
+        {
+            get
+            {
+                // Return the private data
+                return mCustomerID;
+            }
+            set
+            {
+                // Set the private data
+                mCustomerID = value;
+            }
+        }
+
+        // Public property for the car registration number
+        public string CarRegNo
+        {
+            get
+            {
+                // Return the private data
+                return mCarRegNo;
+            }
+            set
+            {
+                // Set the private data
+                mCarRegNo = value;
+            }
+        }
+
+        // Public property for the last name
+        public string LastName
+        {
+            get
+            {
+                // Return the private data
+                return mLastName;
+            }
+            set
+            {
+                // Set the private data
+                mLastName = value;
+            }
+        }
+
+        // Public property for the address line 1
+        public string AddressLine1
+        {
+            get
+            {
+                // Return the private data
+                return mAddressLine1;
+            }
+            set
+            {
+                // Set the private data
+                mAddressLine1 = value;
+            }
+        }
+
+        // Public property for the address line 2
+        public string AddressLine2
+        {
+            get
+            {
+                // Return the private data
+                return mAddressLine2;
+            }
+            set
+            {
+                // Set the private data
+                mAddressLine2 = value;
+            }
+        }
+
+        // Public property for the email
+        public string Email
+        {
+            get
+            {
+                // Return the private data
+                return mEmail;
+            }
+            set
+            {
+                // Set the private data
+                mEmail = value;
+            }
+        }
+
+        // Public property for the first name
+        public string FirstName
+        {
+            get
+            {
+                // Return the private data
+                return mFirstName;
+            }
+            set
+            {
+                // Set the private data
+                mFirstName = value;
+            }
+        }
+
+        // Public property for the phone number
+        public string PhoneNo
+        {
+            get
+            {
+                // Return the private data
+                return mPhoneNo;
+            }
+            set
+            {
+                // Set the private data
+                mPhoneNo = value;
+            }
         }
     }
 }

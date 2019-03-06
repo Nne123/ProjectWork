@@ -136,6 +136,197 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void FindMethodOK()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 1;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check whether it is true
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestAddressLine1Found()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.AddressLine1 != "Test AddressLine1")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAddressLine2Found()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.AddressLine2 != "Test AddressLine2")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.Email != "Test Email")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestFirstNameFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.FirstName != "Test FirstName")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLastNameFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.LastName != "Test LastName")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPhoneNoFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.PhoneNo != "Test PhoneNo")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCarRegNoFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the property
+            if (ACustomer.CarRegNo != "Test C")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCustomerIDFound()
+        {
+            // New instance of clsCustomer class
+            clsCustomer ACustomer = new clsCustomer();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestCustomerID with some test data
+            TestCustomerID = 2;
+            // Check if there is anything found
+            Found = ACustomer.Find(TestCustomerID);
+            // Check the CustomerID
+            if (ACustomer.CustomerID != 2)
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
         public void CarRegNoMinLessOne()
         {
             // New instance of clsCustomer class

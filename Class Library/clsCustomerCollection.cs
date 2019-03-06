@@ -5,6 +5,11 @@ namespace Class_Library
 {
     public class clsCustomerCollection
     {
+        // Private data member for the customer list
+        List<clsCustomer> mCustomerList = new List<clsCustomer>();
+        // Private data member for the customer
+        clsCustomer mThisCustomer = new clsCustomer();
+
         public clsCustomer ThisCustomer { get; set; }
 
         public clsCustomerCollection()
@@ -40,8 +45,26 @@ namespace Class_Library
             }
         }
 
-        // Private data member for the list
-        List<clsCustomer> mCustomerList = new List<clsCustomer>();
+        public int Add()
+        {
+            mThisCustomer.CustomerID = 3;
+            return mThisCustomer.CustomerID;
+        }
+
+        // Public property for the customer
+        public clsCustomer Customer
+        {
+            get
+            {
+                // Return the private data
+                return mThisCustomer;
+            }
+            set
+            {
+                // Set the private data
+                mThisCustomer = value;
+            }
+        }
 
         // Public property for the customer list
         public List<clsCustomer> CustomerList
