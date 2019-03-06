@@ -104,5 +104,11 @@ namespace Class_Library
             // Return the result
             return Error;
         }
+
+        public bool Find(int customerID)
+        {
+            // temporary
+            return true;
+        }
     }
 }
