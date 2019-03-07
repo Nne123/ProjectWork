@@ -29,103 +29,119 @@ namespace Class_Library
             if (CarRegNo.ToString().Length > 6 || CarRegNo.ToString().Length < 6)
             {
                 // Return an error message
-                Error = "Car registration number must be 6 characters long.";
+                Error = Error + "Car registration number must be 6 characters long. ";
             }
             // If AddressLine1 is more than 50 characters long
             if (AddressLine1.Length > 50)
             {
                 // Return an error message
-                Error = "Address Line 1 cannot have more than 50 characters.";
+                Error = Error + "Address Line 1 cannot have more than 50 characters. ";
             }
             // If AddressLine2 is more than 100 characters long
             if (AddressLine2.Length > 100)
             {
                 // Return an error message
-                Error = "Address Line 2 cannot have more than 100 characters.";
+                Error = Error + "Address Line 2 cannot have more than 100 characters. ";
             }
             // If Email is more than 60 characters long
             if (Email.Length > 60)
             {
                 // Return an error message
-                Error = "Email cannot have more than 60 characters";
+                Error = Error + "Email cannot have more than 60 characters. ";
             }
             // If Email is less than 5 characters long
             if (Email.Length < 5)
             {
                 // Return an error message
-                Error = "Email must be at least 5 characters long.";
+                Error = Error + "Email must be at least 5 characters long. ";
             }
             // If FirstName is blank
             if (FirstName.Length == 0)
             {
                 // Return an error message
-                Error = "First name cannot be blank.";
+                Error = Error + "First name cannot be blank. ";
             }
             // If FirstName is less than 2 characters long
             if (FirstName.Length < 2)
             {
                 // Return an error message
-                Error = "First name must be at least 2 characters long.";
+                Error = Error + "First name must be at least 2 characters long. ";
             }
             // If FirstName is more than 40 characters long
             if (FirstName.Length > 25)
             {
                 // Return an error message
-                Error = "First name cannot have more than 25 characters.";
+                Error = Error + "First name cannot have more than 25 characters. ";
             }
             // If LastName is blank
             if (LastName.Length == 0)
             {
                 // Return an error message
-                Error = "Last name cannot be blank.";
+                Error = Error + "Last name cannot be blank. ";
             }
             // If LastName is less than 2 characters long
             if (LastName.Length < 2)
             {
                 // Return an error message
-                Error = "Last name must be at least 2 characters long.";
+                Error = Error + "Last name must be at least 2 characters long. ";
             }
             // If LastName is more than 40 characters long
             if (LastName.Length > 40)
             {
                 // Return an error message
-                Error = "Last name cannot have more than 40 characters.";
+                Error = Error + "Last name cannot have more than 40 characters. ";
             }
             // If PhoneNo is blank
             if (PhoneNo.Length == 0)
             {
                 // Return an error message
-                Error = "Phone number cannot be blank.";
+                Error = Error + "Phone number cannot be blank. ";
             }
             // If PhoneNo is less than 5 characters long
             if (PhoneNo.Length < 5)
             {
                 // Return an error message
-                Error = "Phone number must be at least 5 characters long.";
+                Error = Error + "Phone number must be at least 5 characters long. ";
             }
             // If PhoneNo is more than 30 characters long
             if (PhoneNo.Length > 30)
             {
                 // Return an error message
-                Error = "Phone number cannot have more than 30 characters.";
+                Error = Error + "Phone number cannot have more than 30 characters. ";
             }
             // Return the result
             return Error;
         }
 
-        public bool Find(int customerID)
+        public bool Find(int CustomerID)
         {
-            // Set the private data members to the test data value
-            mAddressLine1 = "Test AddressLine1";
-            mAddressLine2 = "Test AddressLine2";
-            mCustomerID = 2;
-            mEmail = "Test Email";
-            mFirstName = "Test FirstName";
-            mLastName = "Test LastName";
-            mPhoneNo = "Test PhoneNo";
-            mCarRegNo = "Test C";
-            // Always return true
-            return true;
+            // New instance of clsDataConnection class
+            clsDataConnection DB = new clsDataConnection();
+            // Add the parameter for the CustomerID to search for
+            DB.AddParameter("@CustomerID", CustomerID);
+            // Execute the stored procedure
+            DB.Execute("sproc_tblCustomer_FilterByCustomerID");
+            // If one record is found (should be either one or zero)
+            if (DB.Count == 1)
+            {
+                // Copy the data from the database to the private data members
+                mAddressLine1 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine1"]);
+                mAddressLine2 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine2"]);
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
+                mCarRegNo = Convert.ToString(DB.DataTable.Rows[0]["CarRegNo"]);
+                // Return that everything worked OK
+                return true;
+            }
+            // If no record was found (should be either one or zero)
+            else
+            {
+                // Return false indicating a problem
+                return false;
+            }
         }
 
         // Public property for the customer id

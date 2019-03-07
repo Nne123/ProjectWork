@@ -45,10 +45,21 @@ namespace Class_Library
             }
         }
 
+        // Adds a new record to the database based on the values of ThisCustomer
         public int Add()
         {
-            mThisCustomer.CustomerID = 3;
-            return mThisCustomer.CustomerID;
+            // New instance of clsDataConnection class
+            clsDataConnection DB = new clsDataConnection();
+            // Set the parameters for the stored procedure
+            DB.AddParameter("@AddressLine1", mThisCustomer.AddressLine1);
+            DB.AddParameter("@AddressLine2", mThisCustomer.AddressLine2);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@PhoneNo", mThisCustomer.PhoneNo);
+            DB.AddParameter("@CarRegNo", mThisCustomer.CarRegNo);
+            // Execute the query returning the primary key value
+            return DB.Execute("sproc_tblCustomer_Insert");
         }
 
         // Public property for the customer
