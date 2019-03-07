@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Class_Library;
 
 namespace PBFrontEnd
 {
@@ -23,16 +24,77 @@ namespace PBFrontEnd
         // Function to display customers
         void DisplayCustomers()
         {
-            // New instance of clsDataConnection class
-            Class_Library.clsCustomerCollection Customers = new Class_Library.clsCustomerCollection();
+            // New instance of clsCustomerCollection class
+            clsCustomerCollection AllCustomers = new clsCustomerCollection();
             // Set the data source to the list of customers in the collection
-            lstCustomers.DataSource = Customers.CustomerList;
+            lstCustomers.DataSource = AllCustomers.CustomerList;
             // Set the name of the primary key
             lstCustomers.DataValueField = "CustomerID";
             // Set the data field to display
             lstCustomers.DataTextField = "CarRegNo";
             // Bind the data to the list
             lstCustomers.DataBind();
+        }
+
+        // Function to add a customer
+        void Add()
+        {
+            // New instance of clsCustomerCollection class
+            clsCustomerCollection Customer = new clsCustomerCollection();
+            // Store -1 into the session object to indicate this is a new record
+            Session["CustomerID"] = -1;
+            // Check if there is an error message returned
+            String Error = Customer.ThisCustomer.Valid(txtAddressLn1.Text, txtAddressLn2.Text, txtEmailAddress.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtCarRegNo.Text);
+            // If there are no errors
+            if (Error == "")
+            {
+                // Get the data entered by the user
+                Customer.ThisCustomer.AddressLine1 = txtAddressLn1.Text;
+                Customer.ThisCustomer.AddressLine2 = txtAddressLn2.Text;
+                Customer.ThisCustomer.Email = txtEmailAddress.Text;
+                Customer.ThisCustomer.FirstName = txtFirstName.Text;
+                Customer.ThisCustomer.LastName = txtLastName.Text;
+                Customer.ThisCustomer.PhoneNo = txtPhoneNo.Text;
+                Customer.ThisCustomer.CarRegNo = txtCarRegNo.Text;
+                // Add the record
+                Customer.Add();
+                // Refresh the page indicating a successfull adding of a customer
+                Response.Redirect("Customer_StaffSide.aspx");
+            }
+            // If there is an error
+            else
+            {
+                // Show an error message
+                lblError.Text = "There were problems with the data entered: <br /><br />" + Error;
+            }
+        }
+
+        protected void btnAddNew_Click(object sender, EventArgs e)
+        {
+            // Add the new customer
+            Add();
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            // New variable for the primary key
+            Int32 CustomerID;
+            // If a record has been selected from the list
+            if (lstCustomers.SelectedIndex != -1)
+            {
+                // Get the primary key value of the record to delete
+                CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
+                // Store the data into the session object
+                Session["CustomerID"] = CustomerID;
+                // Redirect to the delete page
+                Response.Redirect("Customer_StaffSideConfirm.aspx");
+            }
+            // If no record has been selected
+            else
+            {
+                // Show an error message
+                lblError.Text = "There were problems: <br /><br />Please select a record to delete from the list.";
+            }
         }
     }
 }
