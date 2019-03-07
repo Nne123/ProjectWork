@@ -143,7 +143,7 @@ namespace Test_Framework
             // New variable for anything that was found
             Boolean Found = false;
             // Variable TestCustomerID with some test data
-            TestCustomerID = 1;
+            TestCustomerID = 2;
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check whether it is true
@@ -164,7 +164,7 @@ namespace Test_Framework
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check the property
-            if (ACustomer.AddressLine1 != "Test AddressLine1")
+            if (ACustomer.AddressLine1 != "Test AddressLine1                                 ")
             {
                 OK = false;
             }
@@ -186,7 +186,7 @@ namespace Test_Framework
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check the property
-            if (ACustomer.AddressLine2 != "Test AddressLine2")
+            if (ACustomer.AddressLine2 != "Test AddressLine2                                                                                   ")
             {
                 OK = false;
             }
@@ -208,7 +208,7 @@ namespace Test_Framework
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check the property
-            if (ACustomer.Email != "Test Email")
+            if (ACustomer.Email != "Test Email                                                  ")
             {
                 OK = false;
             }
@@ -230,7 +230,7 @@ namespace Test_Framework
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check the property
-            if (ACustomer.FirstName != "Test FirstName")
+            if (ACustomer.FirstName != "Test FirstName           ")
             {
                 OK = false;
             }
@@ -252,7 +252,7 @@ namespace Test_Framework
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check the property
-            if (ACustomer.LastName != "Test LastName")
+            if (ACustomer.LastName != "Test LastName                           ")
             {
                 OK = false;
             }
@@ -274,7 +274,7 @@ namespace Test_Framework
             // Check if there is anything found
             Found = ACustomer.Find(TestCustomerID);
             // Check the property
-            if (ACustomer.PhoneNo != "Test PhoneNo")
+            if (ACustomer.PhoneNo != "+441231442641                 ")
             {
                 OK = false;
             }

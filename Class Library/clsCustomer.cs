@@ -113,19 +113,35 @@ namespace Class_Library
             return Error;
         }
 
-        public bool Find(int customerID)
+        public bool Find(int CustomerID)
         {
-            // Set the private data members to the test data value
-            mAddressLine1 = "Test AddressLine1";
-            mAddressLine2 = "Test AddressLine2";
-            mCustomerID = 2;
-            mEmail = "Test Email";
-            mFirstName = "Test FirstName";
-            mLastName = "Test LastName";
-            mPhoneNo = "Test PhoneNo";
-            mCarRegNo = "Test C";
-            // Always return true
-            return true;
+            // New instance of clsDataConnection class
+            clsDataConnection DB = new clsDataConnection();
+            // Add the parameter for the CustomerID to search for
+            DB.AddParameter("@CustomerID", CustomerID);
+            // Execute the stored procedure
+            DB.Execute("sproc_tblCustomer_FilterByCustomerID");
+            // If one record is found (should be either one or zero)
+            if (DB.Count == 1)
+            {
+                // Copy the data from the database to the private data members
+                mAddressLine1 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine1"]);
+                mAddressLine2 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine2"]);
+                mCustomerID = Convert.ToInt32(DB.DataTable.Rows[0]["CustomerID"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
+                mCarRegNo = Convert.ToString(DB.DataTable.Rows[0]["CarRegNo"]);
+                // Return that everything worked OK
+                return true;
+            }
+            // If no record was found (should be either one or zero)
+            else
+            {
+                // Return false indicating a problem
+                return false;
+            }
         }
 
         // Public property for the customer id
