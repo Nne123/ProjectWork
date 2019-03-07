@@ -10,8 +10,6 @@ namespace Class_Library
         // Private data member for the customer
         clsCustomer mThisCustomer = new clsCustomer();
 
-        public clsCustomer ThisCustomer { get; set; }
-
         public clsCustomerCollection()
         {
             // New variable for the index
@@ -63,7 +61,7 @@ namespace Class_Library
         }
 
         // Public property for the customer
-        public clsCustomer Customer
+        public clsCustomer ThisCustomer
         {
             get
             {

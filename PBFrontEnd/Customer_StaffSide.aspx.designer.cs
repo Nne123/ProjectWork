@@ -58,13 +58,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblFirstName;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtFirstName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtFirstName;
         
         /// <summary>
         /// lblLastName control.
@@ -76,13 +76,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblLastName;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txtLastName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtLastName;
         
         /// <summary>
         /// lblAddressLn1 control.
@@ -94,13 +94,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblAddressLn1;
         
         /// <summary>
-        /// TextBox3 control.
+        /// txtAddressLn1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox3;
+        protected global::System.Web.UI.WebControls.TextBox txtAddressLn1;
         
         /// <summary>
         /// lblAddressLn2 control.
@@ -112,13 +112,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblAddressLn2;
         
         /// <summary>
-        /// TextBox4 control.
+        /// txtAddressLn2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox4;
+        protected global::System.Web.UI.WebControls.TextBox txtAddressLn2;
         
         /// <summary>
         /// lblPhoneNo control.
@@ -130,13 +130,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblPhoneNo;
         
         /// <summary>
-        /// TextBox5 control.
+        /// txtPhoneNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox5;
+        protected global::System.Web.UI.WebControls.TextBox txtPhoneNo;
         
         /// <summary>
         /// lblEmailAddress control.
@@ -148,13 +148,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblEmailAddress;
         
         /// <summary>
-        /// TextBox6 control.
+        /// txtEmailAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox6;
+        protected global::System.Web.UI.WebControls.TextBox txtEmailAddress;
         
         /// <summary>
         /// lblCarRegNo control.
@@ -166,13 +166,22 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblCarRegNo;
         
         /// <summary>
-        /// TextBox7 control.
+        /// txtCarRegNo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox7;
+        protected global::System.Web.UI.WebControls.TextBox txtCarRegNo;
+        
+        /// <summary>
+        /// lblError control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblError;
         
         /// <summary>
         /// btnSave control.
