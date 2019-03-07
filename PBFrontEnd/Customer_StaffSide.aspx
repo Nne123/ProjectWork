@@ -13,7 +13,7 @@
         <asp:Button ID="btnDisplayAll" runat="server" Text="Display All" Width="432px" />
     </p>
     <h4>Details:</h4>
-    <table style="width: 864px;">
+    <table>
     <tr>
         <td>
         <asp:Label ID="lblFirstName" runat="server" Text="First Name:" Width="200px"></asp:Label>
@@ -36,11 +36,9 @@
         <br />
         <asp:Label ID="lblCarRegNo" runat="server" Text="Car Registration Number:" Width="200px"></asp:Label>
         <asp:TextBox ID="txtCarRegNo" runat="server"></asp:TextBox>
-        <br />
-        <br />
         </td>
         <td>
-        <asp:Label ID="lblError" runat="server" Width="432px" Font-Bold="True" ForeColor="Red"></asp:Label>
+        <asp:Label ID="lblError" runat="server" Width="432px" Font-Bold="True" ForeColor="Red" Font-Size="Small"></asp:Label>
         </td>
     </tr>
     </table>
