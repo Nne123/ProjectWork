@@ -60,6 +60,17 @@ namespace Class_Library
             return DB.Execute("sproc_tblCustomer_Insert");
         }
 
+        // Deletes the record pointed to by ThisCustomer
+        public void Delete()
+        {
+            // New instance of clsDataConnection class
+            clsDataConnection DB = new clsDataConnection();
+            // Set the parameters for the stored procedure
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            // Execute the stored procedure
+            DB.Execute("sproc_tblCustomer_Delete");
+        }
+
         // Public property for the customer
         public clsCustomer ThisCustomer
         {
