@@ -74,5 +74,27 @@ namespace PBFrontEnd
             // Add the new customer
             Add();
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            // New variable for the primary key
+            Int32 CustomerID;
+            // If a record has been selected from the list
+            if (lstCustomers.SelectedIndex != -1)
+            {
+                // Get the primary key value of the record to delete
+                CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
+                // Store the data into the session object
+                Session["CustomerID"] = CustomerID;
+                // Redirect to the delete page
+                Response.Redirect("Customer_StaffSideConfirm.aspx");
+            }
+            // If no record has been selected
+            else
+            {
+                // Show an error message
+                lblError.Text = "There were problems: <br /><br />Please select a record to delete from the list.";
+            }
+        }
     }
 }

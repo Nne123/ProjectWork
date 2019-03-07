@@ -72,6 +72,7 @@
     <Content Include="App_Data\EasyFix_log.ldf">
       <DependentUpon>EasyFix.mdf</DependentUpon>
     </Content>
+    <Content Include="Customer_StaffSideConfirm.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
     <Content Include="DeleteAppointment.aspx" />
@@ -102,6 +103,13 @@
     </Compile>
     <Compile Include="AnAppointment.aspx.designer.cs">
       <DependentUpon>AnAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_StaffSideConfirm.aspx.cs">
+      <DependentUpon>Customer_StaffSideConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer_StaffSideConfirm.aspx.designer.cs">
+      <DependentUpon>Customer_StaffSideConfirm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

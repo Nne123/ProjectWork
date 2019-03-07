@@ -46,6 +46,7 @@
     <p>
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="300px" Height="30px" />
         <asp:Button ID="btnAddNew" runat="server" Text="Add New" Width="124px" Height="30px" OnClick="btnAddNew_Click" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="100px" Height="30px" ForeColor="Red" OnClick="btnDelete_Click" />
         <br />
     </p>
 </asp:Content>
