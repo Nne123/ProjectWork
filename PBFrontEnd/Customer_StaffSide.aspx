@@ -7,7 +7,7 @@
         <br />
         Enter details to search:<br />
         <asp:TextBox ID="txtSearchField" runat="server" Width="332px"></asp:TextBox>
-        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="92px" />
+        <asp:Button ID="btnSearch" runat="server" Text="Search" Width="92px" OnClick="btnSearch_Click" />
         <br />
         <br />
         <asp:Button ID="btnDisplayAll" runat="server" Text="Display All" Width="432px" />

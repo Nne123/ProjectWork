@@ -164,5 +164,21 @@ namespace PBFrontEnd
             // Display the selected customer data
             DisplayCustomer(CustomerID);
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            // New instance of clsCustomerCollection class
+            clsCustomerCollection Customers = new clsCustomerCollection();
+            // Find the record
+            Customers.ReportByCarRegNo(txtSearchField.Text);
+            // Set the data source to the list of customers in the search collection
+            lstCustomers.DataSource = Customers.CustomerList;
+            // Set the name of the primary key
+            lstCustomers.DataValueField = "CustomerID";
+            // Set the data field to display
+            lstCustomers.DataTextField = "CarRegNo";
+            // Bind the data to the list
+            lstCustomers.DataBind();
+        }
     }
 }
