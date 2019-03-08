@@ -36,6 +36,8 @@ namespace PBFrontEnd
             lstCustomers.DataTextField = "CarRegNo";
             // Bind the data to the list
             lstCustomers.DataBind();
+            // Show the count
+            lblCurrentCount.Text = Convert.ToString(AllCustomers.CustomerList.Count);
         }
 
         // Function to display customer data
@@ -179,6 +181,14 @@ namespace PBFrontEnd
             lstCustomers.DataTextField = "CarRegNo";
             // Bind the data to the list
             lstCustomers.DataBind();
+            // Show the count
+            lblCurrentCount.Text = Convert.ToString(Customers.CustomerList.Count);
+        }
+
+        protected void btnShowAll_Click(object sender, EventArgs e)
+        {
+            // Populate the list of customers
+            DisplayCustomers();
         }
     }
 }

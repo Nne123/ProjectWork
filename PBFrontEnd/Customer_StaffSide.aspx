@@ -5,12 +5,15 @@
     <p>
         <asp:ListBox ID="lstCustomers" runat="server" Height="99px" Width="432px" OnSelectedIndexChanged="lstCustomers_SelectedIndexChanged" AutoPostBack="true"></asp:ListBox>
         <br />
-        Enter details to search:<br />
-        <asp:TextBox ID="txtSearchField" runat="server" Width="332px"></asp:TextBox>
+        Currently showing:
+        <asp:Label ID="lblCurrentCount" runat="server" Width="200px" Font-Bold="True"></asp:Label>
+        <br />
+        <br />
+        Enter car registration number to search:
+        <br />
+        <asp:TextBox ID="txtSearchField" runat="server" Width="235px"></asp:TextBox>
         <asp:Button ID="btnSearch" runat="server" Text="Search" Width="92px" OnClick="btnSearch_Click" />
-        <br />
-        <br />
-        <asp:Button ID="btnDisplayAll" runat="server" Text="Display All" Width="432px" />
+        <asp:Button ID="btnShowAll" runat="server" Text="Show All" Width="92px" OnClick="btnShowAll_Click" />
     </p>
     <h4>Details:</h4>
     <table>
