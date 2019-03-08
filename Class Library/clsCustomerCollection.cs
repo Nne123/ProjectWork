@@ -71,6 +71,24 @@ namespace Class_Library
             DB.Execute("sproc_tblCustomer_Delete");
         }
 
+        // Updates an existing record based on the values of ThisCustomer
+        public void Update()
+        {
+            // New instance of clsDataConnection class
+            clsDataConnection DB = new clsDataConnection();
+            // Set the parameters for the stored procedure
+            DB.AddParameter("@CustomerID", mThisCustomer.CustomerID);
+            DB.AddParameter("@AddressLine1", mThisCustomer.AddressLine1);
+            DB.AddParameter("@AddressLine2", mThisCustomer.AddressLine2);
+            DB.AddParameter("@Email", mThisCustomer.Email);
+            DB.AddParameter("@FirstName", mThisCustomer.FirstName);
+            DB.AddParameter("@LastName", mThisCustomer.LastName);
+            DB.AddParameter("@PhoneNo", mThisCustomer.PhoneNo);
+            DB.AddParameter("@CarRegNo", mThisCustomer.CarRegNo);
+            // Execute the stored procedure
+            DB.Execute("sproc_tblCustomer_Update");
+        }
+
         // Public property for the customer
         public clsCustomer ThisCustomer
         {

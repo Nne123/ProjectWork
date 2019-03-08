@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h4>Search:</h4>
     <p>
-        <asp:ListBox ID="lstCustomers" runat="server" Height="99px" Width="432px"></asp:ListBox>
+        <asp:ListBox ID="lstCustomers" runat="server" Height="99px" Width="432px" OnSelectedIndexChanged="lstCustomers_SelectedIndexChanged" AutoPostBack="true"></asp:ListBox>
         <br />
         Enter details to search:<br />
         <asp:TextBox ID="txtSearchField" runat="server" Width="332px"></asp:TextBox>
@@ -44,7 +44,7 @@
     </table>
     <h4>Actions:</h4>
     <p>
-        <asp:Button ID="btnSave" runat="server" Text="Save" Width="300px" Height="30px" />
+        <asp:Button ID="btnSave" runat="server" Text="Save" Width="300px" Height="30px" OnClick="btnSave_Click" />
         <asp:Button ID="btnAddNew" runat="server" Text="Add New" Width="124px" Height="30px" OnClick="btnAddNew_Click" />
         <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="100px" Height="30px" ForeColor="Red" OnClick="btnDelete_Click" />
         <br />
