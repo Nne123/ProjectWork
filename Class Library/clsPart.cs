@@ -1,4 +1,6 @@
-﻿namespace Class_Library
+﻿using System;
+
+namespace Class_Library
 {
 
     public class clsPart
