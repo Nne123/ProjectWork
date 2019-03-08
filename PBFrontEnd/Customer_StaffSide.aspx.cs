@@ -36,6 +36,8 @@ namespace PBFrontEnd
             lstCustomers.DataTextField = "CarRegNo";
             // Bind the data to the list
             lstCustomers.DataBind();
+            // Show the count
+            lblCurrentCount.Text = Convert.ToString(AllCustomers.CustomerList.Count);
         }
 
         // Function to display customer data
@@ -163,6 +165,30 @@ namespace PBFrontEnd
             Int32 CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
             // Display the selected customer data
             DisplayCustomer(CustomerID);
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            // New instance of clsCustomerCollection class
+            clsCustomerCollection Customers = new clsCustomerCollection();
+            // Find the record
+            Customers.ReportByCarRegNo(txtSearchField.Text);
+            // Set the data source to the list of customers in the search collection
+            lstCustomers.DataSource = Customers.CustomerList;
+            // Set the name of the primary key
+            lstCustomers.DataValueField = "CustomerID";
+            // Set the data field to display
+            lstCustomers.DataTextField = "CarRegNo";
+            // Bind the data to the list
+            lstCustomers.DataBind();
+            // Show the count
+            lblCurrentCount.Text = Convert.ToString(Customers.CustomerList.Count);
+        }
+
+        protected void btnShowAll_Click(object sender, EventArgs e)
+        {
+            // Populate the list of customers
+            DisplayCustomers();
         }
     }
 }
