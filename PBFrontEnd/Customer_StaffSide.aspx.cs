@@ -16,8 +16,10 @@ namespace PBFrontEnd
             // If this is the first time the page is displayed
             if (IsPostBack == false)
             {
-                // Update the list box
+                // Populate the list of customers
                 DisplayCustomers();
+                // Display the first customer data
+                DisplayCustomer(1);
             }
         }
 
@@ -34,6 +36,23 @@ namespace PBFrontEnd
             lstCustomers.DataTextField = "CarRegNo";
             // Bind the data to the list
             lstCustomers.DataBind();
+        }
+
+        // Function to display customer data
+        void DisplayCustomer(Int32 CustomerID)
+        {
+            // New instance of clsCustomerCollection class
+            clsCustomerCollection Customer = new clsCustomerCollection();
+            // Find the record to update
+            Customer.ThisCustomer.Find(CustomerID);
+            // Display the data for this record
+            txtAddressLn1.Text = Customer.ThisCustomer.AddressLine1;
+            txtAddressLn2.Text = Customer.ThisCustomer.AddressLine2;
+            txtEmailAddress.Text = Customer.ThisCustomer.Email;
+            txtFirstName.Text = Customer.ThisCustomer.FirstName;
+            txtLastName.Text = Customer.ThisCustomer.LastName;
+            txtPhoneNo.Text = Customer.ThisCustomer.PhoneNo;
+            txtCarRegNo.Text = Customer.ThisCustomer.CarRegNo;
         }
 
         // Function to add a customer
@@ -58,7 +77,7 @@ namespace PBFrontEnd
                 Customer.ThisCustomer.CarRegNo = txtCarRegNo.Text;
                 // Add the record
                 Customer.Add();
-                // Refresh the page indicating a successfull adding of a customer
+                // Refresh the page indicating a successfull add of a record
                 Response.Redirect("Customer_StaffSide.aspx");
             }
             // If there is an error
@@ -66,6 +85,41 @@ namespace PBFrontEnd
             {
                 // Show an error message
                 lblError.Text = "There were problems with the data entered: <br /><br />" + Error;
+            }
+        }
+
+        // Function to update a customer
+        void Update()
+        {
+            // New instance of clsCustomerCollection class
+            clsCustomerCollection Customer = new clsCustomerCollection();
+            // Check if there is an error message returned
+            String Error = Customer.ThisCustomer.Valid(txtAddressLn1.Text, txtAddressLn2.Text, txtEmailAddress.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtCarRegNo.Text);
+            // New variable for the primary key
+            Int32 CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
+            // If there are no errors
+            if (Error == "")
+            {
+                // Find the record to update
+                Customer.ThisCustomer.Find(CustomerID);
+                // Get the data entered by the user
+                Customer.ThisCustomer.AddressLine1 = txtAddressLn1.Text;
+                Customer.ThisCustomer.AddressLine2 = txtAddressLn2.Text;
+                Customer.ThisCustomer.Email = txtEmailAddress.Text;
+                Customer.ThisCustomer.FirstName = txtFirstName.Text;
+                Customer.ThisCustomer.LastName = txtLastName.Text;
+                Customer.ThisCustomer.PhoneNo = txtPhoneNo.Text;
+                Customer.ThisCustomer.CarRegNo = txtCarRegNo.Text;
+                // Update the record
+                Customer.Add();
+                // Refresh the page indicating a successfull update of a record
+                Response.Redirect("Customer_StaffSide.aspx");
+            }
+            // If there is an error
+            else
+            {
+                // Show an error message
+                lblError.Text = "There were problems: <br /><br />Please select a record to update from the list.";
             }
         }
 
@@ -95,6 +149,20 @@ namespace PBFrontEnd
                 // Show an error message
                 lblError.Text = "There were problems: <br /><br />Please select a record to delete from the list.";
             }
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            // Add the new customer
+            Update();
+        }
+
+        protected void lstCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // New variable for the primary key
+            Int32 CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
+            // Display the selected customer data
+            DisplayCustomer(CustomerID);
         }
     }
 }
