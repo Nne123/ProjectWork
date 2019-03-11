@@ -82,6 +82,7 @@
     <Content Include="Global.asax" />
     <Content Include="ListStaff.aspx" />
     <Content Include="MainPage.aspx" />
+    <Content Include="Part.aspx" />
     <Content Include="Staff.aspx" />
     <Content Include="StaffNewAccount.aspx" />
     <Content Include="Web.config" />
@@ -170,6 +171,13 @@
     </Compile>
     <Compile Include="MainPage.aspx.designer.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Part.aspx.cs">
+      <DependentUpon>Part.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Part.aspx.designer.cs">
+      <DependentUpon>Part.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Customer.aspx.cs">
