@@ -4,13 +4,21 @@ namespace Class_Library
 {
     public class clsStaff
     {
+        // Private data member for the Staff FirstName property
         public string FirstName { get; set; }
+        // Private data member for the Staff LastName property
         public string LastName { get; set; }
+        // Private data member for the Staff AddressLine1 property
         public string AddressLine1 { get; set; }
+        // Private data member for the Staff AddressLine2 property
         public string AddressLine2 { get; set; }
+        // Private data member for the Staff PhoneNo property
         public string PhoneNo { get; set; }
+        // Private data member for the Staff Email property
         public string Email { get; set; }
+        // Private data member for the StaffID property
         public int StaffID { get; set; }
+        // Private data member for the Error property
         public string Error { get; private set; }
 
         public string Valid(string FirstName, string LastName, string AddressLine1, string AddressLine2, string PhoneNo, string Email, int StaffID)
