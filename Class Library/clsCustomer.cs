@@ -263,5 +263,10 @@ namespace Class_Library
                 mPhoneNo = value;
             }
         }
+
+        public static implicit operator clsCustomer(clsPart v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -88,6 +88,7 @@
     <Content Include="Customer.aspx" />
     <Content Include="Customer_StaffSide.aspx" />
     <Content Include="StaffAppointment.aspx" />
+    <Content Include="CLSPART.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddStaff.aspx.cs">
@@ -205,6 +206,13 @@
     </Compile>
     <Compile Include="StaffAppointment.aspx.designer.cs">
       <DependentUpon>StaffAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CLSPART.aspx.cs">
+      <DependentUpon>CLSPART.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CLSPART.aspx.designer.cs">
+      <DependentUpon>CLSPART.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
