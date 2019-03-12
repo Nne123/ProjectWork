@@ -30,5 +30,11 @@ namespace PBFrontEnd
             // Temporary
             Response.Redirect("ListStaff.aspx");
         }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("SaveStaff.aspx");
+        }
     }
 }

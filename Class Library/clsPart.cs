@@ -5,6 +5,9 @@ namespace Class_Library
 
     public class clsPart
     {
+        internal object PartName;
+        internal object Name;
+
         // private data member for the the properties
         private string mPartType;
         private Int32 mPartID;
@@ -52,7 +55,9 @@ namespace Class_Library
                 }
             }
 
-
-
+        public static implicit operator clsPart(clsCustomer v)
+        {
+            throw new NotImplementedException();
         }
+    }
     }
