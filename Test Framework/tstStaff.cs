@@ -8,13 +8,19 @@ namespace Test_Framework
     public class tstStaff
     {
         public string TestStaff;
-
+        // this is a test string for address 1
         String TestAddressLine1 = "Wainwright Road";
+        // this is a test string for address 2
         String TestAddressLine2 = "Leicestershire";
+        // this is a test string for first name
         String TestFirstName = "Shefika";
+        // this is a test string for last name
         String TestLastName = "Sheta";
+        // this is a test string for staff ID
         Int32 TestStaffID = 1;
+        // this is a test string for Email
         String TestEmail = "test41@hotmail.com";
+        // this is a test string for PhoneNo
         String TestPhoneNo = "+079684372653";
 
 
