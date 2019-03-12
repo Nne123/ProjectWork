@@ -17,7 +17,13 @@ namespace PBFrontEnd
         protected void btnYes_Click(object sender, EventArgs e)
         {
             // Temporary
-            Response.Redirect("DefaultStaff.aspx");
+            Response.Redirect("ListStaff.aspx");
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("ListStaff.aspx");
         }
     }
 }

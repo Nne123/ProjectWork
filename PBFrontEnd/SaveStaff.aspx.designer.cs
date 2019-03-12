@@ -13,13 +13,13 @@ namespace PBFrontEnd {
     public partial class EditStaff {
         
         /// <summary>
-        /// form1 control.
+        /// SaveStaff control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm SaveStaff;
         
         /// <summary>
         /// lblAreYouSure control.
@@ -28,7 +28,7 @@ namespace PBFrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAreYouSure;
+        ///protected global::System.Web.UI.WebControls.Label lblAreYouSure;
         
         /// <summary>
         /// btnYes control.
@@ -37,7 +37,7 @@ namespace PBFrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnYes;
+        ///protected global::System.Web.UI.WebControls.Button btnYes;
         
         /// <summary>
         /// btnNo control.
@@ -46,6 +46,6 @@ namespace PBFrontEnd {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNo;
+        ///protected global::System.Web.UI.WebControls.Button btnNo;
     }
 }

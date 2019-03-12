@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="StaffDefault.aspx.cs" Inherits="PBFrontEnd.WebForm3" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<%@ Page AutoEventWireup="true" CodeBehind="Staff.aspx.cs" Inherits="PBFrontEnd.Staff" Language="C#" %>
 
 <!DOCTYPE html>
 
@@ -33,12 +32,11 @@
         <br />
         <br />
         <asp:Button ID="btnSignIn" runat="server" Height="41px" OnClick="btnSignIn_Click" Text="Sign-in" Width="202px" />
-        </td>
         <td>
+        </td>
         <asp:Button ID="btnSignUp" runat="server" Height="41px" OnClick="btnSignUp_Click" Text="Sign Up" Width="202px" />
-        <br />
-        </td>
-        <td>
+        <br/>
     </center>
+    <td />
+    <td>
 </asp:Content>
-

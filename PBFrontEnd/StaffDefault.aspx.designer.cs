@@ -10,7 +10,7 @@
 namespace PBFrontEnd {
     
     
-    public partial class Staff {
+    public partial class WebForm3 {
         
         /// <summary>
         /// lblEmail control.

@@ -12,6 +12,7 @@ namespace Class_Library
         List<clsPart> mPartList = new List<clsPart>();
         // Private data member for the customer
         clsPart mThisPart = new clsPart();
+        private List<clsCustomer> mPart;
 
         public clspartCollection()
         {
@@ -106,20 +107,18 @@ namespace Class_Library
             }
         }
 
-        // Public property for the customer
-        public clsCustomer ThisCustomer
-        {
-            get
-            {
-                // Return the private data
-                return mThisPart;
-            }
-            set
-            {
-                // Set the private data
-                mPart = value;
-            }
-        }
+        //// Public property for the customer
+        //public clsPart ThisPart
+        //{
+        //    get
+        //    {
+        //        // Return the private data
+        //        return mThisPart;
+        //    }
+        //    set =>
+        //        // Set the private data
+        //        mPart = value;
+        //}
 
         // Public property for the customer list
         public List<clsCustomer> CustomerList
