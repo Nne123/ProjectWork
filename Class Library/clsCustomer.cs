@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Class_Library
 {
@@ -265,6 +266,11 @@ namespace Class_Library
         }
 
         public static implicit operator clsCustomer(clsPart v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static implicit operator List<object>(clsCustomer v)
         {
             throw new NotImplementedException();
         }

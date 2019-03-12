@@ -1,11 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Class_Library
 {
 
     public class clsPart
     {
-        internal object PartName;
         internal object Name;
 
         // private data member for the the properties
@@ -55,7 +55,14 @@ namespace Class_Library
                 }
             }
 
+        public object PartName { get; internal set; }
+
         public static implicit operator clsPart(clsCustomer v)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static implicit operator List<object>(clsPart v)
         {
             throw new NotImplementedException();
         }

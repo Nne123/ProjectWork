@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="EasyFixBank.css" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="SaveStaff" runat="server">
         <div>
         <center>
             <h1>EasyFix</h1>

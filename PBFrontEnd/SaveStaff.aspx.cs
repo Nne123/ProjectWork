@@ -37,5 +37,11 @@ namespace PBFrontEnd
             // Temporary
             Response.Redirect("StaffNewAccount.aspx");
         }
+
+        protected void btnYes_Click(object sender, EventArgs e)
+        {
+            // Temporary
+            Response.Redirect("ListStaff.aspx");
+        }
     }
 }
