@@ -53,7 +53,7 @@ namespace Test_Framework
         [TestMethod]
         public void StaffListOK()
         {
-            // New instance of clsStaffCollection class
+            // New instance of clsStaffCollection cls
             clsStaffCollection AllStaffs = new clsStaffCollection();
             // Create a list named TestList
             List<clsStaff> TestList = new List<clsStaff>();
