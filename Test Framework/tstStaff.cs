@@ -128,7 +128,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestFirstName, TestLastName, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreEqual(Error, "Email cant be less than 6 characters long");
+            Assert.AreEqual(Error, "Email cant be less than 5 characters long");
         }
 
         [TestMethod]
