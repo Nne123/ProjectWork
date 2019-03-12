@@ -2,6 +2,7 @@
 
 namespace Class_Library
 {
+    // cls Staff Variable
     public class clsStaff
     {
         // Private data member for the Staff FirstName property
@@ -41,13 +42,13 @@ namespace Class_Library
             if (FirstName.Length == 0)
             {
                 // Return an error message
-                Error = "First name cant be blank";
+                Error = "First Name can't be blank";
             }
             // If FirstName is less than 2 characters long
             else if (FirstName.Length < 2)
             {
                 // Return an error message
-                Error = "First name must be at least 2 characters long";
+                Error = "First name must be at least 2 characters long or more";
             }
             // If FirstName is more than 40 characters long
             else if (FirstName.Length > 40)
@@ -65,7 +66,7 @@ namespace Class_Library
             else if (LastName.Length < 2)
             {
                 // Return an error message
-                Error = "Last name must be at least 2 characters long";
+                Error = "Last name must be at least 2 characters long or more";
             }
             // If LastName is more than 40 characters long
             else if (LastName.Length > 40)
@@ -79,11 +80,11 @@ namespace Class_Library
                 //return an error message saying 
                 Error = "Email cant be 40 characters long";
             }
-            //if email is less than 6 characters long 
-            else if (Email.Length > 6)
+            //if email is less than 5 characters long 
+            else if (Email.Length > 5)
             {
                 //return an error message saying 
-                Error = "Email cant be less than 6 characters long";
+                Error = "Email cant be less than 5 characters long";
             }
             //if phone number is blank
             if (PhoneNo.Length == 0)
@@ -101,7 +102,7 @@ namespace Class_Library
             else if (PhoneNo.Length > 25)
             {
                 //return an error message saying 
-                Error = "Phone number cant be 25 characters long";
+                Error = "Phone number can't be 25 characters long";
             }
             // Return the result
             return Error;
