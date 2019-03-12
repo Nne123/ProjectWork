@@ -83,7 +83,7 @@
     <Content Include="ListStaff.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Part.aspx" />
-    <Content Include="Staff.aspx" />
+    <Content Include="SaveStaff.aspx" />
     <Content Include="StaffNewAccount.aspx" />
     <Content Include="Web.config" />
     <Content Include="Customer.aspx" />
@@ -194,12 +194,12 @@
     <Compile Include="Customer_StaffSide.aspx.designer.cs">
       <DependentUpon>Customer_StaffSide.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Staff.aspx.cs">
-      <DependentUpon>Staff.aspx</DependentUpon>
+    <Compile Include="SaveStaff.aspx.cs">
+      <DependentUpon>SaveStaff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Staff.aspx.designer.cs">
-      <DependentUpon>Staff.aspx</DependentUpon>
+    <Compile Include="SaveStaff.aspx.designer.cs">
+      <DependentUpon>SaveStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="StaffNewAccount.aspx.cs">
       <DependentUpon>StaffNewAccount.aspx</DependentUpon>

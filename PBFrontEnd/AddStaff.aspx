@@ -39,7 +39,7 @@
     <br />
         <asp:Button ID="btnAdd" runat="server" Text="Add" Width="120px" Height="35px" OnClick="btnAdd_Click" /> 
                         &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnSave" runat="server" Text="Save" Width="120px" Height="35px" />
+        <asp:Button ID="btnSave" runat="server" Text="Save" Width="120px" Height="35px" OnClick="btnSave_Click" />
         <br />
         <br />
 </form>
