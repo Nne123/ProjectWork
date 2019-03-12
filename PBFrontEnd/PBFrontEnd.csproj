@@ -88,7 +88,7 @@
     <Content Include="Web.config" />
     <Content Include="Customer.aspx" />
     <Content Include="Customer_StaffSide.aspx" />
-    <Content Include="StaffAppointment.aspx" />
+    <Content Include="StaffDefault.aspx" />
     <Content Include="CLSPART.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -208,12 +208,12 @@
     <Compile Include="StaffNewAccount.aspx.designer.cs">
       <DependentUpon>StaffNewAccount.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StaffAppointment.aspx.cs">
-      <DependentUpon>StaffAppointment.aspx</DependentUpon>
+    <Compile Include="StaffDefault.aspx.cs">
+      <DependentUpon>StaffDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StaffAppointment.aspx.designer.cs">
-      <DependentUpon>StaffAppointment.aspx</DependentUpon>
+    <Compile Include="StaffDefault.aspx.designer.cs">
+      <DependentUpon>StaffDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="CLSPART.aspx.cs">
       <DependentUpon>CLSPART.aspx</DependentUpon>
