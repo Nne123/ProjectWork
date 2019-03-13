@@ -216,6 +216,7 @@ namespace Test_Framework
             Assert.AreEqual(AllAppointments.ThisAppointment, TestItem);
         }
 
+        // Doesn't really pass
         [TestMethod]
         public void ReportByMOTDateMethodOK()
         {
