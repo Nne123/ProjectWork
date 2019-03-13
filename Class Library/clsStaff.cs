@@ -5,22 +5,163 @@ namespace Class_Library
     // cls Staff Variable
     public class clsStaff
     {
-        // Private data member for the Staff FirstName property
-        public string FirstName { get; set; }
-        // Private data member for the Staff LastName property
-        public string LastName { get; set; }
-        // Private data member for the Staff AddressLine1 property
-        public string AddressLine1 { get; set; }
-        // Private data member for the Staff AddressLine2 property
-        public string AddressLine2 { get; set; }
-        // Private data member for the Staff PhoneNo property
-        public string PhoneNo { get; set; }
-        // Private data member for the Staff Email property
-        public string Email { get; set; }
-        // Private data member for the StaffID property
-        public int StaffID { get; set; }
-        // Private data member for the Error property
-        public string Error { get; private set; }
+        private int mStaffID;
+        private string mAddressLine1;
+        private string mAddressLine2;
+        private string mFirstName;
+        private string mLastName;
+        private string mPhoneNo;
+        private string mEmail;
+        private int mError;
+        private bool mActive;
+        private string mThisStaffOK;
+        private string mStaffListOK;
+
+        public string AddressLine1
+        {
+            get
+            {
+                // return the private data
+                return mAddressLine1;
+            }
+            set
+            {
+                // set the value of the private data member
+                mAddressLine1 = value;
+            }
+        }
+        public int StaffID
+        {
+            get
+            {
+                // return the private data
+                return mStaffID;
+            }
+            set
+            {
+                // set the value of the private data member
+                mStaffID = value;
+            }
+        }
+
+        public string AddressLine2
+        {
+            get
+            {
+                // return the private data
+                return mAddressLine2;
+            }
+            set
+            {
+                // set the value of the private data member
+                mAddressLine2 = value;
+            }
+        }
+
+        public string FirstName
+        {
+            get
+            {
+                // return the private data
+                return mFirstName;
+            }
+            set
+            {
+                // set the value of the private data member
+                mFirstName = value;
+            }
+        }
+
+
+        public string LastName
+        {
+            get
+            {
+                // return the private data
+                return mLastName;
+            }
+            set
+            {
+                // set the value of the private data member
+                mLastName = value;
+            }
+        }
+
+
+        public string PhoneNo
+        {
+            get
+            {
+                // return the private data
+                return mPhoneNo;
+            }
+            set
+            {
+                // set the value of the private data member
+                mPhoneNo = value;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                // return the private data
+                return mEmail; 
+            }
+            set
+            {
+                // set the value of the private data member
+                mEmail = value;
+            }
+        }
+
+        public string StaffListOK
+        {
+            get
+            {
+                // return the private data
+                return mStaffListOK;
+            }
+            set
+            {
+                // set the value of the private data member
+                mStaffListOK = value;
+            }
+        }
+
+        public string ThisStaffOK
+        {
+            get
+            {
+                // return the private data
+                return mThisStaffOK;
+            }
+            set
+            {
+                // set the value of the private data member
+                mThisStaffOK = value;
+            }
+        }
+
+        //public int StaffID { get; internal set; }
+
+        //// Private data member for the Staff FirstName property
+        //public string FirstName { get; set; }
+        //// Private data member for the Staff LastName property
+        //public string LastName { get; set; }
+        //// Private data member for the Staff AddressLine1 property
+        //public string AddressLine1 { get; set; }
+        //// Private data member for the Staff AddressLine2 property
+        //public string AddressLine2 { get; set; }
+        //// Private data member for the Staff PhoneNo property
+        //public string PhoneNo { get; set; }
+        //// Private data member for the Staff Email property
+        //public string Email { get; set; }
+        //// Private data member for the StaffID property
+        //public int StaffID { get; set; }
+        //// Private data member for the Error property
+        //public string Error { get; private set; }
 
         public string Valid(string FirstName, string LastName, string AddressLine1, string AddressLine2, string PhoneNo, string Email, int StaffID)
         {
@@ -33,7 +174,7 @@ namespace Class_Library
                 Error = "AddressLine1 cant have more than 50 characters";
             }
             // If AddressLine2 is more than 100 characters long
-           else  if (AddressLine2.Length > 100)
+            else if (AddressLine2.Length > 100)
             {
                 // Return an error message
                 Error = "AddressLine2 cant have more than 100 characters";
@@ -107,5 +248,45 @@ namespace Class_Library
             // Return the result
             return Error;
         }
+
+        public bool Find(int StaffID)
+        {
+            // create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            // add the parameter for the appointment no to search for
+            DB.AddParameter("@StaffID", StaffID);
+            // execute the stored procedure
+            DB.Execute("sproc_tblStaff_FilterByStaffID");
+            // if one record is found (there should be either one or zero)
+            if (DB.Count == 1)
+            {
+                // set the private data member for the AppointmentID property
+                mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+                mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+                mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+                mAddressLine1 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine1"]);
+                mAddressLine2 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine2"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
+                mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
+                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                // return that everything worked OK
+                return true;
+            }
+            // if no record was found
+            else
+            {
+                // return false indicating a problem
+                return false;
+            }
+        }
+
     }
 }
+
+
+
+
+
+
+
