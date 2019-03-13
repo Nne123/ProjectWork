@@ -1041,7 +1041,7 @@ namespace Test_Framework
             // invoke the method
             Found = AnAppointment.Find(AppointmentID);
             // check the appointment no
-            if (AnAppointment.MOTDate != Convert.ToDateTime("01/03/2019"))
+            if (AnAppointment.MOTDate != Convert.ToDateTime("16/03/2019"))
             {
                 OK = false;
             }
@@ -1059,7 +1059,7 @@ namespace Test_Framework
             // boolean variable to record if the data is OK (assume it is)
             Boolean OK = true;
             // create some test data to use with the method
-            Int32 AppointmentID = 15;
+            Int32 AppointmentID = 5;
             // invoke the method
             Found = AnAppointment.Find(AppointmentID);
             // check the appointment no

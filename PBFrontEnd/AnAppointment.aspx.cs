@@ -141,6 +141,10 @@ namespace PBFrontEnd
             chkActive.Checked = AppointmentBook.ThisAppointment.Active;
             ddlMOTTime.SelectedValue = AppointmentBook.ThisAppointment.MOTTimeID.ToString();
         }
-        
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("DefaultAppointment.aspx");
+        }
     }
 }
