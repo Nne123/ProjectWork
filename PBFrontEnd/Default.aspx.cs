@@ -19,5 +19,10 @@ namespace PBFrontEnd
             // Temporary
             Response.Redirect("MainPage.aspx");
         }
+
+        protected void lstPart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
