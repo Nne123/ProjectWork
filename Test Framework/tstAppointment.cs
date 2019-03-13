@@ -1041,7 +1041,7 @@ namespace Test_Framework
             // invoke the method
             Found = AnAppointment.Find(AppointmentID);
             // check the appointment no
-            if (AnAppointment.MOTDate != Convert.ToDateTime("09/03/2019"))
+            if (AnAppointment.MOTDate != Convert.ToDateTime("16/03/2019"))
             {
                 OK = false;
             }
