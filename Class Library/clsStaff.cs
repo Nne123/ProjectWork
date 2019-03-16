@@ -12,7 +12,6 @@ namespace Class_Library
         private string mLastName;
         private string mPhoneNo;
         private string mEmail;
-        private int mError;
         private bool mActive;
         private string mThisStaffOK;
         private string mStaffListOK;
@@ -28,6 +27,19 @@ namespace Class_Library
             {
                 // set the value of the private data member
                 mAddressLine1 = value;
+            }
+        }
+        public bool Active
+        {
+            get
+            {
+                // return the private data
+                return mActive;
+            }
+            set
+            {
+                // set the value of the private data member
+                mActive = value;
             }
         }
         public int StaffID
@@ -165,8 +177,18 @@ namespace Class_Library
 
         public string Valid(string FirstName, string LastName, string AddressLine1, string AddressLine2, string PhoneNo, string Email, int StaffID)
         {
-            //new variable Error
+            // string variable to store the error message
             string Error = "";
+            //// create a temporary variable to store date values
+            //Int32 FirstName;
+            //// create a temporary variable to store the customer id
+            //Int32 StaffID;
+            //// create a temporary variable to store the staff id
+            //Int32 LastName;
+            //// create a temporary variable to store the staff id
+            //Int32 AddressLine1;
+
+
             // If AddressLine1 is more than 50 characters long
             if (AddressLine1.Length > 50)
             {
