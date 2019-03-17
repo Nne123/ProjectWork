@@ -298,7 +298,6 @@ namespace Class_Library
                 mAddressLine2 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine2"]);
                 mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
                 mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
-                mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
                 mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
                 // return that everything worked OK
                 return true;
