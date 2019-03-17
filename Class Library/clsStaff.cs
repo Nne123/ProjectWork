@@ -188,6 +188,14 @@ namespace Class_Library
             //// create a temporary variable to store the staff id
             //Int32 AddressLine1;
 
+            //if (FirstName != "")
+            //{
+            //    return "";
+            //}
+            //else
+            //{
+            //    return "The First Name must not be blank";
+            //}
 
             // If AddressLine1 is more than 50 characters long
             if (AddressLine1.Length > 50)
