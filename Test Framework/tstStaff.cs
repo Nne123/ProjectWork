@@ -132,6 +132,19 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void AddMethodOK()
+        {
+            //New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestFirstName, TestLastName, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "Email cant be less than 5 characters long");
+        }
+
+        [TestMethod]
         public void FirstNameMinLessOne()         
         {
            // New instance of clsStaff class
@@ -655,6 +668,19 @@ namespace Test_Framework
             //test to see that the result is NOT OK i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
-
+        ////[TestMethod]
+        ////public void FindMethodOK()
+        ////{
+        ////    // create an instance of clsStaff
+        ////    clsStaff AStaff = new clsStaff();
+        ////    // boolean variable to store the results of the validation
+        ////    Boolean Found = true;
+        ////    // create some test data to test the method
+        ////    Int32 PhoneNo = 1234567892;
+        ////    // invoke the method
+        ////    Found = AStaff.Find (PhoneNo);
+        ////    //test to see that the result is NOT OK i.e there should be an error message
+        ////    Assert.IsTrue(Found);
+        ////}
     }
 }
