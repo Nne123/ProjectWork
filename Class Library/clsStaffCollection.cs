@@ -81,9 +81,6 @@ namespace Class_Library
             }
         }
 
-
-
-
         // public property for ThisStaff
         public clsStaff ThisStaff
         {

@@ -15,6 +15,9 @@ namespace Class_Library
         private bool mActive;
         private string mThisStaffOK;
         private string mStaffListOK;
+        private string mAddMethodOK;
+        private string mDeleteMethodOK;
+        private string mUpdateMethodOK;
 
         public string AddressLine1
         {
@@ -156,6 +159,47 @@ namespace Class_Library
             }
         }
 
+        public string AddMethodOK
+        {
+            get
+            {
+                // return the private data
+                return mAddMethodOK;
+            }
+            set
+            {
+                // set the value of the private data member
+                mAddMethodOK = value;
+            }
+        }
+
+        public string DeleteMethodOK
+        {
+            get
+            {
+                // return the private data
+                return mDeleteMethodOK;
+            }
+            set
+            {
+                // set the value of the private data member
+                mDeleteMethodOK = value;
+            }
+        }
+
+        public string UpdateMethodOK
+        {
+            get
+            {
+                // return the private data
+                return mUpdateMethodOK;
+            }
+            set
+            {
+                // set the value of the private data member
+                mUpdateMethodOK = value;
+            }
+        }
         //public int StaffID { get; internal set; }
 
         //// Private data member for the Staff FirstName property
@@ -309,6 +353,37 @@ namespace Class_Library
                 return false;
             }
         }
+
+        //public bool Add(int StaffID)
+        //{
+        //    // create an instance of the data connection
+        //    clsDataConnection DB = new clsDataConnection();
+        //    // add the parameter for the appointment no to search for
+        //    DB.AddParameter("@StaffID", StaffID);
+        //    // execute the stored procedure
+        //    DB.Execute("sproc_tblStaff_FilterByStaffID");
+        //    // if one record is found (there should be either one or zero)
+        //    if (DB.Count == 1)
+        //    {
+        //        // set the private data member for the AppointmentID property
+        //        mFirstName = Convert.ToString(DB.DataTable.Rows[0]["FirstName"]);
+        //        mLastName = Convert.ToString(DB.DataTable.Rows[0]["LastName"]);
+        //        mStaffID = Convert.ToInt32(DB.DataTable.Rows[0]["StaffID"]);
+        //        mAddressLine1 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine1"]);
+        //        mAddressLine2 = Convert.ToString(DB.DataTable.Rows[0]["AddressLine2"]);
+        //        mPhoneNo = Convert.ToString(DB.DataTable.Rows[0]["PhoneNo"]);
+        //        mEmail = Convert.ToString(DB.DataTable.Rows[0]["Email"]);
+        //        mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+        //        // return that everything worked OK
+        //        return true;
+        //    }
+        //    // if no record was found
+        //    else
+        //    {
+        //        // return false indicating a problem
+        //        return false;
+        //    }
+        //}
 
     }
 }

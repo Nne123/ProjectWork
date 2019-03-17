@@ -132,6 +132,19 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void AddMethodOK()
+        {
+            //New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestFirstName, TestLastName, TestPhoneNo, TestEmail, TestStaffID);
+            // Check whether there is an error
+            Assert.AreEqual(Error, "Email cant be less than 5 characters long");
+        }
+
+        [TestMethod]
         public void FirstNameMinLessOne()         
         {
            // New instance of clsStaff class
