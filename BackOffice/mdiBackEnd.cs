@@ -160,15 +160,15 @@ namespace BackOffice
 
         private void SetLinks(Boolean Authenticated, Boolean IsAdmin)
         {
-            //sets the enabled state of links based on the authentiaction state and if the user is admin or not
-            //set the login option to the opposite of authentiaction
-            signInToolStripMenuItem.Enabled = !Authenticated;
-            //if the user is authentiacted then enable the following
-            signOutToolStripMenuItem.Enabled = Authenticated;
-            changePasswordToolStripMenuItem.Enabled = Authenticated;
-            //if the user is authenticated and admin then enable the following
-            reSetPasswordToolStripMenuItem.Enabled = Authenticated & IsAdmin;
-            addUserToolStripMenuItem.Enabled = Authenticated & IsAdmin;
+            ////sets the enabled state of links based on the authentiaction state and if the user is admin or not
+            ////set the login option to the opposite of authentiaction
+            //signInToolStripMenuItem.Enabled = !Authenticated;
+            ////if the user is authentiacted then enable the following
+            //signOutToolStripMenuItem.Enabled = Authenticated;
+            //changePasswordToolStripMenuItem.Enabled = Authenticated;
+            ////if the user is authenticated and admin then enable the following
+            //reSetPasswordToolStripMenuItem.Enabled = Authenticated & IsAdmin;
+            //addUserToolStripMenuItem.Enabled = Authenticated & IsAdmin;
         }
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
