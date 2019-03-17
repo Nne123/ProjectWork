@@ -89,7 +89,7 @@ namespace PBFrontEnd
             else
             {
                 // report an error
-                lblError.Text = "There were problems wit the data entered " + Error;
+                lblError.Text = "There were problems wit the data entered:  " + "  " + Error;
             }
         }
 

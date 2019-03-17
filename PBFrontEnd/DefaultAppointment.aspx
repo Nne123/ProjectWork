@@ -19,7 +19,6 @@
 &nbsp;&nbsp;
         <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="73px" OnClick="btnEdit_Click" />
 &nbsp;&nbsp;
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="68px" OnClick="btnDelete_Click" />
         <br />
         <br />
         <asp:Label ID="lblError" runat="server" Text="lblError"></asp:Label>
