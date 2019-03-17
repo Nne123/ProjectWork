@@ -71,7 +71,6 @@
     <Content Include="Customer_StaffSideConfirm.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
-    <Content Include="DeleteAppointment.aspx" />
     <Content Include="DeleteStaff.aspx" />
     <Content Include="EasyFixBank.css" />
     <Content Include="EditStaff.aspx" />
@@ -122,13 +121,6 @@
     </Compile>
     <Compile Include="DefaultAppointment.aspx.designer.cs">
       <DependentUpon>DefaultAppointment.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteAppointment.aspx.cs">
-      <DependentUpon>DeleteAppointment.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteAppointment.aspx.designer.cs">
-      <DependentUpon>DeleteAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="DeleteStaff.aspx.cs">
       <DependentUpon>DeleteStaff.aspx</DependentUpon>

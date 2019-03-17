@@ -133,7 +133,7 @@ namespace Class_Library
             Int32 JobIDTemp;            
 
 
-            // if the name of the car reg no is not blank
+            // if the name of the car reg no is more than 8 char
             if (carRegNo.Length > 8)
             {
                 // return an error message
@@ -144,7 +144,7 @@ namespace Class_Library
             if (carRegNo.Length < 7)
             {
                 // return an error message
-                Error = "The car reg no cannot have more than 8 characters";
+                Error = "The car reg no must be less than 6 characters";
             }
 
             if (carRegNo.Length == 0)
@@ -159,11 +159,11 @@ namespace Class_Library
                 CustomerIDTemp = Convert.ToInt32(CustomerID);
                 if (CustomerIDTemp < 1)
                 {
-                    Error = Error + "The CustomerID must be four digits : ";
+                    Error = Error + "The CustomerID must be more more than 1 : ";
                 }
                 if (CustomerIDTemp > 600)
                 {
-                    Error = Error + "The CustomerID must be four digits : ";
+                    Error = Error + "The CustomerID cannot be more than 600 : ";
                 }
             }
             catch
@@ -176,11 +176,11 @@ namespace Class_Library
                 StaffIDTemp = Convert.ToInt32(StaffID);
                 if (StaffIDTemp < 1)
                 {
-                    Error = Error + "The Staff ID must be four digits : ";
+                    Error = Error + "The Staff ID must be more than 1 : ";
                 }
                 if (StaffIDTemp > 600)
                 {
-                    Error = Error + "The Staff ID must be four digits : ";
+                    Error = Error + "The Staff ID cannot be more than 600 : ";
                 }
             }
             catch
@@ -193,11 +193,11 @@ namespace Class_Library
                 JobIDTemp = Convert.ToInt32(JobID);
                 if (JobIDTemp < 1)
                 {
-                    Error = Error + "The Job ID must be four digits : ";
+                    Error = Error + "The Job ID must be more than 1 : ";
                 }
                 if (JobIDTemp > 600)
                 {
-                    Error = Error + "The Job ID must be four digits : ";
+                    Error = Error + "The Job ID cannot be more than 600 : ";
                 }
             }
             catch

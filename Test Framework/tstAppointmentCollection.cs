@@ -250,17 +250,17 @@ namespace Test_Framework
             // var to store outcome
             Boolean OK = true;
             // apply a mot date that doesnt exist
-            FilteredAppointments.ReportByMOTDate(Convert.ToDateTime("07/03/2019"));
+            FilteredAppointments.ReportByMOTDate(Convert.ToDateTime("27/02/2019"));
             // check that the correct number of records are found
             if (FilteredAppointments.Count == 2)
             {
                 // check that the first record is ID 114
-                if (FilteredAppointments.AppointmentList[0].AppointmentID != 114)
+                if (FilteredAppointments.AppointmentList[0].AppointmentID != 4)
                 {
                     OK = false;
                 }
                 // check that the first record is ID 116
-                if (FilteredAppointments.AppointmentList[1].AppointmentID != 116)
+                if (FilteredAppointments.AppointmentList[1].AppointmentID != 5)
                 {
                     OK = false;
                 }

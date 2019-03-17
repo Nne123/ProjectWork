@@ -9,7 +9,7 @@ namespace Test_Framework
     {
         // good test data
         // create some test data to pass the method
-        string carRegNo = "1234 6GH";
+        string carRegNo = "1234 7G6";
         string MOTDate = DateTime.Now.AddDays(1).ToString();
         string CustomerID = Convert.ToString(25);
         string StaffID = Convert.ToString(35);
@@ -44,7 +44,7 @@ namespace Test_Framework
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
             // create some test data to assign to the property
-            string TestData = "123 6GH";
+            string TestData = "1234 6GH";
             // assign the data to the property
             AnAppointment.CarRegNo = TestData;
             // test to see that the two values are the same
@@ -214,7 +214,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTDateExtremeMin()
+        public void MOTDateExtremeMin()         // - 100 days
         {
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -235,7 +235,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTDateMinLessOne()
+        public void MOTDateMinLessOne()           // Today
         {
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -255,7 +255,7 @@ namespace Test_Framework
 
 
         [TestMethod]
-        public void MOTDateMinBoundary() // min tomorrow's date
+        public void MOTDateMinBoundary() // boundary today + 1
         {
             // create an instance of clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -340,7 +340,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void MOTDateMaxPlusOne()      // todays date + 22
+        public void MOTDateMaxPlusOne()      // max todays date + 22
         {
             // create an instance of the class we want to create
             clsAppointment AnAppointment = new clsAppointment();
@@ -525,7 +525,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void CustomerIDMid()
+        public void CustomerIDMid()                // mid 300
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -542,7 +542,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void CustomerIDExtremeMax()
+        public void CustomerIDExtremeMax()         // extreme 6000
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -630,7 +630,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void StaffIDMaxLessOne()
+        public void StaffIDMaxLessOne()         // 599
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -647,7 +647,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void StaffIDMaxBoundary()
+        public void StaffIDMaxBoundary()       // 600
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -748,7 +748,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void JobIDMinBoundary()
+        public void JobIDMinBoundary()          // 1
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -765,7 +765,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void JobIDMinPlusOne()
+        public void JobIDMinPlusOne()        // 2
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -782,7 +782,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void JobIDMaxLessOne()
+        public void JobIDMaxLessOne()        // 599
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -799,7 +799,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void JobIDMaxBoundary()
+        public void JobIDMaxBoundary()      // 600
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -833,7 +833,7 @@ namespace Test_Framework
         }
 
         [TestMethod]
-        public void JobIDMid()
+        public void JobIDMid()         // 300
         {
             // create an instance of our class clsAppointment
             clsAppointment AnAppointment = new clsAppointment();
@@ -1041,7 +1041,7 @@ namespace Test_Framework
             // invoke the method
             Found = AnAppointment.Find(AppointmentID);
             // check the appointment no
-            if (AnAppointment.MOTDate != Convert.ToDateTime("16/03/2019"))
+            if (AnAppointment.MOTDate != Convert.ToDateTime("20/03/2019"))
             {
                 OK = false;
             }
