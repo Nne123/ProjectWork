@@ -31,8 +31,9 @@
             </td>
         </tr>
     </table>
+    <br />
+    <asp:Label ID="lblSuccess" runat="server" Font-Bold="True" ForeColor="Green" Font-Size="Small"></asp:Label>
     <p>
-        <br />
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="182px" OnClick="btnSave_Click" />
         <asp:Button ID="btnReset" runat="server" Text="Reset" Width="181px" OnClick="btnReset_Click" />
         <br />

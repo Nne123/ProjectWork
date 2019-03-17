@@ -62,8 +62,8 @@ namespace PBFrontEnd
                 Customer.ThisCustomer.CarRegNo = txtCarRegNo.Text;
                 // Update the record
                 Customer.Update();
-                // Refresh the page indicating a successfull update of a record
-                Response.Redirect("Customer.aspx");
+                // Indicate a successfull update of a record
+                lblSuccess.Text = "Your details updated successfully.";
             }
             // If there is an error
             else
