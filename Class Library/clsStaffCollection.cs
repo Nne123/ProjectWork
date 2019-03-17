@@ -15,8 +15,6 @@ namespace Class_Library
         //private data member that stores the count of records found
         private Int32 mRecordCount;
 
-        //public clsStaff ThisStaff { get; set; }
-
         //public constructor for the class
         public clsStaffCollection()
         {
@@ -36,6 +34,7 @@ namespace Class_Library
                 // New instance of clsStaff class
                 clsStaff AStaff = new clsStaff();
                 // Read in the fields from the current record
+                AStaff.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
                 AStaff.AddressLine1 = Convert.ToString(DB.DataTable.Rows[Index]["AddressLine1"]);
                 AStaff.AddressLine2 = Convert.ToString(DB.DataTable.Rows[Index]["AddressLine2"]);
                 AStaff.StaffID = Convert.ToInt32(DB.DataTable.Rows[Index]["StaffID"]);

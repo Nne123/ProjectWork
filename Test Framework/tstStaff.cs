@@ -668,6 +668,19 @@ namespace Test_Framework
             //test to see that the result is NOT OK i.e there should be an error message
             Assert.AreNotEqual(Error, "");
         }
-
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // boolean variable to store the results of the validation
+            Boolean Found = false;
+            // create some test data to test the method
+            Int32 PhoneNo = 1234567891;
+            // invoke the method
+            Found = AStaff.Find (PhoneNo);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.IsTrue(Found);
+        }
     }
 }

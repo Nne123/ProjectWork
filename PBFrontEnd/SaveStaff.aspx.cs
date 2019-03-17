@@ -9,6 +9,8 @@ namespace PBFrontEnd
 {
     public partial class Staff : System.Web.UI.Page
     {
+        public static object StaffList { get; internal set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
