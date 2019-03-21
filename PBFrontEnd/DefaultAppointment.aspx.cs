@@ -70,7 +70,7 @@ namespace PBFrontEnd
         Int32 DisplayAppointments(DateTime MOTDateFilter)
         {
             // create an instance of the appointment collection class
-            Class_Library.clsAppointmentCollection MyAppointmentBook = new Class_Library.clsAppointmentCollection();
+            clsAppointmentCollection MyAppointmentBook = new clsAppointmentCollection();
             // var to store the count of records
             Int32 RecordCount;
             // var to store the staff id
