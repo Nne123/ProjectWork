@@ -10,7 +10,7 @@
 namespace PBFrontEnd {
     
     
-    public partial class Default1 {
+    public partial class ProductName {
         
         /// <summary>
         /// form1 control.

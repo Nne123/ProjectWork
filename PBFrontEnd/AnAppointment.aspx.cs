@@ -187,7 +187,7 @@ namespace PBFrontEnd
 
         protected void btnStaffIDs_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AppointmentCartDetailsStaff2.aspx");
+            Response.Redirect("AppointmentStaffDetails.aspx");
         }
     }
 }

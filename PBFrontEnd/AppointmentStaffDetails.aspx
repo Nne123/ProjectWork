@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="AppointmentCartDetailsStaff2.aspx.cs" Inherits="PBFrontEnd.AppointmentCartDetailsStaff2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="AppointmentStaffDetails.aspx.cs" Inherits="PBFrontEnd.AppointmentCartDetailsStaff2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <br />
     <asp:Label ID="lblStaffReference" runat="server" Font-Bold="True" Font-Size="Larger" Text="Staff Reference"></asp:Label>
@@ -21,4 +21,8 @@
                 <td>Powers</td>
             </tr>
         </table>
+    <br />
+    <br />
+    <asp:Button ID="btnBack" runat="server" Text="Back" OnClick="btnBack_Click" Width="118px" />
+    <br />
 </asp:Content>
