@@ -13,15 +13,11 @@ namespace PBFrontEnd
         // handles the load event for the page
         protected void Page_Load(object sender, EventArgs e)
         {
-           // DateTime MOTDateListed = Convert.ToDateTime("dd/mm/yyyy");
-
-            //DateTime? testDate = null;
-
             // clear an existing error message
             lblError.Text = "";
             // if this is the first time the page is displayed
             if (IsPostBack == false)
-            {
+            {                
                 // update the list box
                 lblError.Text = DisplayAppointments(Convert.ToDateTime("27/03/2019")) + "  records in the database";
             }

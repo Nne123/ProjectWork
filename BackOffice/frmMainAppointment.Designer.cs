@@ -31,7 +31,6 @@
             this.lstAppointments = new System.Windows.Forms.ListBox();
             this.btnPopulate = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstAppointments
@@ -55,28 +54,17 @@
             // lblError
             // 
             this.lblError.AutoSize = true;
-            this.lblError.Location = new System.Drawing.Point(56, 301);
+            this.lblError.Location = new System.Drawing.Point(56, 291);
             this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(9, 13);
-            this.lblError.TabIndex = 2;
-            this.lblError.Text = "l";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(149, 260);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 3;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.lblError.Size = new System.Drawing.Size(10, 13);
+            this.lblError.TabIndex = 4;
+            this.lblError.Text = ".";
             // 
             // frmMainAppointment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(445, 375);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnPopulate);
             this.Controls.Add(this.lstAppointments);
@@ -93,7 +81,6 @@
         private System.Windows.Forms.ListBox lstAppointments;
         private System.Windows.Forms.Button btnPopulate;
         private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Button btnAdd;
     }
 }
 
