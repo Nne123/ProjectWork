@@ -10,7 +10,7 @@
 namespace PBFrontEnd {
     
     
-    public partial class AppointmentCartDetailsStaff {
+    public partial class AppointmentCartDetailsStaff2 {
         
         /// <summary>
         /// lblStaffReference control.
