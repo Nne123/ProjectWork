@@ -40,67 +40,20 @@ namespace PBFrontEnd
         // event handler for OK button
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            // var to store the error message
-            string ErrorMsg;
-            // create an instance of the appointment collection class
-            clsAppointmentCollection AppointmentBook = new clsAppointmentCollection();
-            //use the objects validation method to test the data
-            ErrorMsg = AppointmentBook.ThisAppointment.Valid(txtCarRegNo.Text, txtMOTDate.Text, txtStaffID.Text, txtJobID.Text, txtCustomerID.Text);
-            // if no error is returned
-            if (ErrorMsg == "")
+            // if appointment does not exist
+            if (AppointmentID == -1)
             {
-                // if we are adding a new record
-                if (AppointmentID == -1)
-                {
-                    //set the car reg number property of the object
-                    AppointmentBook.ThisAppointment.CarRegNo = txtCarRegNo.Text;
-                    //set the customer id property of the object
-                    AppointmentBook.ThisAppointment.CustomerID = Convert.ToInt32(txtCustomerID.Text);
-                    //set the staff id property of the object
-                    AppointmentBook.ThisAppointment.StaffID = Convert.ToInt32(txtStaffID.Text);
-                    //set the active property of the object
-                    AppointmentBook.ThisAppointment.Active = chkActive.Checked;
-                    //set the mot time property of the object
-                    AppointmentBook.ThisAppointment.MOTTimeID = Convert.ToInt32(ddlMOTTime.SelectedValue);
-                    //set the job id property of the object
-                    AppointmentBook.ThisAppointment.JobID = Convert.ToInt32(txtJobID.Text);
-                    //set the mot date property of the object
-                    AppointmentBook.ThisAppointment.MOTDate = Convert.ToDateTime(txtMOTDate.Text);
-                    // invoke the add method
-                    Add();
-                }
-                else
-                {
-                    // // find the record to be updated
-                    AppointmentBook.ThisAppointment.Find(AppointmentID);
-                    //set the car reg number property of the object
-                    AppointmentBook.ThisAppointment.CarRegNo = txtCarRegNo.Text;
-                    //set the customer id property of the object
-                    AppointmentBook.ThisAppointment.CustomerID = Convert.ToInt32(txtCustomerID.Text);
-                    //set the staff id property of the object
-                    AppointmentBook.ThisAppointment.StaffID = Convert.ToInt32(txtStaffID.Text);
-                    //set the active property of the object
-                    AppointmentBook.ThisAppointment.Active = chkActive.Checked;
-                    //set the mot time property of the object
-                    AppointmentBook.ThisAppointment.MOTTimeID = Convert.ToInt32(ddlMOTTime.SelectedValue);
-                    //set the job id property of the object
-                    AppointmentBook.ThisAppointment.JobID = Convert.ToInt32(txtJobID.Text);
-                    //set the mot date property of the object
-                    AppointmentBook.ThisAppointment.MOTDate = Convert.ToDateTime(txtMOTDate.Text);
-                    // update the record
-                    Update();
-                }
-            
-            //// all done so redirect back to the main page
-            Response.Redirect("DefaultAppointment.aspx");
-
+                // add it to the database
+                Add();
             }
-            else // there are errors
+            // otherwise
+            else
             {
-                //display the error message
-                lblError.Text = ErrorMsg;
+                // update it to the database
+                Update();
             }
-            
+            // return to main page
+            Response.Redirect("DefaultAppointment.aspx");          
         }
 
 
@@ -108,7 +61,7 @@ namespace PBFrontEnd
         void Add()
         {
             // create an instance of the appointment book
-            Class_Library.clsAppointmentCollection AppointmentBook = new Class_Library.clsAppointmentCollection();
+            clsAppointmentCollection AppointmentBook = new clsAppointmentCollection();
             // validate the data on the web form
             String Error = AppointmentBook.ThisAppointment.Valid(txtMOTDate.Text, txtCarRegNo.Text, txtCustomerID.Text, txtStaffID.Text, txtJobID.Text);
             // if the data is OK then add it to the object
@@ -124,6 +77,8 @@ namespace PBFrontEnd
                 AppointmentBook.ThisAppointment.MOTTimeID = Convert.ToInt32(ddlMOTTime.SelectedValue);
                 // add the record
                 AppointmentBook.Add();
+                // all done so redirect back to the main page
+                Response.Redirect("DefaultAppointment.aspx");
             }
             else
             {
@@ -137,7 +92,7 @@ namespace PBFrontEnd
         void Update()
         {
             // create an instance of the appointment book
-            Class_Library.clsAppointmentCollection AppointmentBook = new Class_Library.clsAppointmentCollection();
+            clsAppointmentCollection AppointmentBook = new clsAppointmentCollection();
             // validate the data on the web form
             String Error = AppointmentBook.ThisAppointment.Valid(txtMOTDate.Text, txtCarRegNo.Text, txtCustomerID.Text, txtStaffID.Text, txtJobID.Text);
             // if the data is OK then add it to the object
