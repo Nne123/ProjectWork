@@ -12,14 +12,14 @@ namespace Class_Library
         List<clsPart> mPartList = new List<clsPart>();
         // Private data member for the customer
         clsPart mThisPart = new clsPart();
-        private List<clsCustomer> mPart;
+        private List<clsPart> mPart;
 
         public clspartCollection()
         {
             // New instance of clsDataConnection class
             clsDataConnection DB = new clsDataConnection();
             // Execute the stored procedure
-            DB.Execute("sproc_tblpart_SelectAll");
+            DB.Execute("sproc_tblPart_SelectAll");
             // Populate the array list with the data table
             PopulateArray(DB);
         }
@@ -30,12 +30,12 @@ namespace Class_Library
             // New instance of clsDataConnection class
             clsDataConnection DB = new clsDataConnection();
             // Set the parameters for the stored procedure
-            DB.AddParameter("@FirstName", mThisPart.PartName);
+            DB.AddParameter("@FirstName", mThisPart.PartType);
             // Execute the query returning the primary key value
             return DB.Execute("sproc_tblPart_Insert");
         }
 
-        // Deletes the record pointed to by ThisCustomer
+        // Deletes the record pointed to by ThisPart
         public void Delete()
         {
             // New instance of clsDataConnection class
@@ -46,7 +46,7 @@ namespace Class_Library
             DB.Execute("sproc_part_Delete");
         }
 
-        // Updates an existing record based on the values of ThisCustomer
+        // Updates an existing record based on the values of ThisPart
         public void Update()
         {
             // New instance of clsDataConnection class
@@ -55,22 +55,22 @@ namespace Class_Library
             DB.AddParameter("@PartID", mThisPart.PartID);
       
 
-            DB.AddParameter("@FirstName", mThisPart.Name);
-            DB.AddParameter("@LastName", mThisPart.Name);
+            DB.AddParameter("@PartType", mThisPart.PartType);
+            DB.AddParameter("@Active", mThisPart.Active);
             
             // Execute the stored procedure
             DB.Execute("sproc_part_Update");
         }
 
-        // Filters the records based on the values of full or partial CarRegNo
-        public void ReportByCarRegNo(string CarRegNo)
+        // Filters the records based on the values of full or partial Part ID
+        public void ReportByPartID(string PartID)
         {
             // New instance of clsDataConnection class
             clsDataConnection DB = new clsDataConnection();
             // Set the parameters for the stored procedure
-            DB.AddParameter("@CarRegNo", CarRegNo);
+            DB.AddParameter("@CarRegNo", PartID);
             // Execute the stored procedure
-            DB.Execute("sproc_tblCustomer_FilterByCarRegNo");
+            DB.Execute("sproc_tblPart_FilterByPartID");
             // Populate the array list with the data table
             PopulateArray(DB);
         }
@@ -85,23 +85,20 @@ namespace Class_Library
             // Get the count of records
             RecordCount = DB.Count;
             // Clear the private array list
-            mPart = new List<clsCustomer>();
+            mPart = new List<clsPart>();
             // While there are records to process
             while (Index < RecordCount)
             {
                 // New instance of clsCustomer class
-                clsCustomer ACustomer = new clsCustomer();
+                clsPart APart = new clsPart();
                 // Read in the fields from the current record
-                ACustomer.AddressLine1 = Convert.ToString(DB.DataTable.Rows[Index]["AddressLine1"]);
-                ACustomer.AddressLine2 = Convert.ToString(DB.DataTable.Rows[Index]["AddressLine2"]);
-                ACustomer.CustomerID = Convert.ToInt32(DB.DataTable.Rows[Index]["PartID"]);
-                ACustomer.Email = Convert.ToString(DB.DataTable.Rows[Index]["Email"]);
-                ACustomer.FirstName = Convert.ToString(DB.DataTable.Rows[Index]["FirstName"]);
-                ACustomer.LastName = Convert.ToString(DB.DataTable.Rows[Index]["LastName"]);
-                ACustomer.PhoneNo = Convert.ToString(DB.DataTable.Rows[Index]["PhoneNo"]);
-                ACustomer.CarRegNo = Convert.ToString(DB.DataTable.Rows[Index]["CarRegNo"]);
+
+                APart.PartID = Convert.ToInt32(DB.DataTable.Rows[Index]["PartID"]);
+                APart.PartType = Convert.ToString(DB.DataTable.Rows[Index]["PartType"]);
+                APart.Active = Convert.ToBoolean(DB.DataTable.Rows[Index]["Active"]);
+                
                 // Add the record to the private data member
-                mPart.Add(ACustomer);
+                mPart.Add(APart);
                 // Increment the index
                 Index++;
             }
@@ -121,7 +118,7 @@ namespace Class_Library
         //}
 
         // Public property for the customer list
-        public List<clsCustomer> CustomerList
+        public List<clsPart> PartList
         {
             get
             {

@@ -20,6 +20,8 @@ namespace PBFrontEnd
                 DisplayCustomers();
                 // Display the first customer data
                 DisplayCustomer(1);
+                // Make the first customer in the list selected
+                lstCustomers.SelectedIndex = 0;
             }
         }
 
@@ -95,29 +97,39 @@ namespace PBFrontEnd
         {
             // New instance of clsCustomerCollection class
             clsCustomerCollection Customer = new clsCustomerCollection();
-            // Check if there is an error message returned
-            String Error = Customer.ThisCustomer.Valid(txtAddressLn1.Text, txtAddressLn2.Text, txtEmailAddress.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtCarRegNo.Text);
-            // New variable for the primary key
-            Int32 CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
-            // If there are no errors
-            if (Error == "")
+            // If a record has been selected from the list
+            if (lstCustomers.SelectedIndex != -1)
             {
-                // Find the record to update
-                Customer.ThisCustomer.Find(CustomerID);
-                // Get the data entered by the user
-                Customer.ThisCustomer.AddressLine1 = txtAddressLn1.Text;
-                Customer.ThisCustomer.AddressLine2 = txtAddressLn2.Text;
-                Customer.ThisCustomer.Email = txtEmailAddress.Text;
-                Customer.ThisCustomer.FirstName = txtFirstName.Text;
-                Customer.ThisCustomer.LastName = txtLastName.Text;
-                Customer.ThisCustomer.PhoneNo = txtPhoneNo.Text;
-                Customer.ThisCustomer.CarRegNo = txtCarRegNo.Text;
-                // Update the record
-                Customer.Add();
-                // Refresh the page indicating a successfull update of a record
-                Response.Redirect("Customer_StaffSide.aspx");
+                // Check if there is an error message returned
+                String Error = Customer.ThisCustomer.Valid(txtAddressLn1.Text, txtAddressLn2.Text, txtEmailAddress.Text, txtFirstName.Text, txtLastName.Text, txtPhoneNo.Text, txtCarRegNo.Text);
+                // If there are no errors
+                if (Error == "")
+                {
+                    // New variable for the primary key
+                    Int32 CustomerID = Convert.ToInt32(lstCustomers.SelectedValue);
+                    // Find the record to update
+                    Customer.ThisCustomer.Find(CustomerID);
+                    // Get the data entered by the user
+                    Customer.ThisCustomer.AddressLine1 = txtAddressLn1.Text;
+                    Customer.ThisCustomer.AddressLine2 = txtAddressLn2.Text;
+                    Customer.ThisCustomer.Email = txtEmailAddress.Text;
+                    Customer.ThisCustomer.FirstName = txtFirstName.Text;
+                    Customer.ThisCustomer.LastName = txtLastName.Text;
+                    Customer.ThisCustomer.PhoneNo = txtPhoneNo.Text;
+                    Customer.ThisCustomer.CarRegNo = txtCarRegNo.Text;
+                    // Update the record
+                    Customer.Update();
+                    // Refresh the page indicating a successfull update of a record
+                    Response.Redirect("Customer_StaffSide.aspx");
+                }
+                // If there is an error
+                else
+                {
+                    // Show an error message
+                    lblError.Text = "There were problems with the data entered: <br /><br />" + Error;
+                }
             }
-            // If there is an error
+            // If no record has been selected
             else
             {
                 // Show an error message
@@ -155,7 +167,7 @@ namespace PBFrontEnd
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
-            // Add the new customer
+            // Update the customer
             Update();
         }
 
@@ -189,6 +201,18 @@ namespace PBFrontEnd
         {
             // Populate the list of customers
             DisplayCustomers();
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            // Set all fields as blank
+            txtAddressLn1.Text = "";
+            txtAddressLn2.Text = "";
+            txtEmailAddress.Text = "";
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtPhoneNo.Text = "";
+            txtCarRegNo.Text = "";
         }
     }
 }
