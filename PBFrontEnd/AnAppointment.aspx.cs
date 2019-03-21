@@ -29,7 +29,7 @@ namespace PBFrontEnd
                     DisplayAppointment();
                 }
                 else // this is a new record
-                {
+                {  // set the date to tomorrows date
                     txtMOTDate.Text = DateTime.Now.Date.AddDays(1).ToString("dd/mm/yyyy");
                 }
             }
@@ -40,34 +40,52 @@ namespace PBFrontEnd
         // event handler for OK button
         protected void btnOK_Click(object sender, EventArgs e)
         {
+            // var to store the error message
             string ErrorMsg;
+            // create an instance of the appointment collection class
             clsAppointmentCollection AppointmentBook = new clsAppointmentCollection();
-
+            //use the objects validation method to test the data
             ErrorMsg = AppointmentBook.ThisAppointment.Valid(txtCarRegNo.Text, txtMOTDate.Text, txtStaffID.Text, txtJobID.Text, txtCustomerID.Text);
+            // if no error is returned
             if (ErrorMsg == "")
             {
+                // if we are adding a new record
                 if (AppointmentID == -1)
                 {
-                    // add the new record
+                    //set the car reg number property of the object
                     AppointmentBook.ThisAppointment.CarRegNo = txtCarRegNo.Text;
+                    //set the customer id property of the object
                     AppointmentBook.ThisAppointment.CustomerID = Convert.ToInt32(txtCustomerID.Text);
+                    //set the staff id property of the object
                     AppointmentBook.ThisAppointment.StaffID = Convert.ToInt32(txtStaffID.Text);
+                    //set the active property of the object
                     AppointmentBook.ThisAppointment.Active = chkActive.Checked;
+                    //set the mot time property of the object
                     AppointmentBook.ThisAppointment.MOTTimeID = Convert.ToInt32(ddlMOTTime.SelectedValue);
+                    //set the job id property of the object
                     AppointmentBook.ThisAppointment.JobID = Convert.ToInt32(txtJobID.Text);
+                    //set the mot date property of the object
                     AppointmentBook.ThisAppointment.MOTDate = Convert.ToDateTime(txtMOTDate.Text);
+                    // invoke the add method
                     Add();
                 }
                 else
                 {
-                    // add the new record
+                    // // find the record to be updated
                     AppointmentBook.ThisAppointment.Find(AppointmentID);
+                    //set the car reg number property of the object
                     AppointmentBook.ThisAppointment.CarRegNo = txtCarRegNo.Text;
+                    //set the customer id property of the object
                     AppointmentBook.ThisAppointment.CustomerID = Convert.ToInt32(txtCustomerID.Text);
+                    //set the staff id property of the object
                     AppointmentBook.ThisAppointment.StaffID = Convert.ToInt32(txtStaffID.Text);
+                    //set the active property of the object
                     AppointmentBook.ThisAppointment.Active = chkActive.Checked;
+                    //set the mot time property of the object
                     AppointmentBook.ThisAppointment.MOTTimeID = Convert.ToInt32(ddlMOTTime.SelectedValue);
+                    //set the job id property of the object
                     AppointmentBook.ThisAppointment.JobID = Convert.ToInt32(txtJobID.Text);
+                    //set the mot date property of the object
                     AppointmentBook.ThisAppointment.MOTDate = Convert.ToDateTime(txtMOTDate.Text);
                     // update the record
                     Update();
@@ -77,8 +95,9 @@ namespace PBFrontEnd
             Response.Redirect("DefaultAppointment.aspx");
 
             }
-            else
+            else // there are errors
             {
+                //display the error message
                 lblError.Text = ErrorMsg;
             }
             
@@ -180,11 +199,13 @@ namespace PBFrontEnd
             return MOTTimes.Count;
         }
 
+        // Cancel button event handler
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("DefaultAppointment.aspx");
         }
 
+        // Staff Reference button event handler
         protected void btnStaffIDs_Click(object sender, EventArgs e)
         {
             Response.Redirect("AppointmentStaffDetails.aspx");
