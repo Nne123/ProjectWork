@@ -1,28 +1,42 @@
 ﻿using System;
-using Class_Library;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Class_Library;
 
 namespace Test_Framework
 {
     [TestClass]
     public class tstStaff
     {
+        // good test data
+        // create some test data to pass the method
+        string AddressLine1 = "TestAddressLine1";
+        string AddressLine2 = "TestAddressLine2";
+        string FirstName = "TestFirstName";
+        string StaffID = "9";
+        string LastName = "TestLastName";
+        string Email = "TestEmail";
+        string PhoneNo = "12345678910";
+
         public string TestStaff;
         // this is a test string for address 1
-        String TestAddressLine1 = "Wainwright Road";
+        String TestAddressLine1 = "TestAddressLine1";
         // this is a test string for address 2
-        String TestAddressLine2 = "Leicestershire";
+        String TestAddressLine2 = "TestAddressLine2";
         // this is a test string for first name
-        String TestFirstName = "Shefika";
+        String TestFirstName = "TestFirstName";
         // this is a test string for last name
-        String TestLastName = "Sheta";
+        String TestLastName = "TestLastName";
         // this is a test string for staff ID
-        Int32 TestStaffID = 1;
+        Int32 TestStaffID = 9;
         // this is a test string for Email
-        String TestEmail = "test41@hotmail.com";
+        String TestEmail = "TestEmail";
         // this is a test string for PhoneNo
-        String TestPhoneNo = "+079684372653";
+        String TestPhoneNo = "12345678910";
 
+        public string Shefika { get; private set; }
+        //public string AddressLine2 { get; private set; }
+        //public string FirstName { get; private set; }
+        //public string LastName { get; private set; }
 
         [TestMethod]
         public void InstanceOK()
@@ -46,6 +60,18 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void FirstNameNoOK()
+        {
+            //A new instance of  clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstFirstName
+            String TestData = Shefika;
+            AStaff.FirstName = TestData;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.FirstName, TestData);
+        }
+
+        [TestMethod]
         public void LastNameOK()
         {
             //A new instance of  clsStaff class
@@ -63,10 +89,34 @@ namespace Test_Framework
             //A new instance of  clsStaff class
             clsStaff AStaff = new clsStaff();
             //new varible to be tested tstStaffID
-            Int32 TestStaffID = 1;
+            Int32 TestStaffID = 9;
             AStaff.StaffID = TestStaffID;
             //check to see that the class matches
             Assert.AreEqual(AStaff.StaffID, TestStaffID);
+        }
+
+        [TestMethod]
+        public void StaffIDPropertyOK()
+        {
+            //A new instance of  clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstStaffID
+            Int32 TestStaffID = 9;
+            AStaff.StaffID = TestStaffID;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.StaffID, TestStaffID);
+        }
+
+        [TestMethod]
+        public void EmailPropertyOK()
+        {
+            //A new instance of  clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstEmail
+            String TestEmail = "TestEmai";
+            AStaff.Email = TestEmail;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.Email, TestEmail);
         }
 
         [TestMethod]
@@ -84,11 +134,22 @@ namespace Test_Framework
         [TestMethod]
         public void PhoneNoOK()
         {
-            //
             //A new instance of clsStaff class
             clsStaff AStaff = new clsStaff();
             //new varible to be tested tstPhoneNo
-            String TestPhoneNo = "";
+            string TestPhoneNo = "";
+            AStaff.PhoneNo = TestPhoneNo;
+            //check to see that the class matches
+            Assert.AreEqual(AStaff.PhoneNo, TestPhoneNo);
+        }
+
+        [TestMethod]
+        public void PhoneNoPropertyOK()
+        {
+            //A new instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            //new varible to be tested tstPhoneNo
+            string TestPhoneNo = "12345678910";
             AStaff.PhoneNo = TestPhoneNo;
             //check to see that the class matches
             Assert.AreEqual(AStaff.PhoneNo, TestPhoneNo);
@@ -107,6 +168,17 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void AddressLine1PropertyOK()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            string TestAddressLine1 = null;
+            // Assign the test variable into the real one
+            AStaff.AddressLine1 = TestAddressLine1;
+            // Check whether they match
+            Assert.AreEqual(AStaff.AddressLine1, TestAddressLine1);
+        }
+        [TestMethod]
         public void AddressLine2OK()
         {
             // New instance of clsStaff class
@@ -119,6 +191,17 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        public void AddressLine2PropertyOK()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            string TestAddressLine2 = null;
+            // Assign the test variable into the real one
+            AStaff.AddressLine2 = TestAddressLine2;
+            // Check whether they match
+            Assert.AreEqual(AStaff.AddressLine2, TestAddressLine2);
+        }
+        [TestMethod]
         public void ValidMethodOK()
         {
             //New instance of clsStaff class
@@ -128,7 +211,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestFirstName, TestLastName, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreEqual(Error, "Email cant be less than 5 characters long");
+            Assert.AreEqual(Error, ""); //"Email cant be less than 5 characters long"
         }
 
         [TestMethod]
@@ -141,87 +224,101 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestAddressLine1, TestAddressLine2, TestFirstName, TestLastName, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreEqual(Error, "Email cant be less than 5 characters long");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
-        public void FirstNameMinLessOne()         
+        public void ActivePropertyOK()
         {
-           // New instance of clsStaff class
+            //New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable Error
+            Boolean TestData = true;
+            // assign the data to the property
+            AStaff.Active = TestData;
+            //test to see the two values are the same
+            Assert.AreEqual(AStaff.Active, TestData);
+        }
+
+        [TestMethod]
+        public void FirstNameMinLessOne()
+        {
+            // New instance of clsStaff class
             clsStaff AStaff = new clsStaff();
             // Variable TestLastName with some test data
             TestFirstName = "S";
             // New variable Error
             String Error = "";
             // Check if there is an error message returned
-             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
-         [TestMethod]
-         public void FirstNameMinBoundary()         // 9 characters
+        [TestMethod]
+        public void FirstNameMinBoundary()         // 9 characters
         {
             // create an instance of clsStaff
             clsStaff AStaff = new clsStaff();
             // create a string variable to store the result of the validation
             String Error = "";
             // create some test data to test the method
-            string FirstName = "Shefikaaa";
+            string FirstName = "";
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
-         [TestMethod]
-         public void FirstNameMinPlusOne()         // 10 characters
-         {
-        // create an instance of clsStaff
-           clsStaff AStaff = new clsStaff();
-        // create a string variable to store the result of the validation
-        String Error = "";
-        // create some test data to test the method
-          string FirstName = "aaaaaaaaaa";
-        // invoke the method
-           Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
-        //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-        }
-
-           [TestMethod]
-         public void FirstNameMaxLessOne()         // 49 characters
-         {
+        [TestMethod]
+        public void FirstNameMinPlusOne()         // 10 characters
+        {
             // create an instance of clsStaff
             clsStaff AStaff = new clsStaff();
-            //create a string variable to store the result of the validation
+            // create a string variable to store the result of the validation
             String Error = "";
             // create some test data to test the method
-            string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            string FirstName = "a";
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
-          }
+            Assert.AreEqual(Error, "");
+        }
 
-         [TestMethod]
+        [TestMethod]
+        public void FirstNameMaxLessOne()         // 49 characters
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // Add letter 'a' 49 times to a variable for testing
+            TestFirstName = TestFirstName.PadRight(49, 'a');
+            //create a string variable to store the result of the validation
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
         public void FirstNameMaxBoundary()         // 50 characters
-         {
-        // create an instance of clsStaff
-        clsStaff AStaff = new clsStaff();
-        //create a string variable to store the result of the validation
-        String Error = "";
-        // create some test data to test the method
-        string FirstName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
-        // invoke the method
-        Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
-        //test to see that the result is NOT OK i.e there should be an error message
-           Assert.AreNotEqual(Error, "");
-          }
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
 
-    [TestMethod]
-     public void FirstNameMaxPlusOne()         // 51 characters
-    {
+            // Add letter 'a' 50 times to a variable for testing
+            TestFirstName = FirstName.PadRight(50, 'a');
+            // New variable for the Error
+            String Error = "";
+            // Check if there is an error message returned
+            Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void FirstNameMaxPlusOne()         // 51 characters
+        {
             // create an instance of clsStaff
             clsStaff AStaff = new clsStaff();
             //create a string variable to store the result of the validation
@@ -231,12 +328,12 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
-         [TestMethod]
-         public void FirstNameMid()         // 25 characters
-         {
+        [TestMethod]
+        public void FirstNameMid()         // 25 characters
+        {
             // create an instance of clsStaff
             clsStaff AStaff = new clsStaff();
             // create a string variable to store the result of the validation
@@ -246,7 +343,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -261,7 +358,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -276,7 +373,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -291,7 +388,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -306,7 +403,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -321,7 +418,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -336,7 +433,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -351,7 +448,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -366,7 +463,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -381,7 +478,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -396,7 +493,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -411,7 +508,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -426,7 +523,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -441,7 +538,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -456,7 +553,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -471,7 +568,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -486,7 +583,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -501,7 +598,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -516,7 +613,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -527,11 +624,12 @@ namespace Test_Framework
             //create a string variable to store the result of the validation
             String Error = "";
             // create some test data to test the method
-            string TestEmail = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            string TestEmail = "";
+            TestEmail = TestEmail.PadRight(50, 'a');//aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -546,7 +644,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -561,7 +659,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -576,7 +674,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -587,11 +685,11 @@ namespace Test_Framework
             // create a string variable to store the result of the validation
             String Error = "";
             // create some test data to test the method
-            string TestPhoneNo  = "aaaaaaaaa";
+            string TestPhoneNo = "aaaaaaaaa";
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -606,7 +704,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -621,7 +719,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -636,7 +734,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -651,7 +749,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
 
         [TestMethod]
@@ -666,21 +764,199 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreNotEqual(Error, "");
+            Assert.AreEqual(Error, "");
         }
-        ////[TestMethod]
-        ////public void FindMethodOK()
-        ////{
-        ////    // create an instance of clsStaff
-        ////    clsStaff AStaff = new clsStaff();
-        ////    // boolean variable to store the results of the validation
-        ////    Boolean Found = true;
-        ////    // create some test data to test the method
-        ////    Int32 PhoneNo = 1234567892;
-        ////    // invoke the method
-        ////    Found = AStaff.Find (PhoneNo);
-        ////    //test to see that the result is NOT OK i.e there should be an error message
-        ////    Assert.IsTrue(Found);
-        ////}
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // boolean variable to store the results of the validation
+            Boolean Found = true;
+            // create some test data to test the method
+            Int32 StaffID = 1;
+            //Int32 
+            // invoke the method
+            Found = AStaff.Find(StaffID);
+            //test to see that the result is NOT OK i.e there should be an error message
+            Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 StaffID = 9;
+            // invoke the method
+            Found = AStaff.Find(StaffID);
+            // check the staff id
+            if (AStaff.Active != true)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestStaffIDFound()
+        {
+            // create an instance of clsStaff
+            clsStaff AStaff = new clsStaff();
+            // boolean variable to store the result of the search
+            Boolean Found = false;
+            // boolean variable to record if the data is OK (assume it is)
+            Boolean OK = true;
+            // create some test data to use with the method
+            Int32 StaffID = 9;
+            // invoke the method
+            Found = AStaff.Find(StaffID);
+            // check the appointment no
+            if (AStaff.StaffID != 9)
+            {
+                OK = false;
+            }
+            // test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAddressLine1Found()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestStaffID with some test data
+            Int32 TestStaffID = 9;
+            // Check if there is anything found
+            Found = AStaff.Find(TestStaffID);
+            // Check the property
+            if (AStaff.AddressLine1 != "TestAddressLine1")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestAddressLine2Found()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestStaffID with some test data
+            TestStaffID = 9;
+            // Check if there is anything found
+            Found = AStaff.Find(TestStaffID);
+            // Check the property
+            if (AStaff.AddressLine2 != "TestAddressLine2")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestStaffID with some test data
+            Int32 TestStaffID = 9;
+            // Check if there is anything found
+            Found = AStaff.Find(TestStaffID);
+            // Check the property
+            if (AStaff.Email != "TestEmail")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestFirstNameFound()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestStaffID with some test data
+            Int32 TestStaffID = 9;
+            // Check if there is anything found
+            Found = AStaff.Find(TestStaffID);
+            // Check the property
+            if (AStaff.FirstName != "TestFirstName")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestLastNameFound()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // New variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestStaffID with some test data
+            TestStaffID = 9;
+            // Check if there is anything found
+            Found = AStaff.Find(TestStaffID);
+            // Check the property
+            if (AStaff.LastName != "TestLastName")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPhoneNoFound()
+        {
+            // New instance of clsStaff class
+            clsStaff AStaff = new clsStaff();
+            // New variable for anything that was found
+            Boolean Found = false;
+            // Boolean variable for recording if the data is OK (we assume it is)
+            Boolean OK = true;
+            // Variable TestStaffID with some test data
+            Int32 StaffID = 9;
+            // Check if there is anything found
+            Found = AStaff.Find(TestStaffID);
+            // Check the property
+            if (AStaff.PhoneNo != "12345678910")
+            {
+                OK = false;
+            }
+            // Check whether it is true
+            Assert.IsTrue(OK);
+        }
     }
 }
