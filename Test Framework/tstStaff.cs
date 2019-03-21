@@ -674,7 +674,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             // Check whether there is an error
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -689,7 +689,7 @@ namespace Test_Framework
             // Check if there is an error message returned
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -704,7 +704,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -719,7 +719,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -734,7 +734,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -749,7 +749,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -764,7 +764,7 @@ namespace Test_Framework
             // invoke the method
             Error = AStaff.Valid(TestFirstName, TestLastName, TestAddressLine1, TestAddressLine2, TestPhoneNo, TestEmail, TestStaffID);
             //test to see that the result is NOT OK i.e there should be an error message
-            Assert.AreEqual(Error, "");
+            Assert.AreNotEqual(Error, "");
         }
 
         [TestMethod]
@@ -775,7 +775,7 @@ namespace Test_Framework
             // boolean variable to store the results of the validation
             Boolean Found = true;
             // create some test data to test the method
-            Int32 StaffID = 1;
+            Int32 StaffID = 28;
             //Int32 
             // invoke the method
             Found = AStaff.Find(StaffID);
@@ -793,7 +793,7 @@ namespace Test_Framework
             // boolean variable to record if the data is OK (assume it is)
             Boolean OK = true;
             // create some test data to use with the method
-            Int32 StaffID = 9;
+            Int32 StaffID = 28;
             // invoke the method
             Found = AStaff.Find(StaffID);
             // check the staff id
@@ -815,11 +815,11 @@ namespace Test_Framework
             // boolean variable to record if the data is OK (assume it is)
             Boolean OK = true;
             // create some test data to use with the method
-            Int32 StaffID = 9;
+            Int32 StaffID = 28;
             // invoke the method
             Found = AStaff.Find(StaffID);
             // check the appointment no
-            if (AStaff.StaffID != 9)
+            if (AStaff.StaffID != 28)
             {
                 OK = false;
             }
@@ -837,7 +837,7 @@ namespace Test_Framework
             // New variable for recording if the data is OK (we assume it is)
             Boolean OK = true;
             // Variable TestStaffID with some test data
-            Int32 TestStaffID = 9;
+            Int32 TestStaffID = 28;
             // Check if there is anything found
             Found = AStaff.Find(TestStaffID);
             // Check the property
@@ -859,7 +859,7 @@ namespace Test_Framework
             // New variable for recording if the data is OK (we assume it is)
             Boolean OK = true;
             // Variable TestStaffID with some test data
-            TestStaffID = 9;
+            TestStaffID = 28;
             // Check if there is anything found
             Found = AStaff.Find(TestStaffID);
             // Check the property
@@ -881,7 +881,7 @@ namespace Test_Framework
             // New variable for recording if the data is OK (we assume it is)
             Boolean OK = true;
             // Variable TestStaffID with some test data
-            Int32 TestStaffID = 9;
+            Int32 TestStaffID = 28;
             // Check if there is anything found
             Found = AStaff.Find(TestStaffID);
             // Check the property
@@ -903,7 +903,7 @@ namespace Test_Framework
             // New variable for recording if the data is OK (we assume it is)
             Boolean OK = true;
             // Variable TestStaffID with some test data
-            Int32 TestStaffID = 9;
+            Int32 TestStaffID = 28;
             // Check if there is anything found
             Found = AStaff.Find(TestStaffID);
             // Check the property
@@ -925,7 +925,7 @@ namespace Test_Framework
             // New variable for recording if the data is OK (we assume it is)
             Boolean OK = true;
             // Variable TestStaffID with some test data
-            TestStaffID = 9;
+            TestStaffID = 28;
             // Check if there is anything found
             Found = AStaff.Find(TestStaffID);
             // Check the property
@@ -947,7 +947,7 @@ namespace Test_Framework
             // Boolean variable for recording if the data is OK (we assume it is)
             Boolean OK = true;
             // Variable TestStaffID with some test data
-            Int32 StaffID = 9;
+            Int32 StaffID = 28;
             // Check if there is anything found
             Found = AStaff.Find(TestStaffID);
             // Check the property
@@ -960,3 +960,4 @@ namespace Test_Framework
         }
     }
 }
+

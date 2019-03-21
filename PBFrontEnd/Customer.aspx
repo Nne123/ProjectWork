@@ -12,7 +12,7 @@
                 <asp:TextBox ID="txtLastName" runat="server"></asp:TextBox>
                 <br />
                 <asp:Label ID="lblAddressLn1" runat="server" Text="Address Line 1:" Width="200px"></asp:Label>
-                <asp:TextBox ID="txtAddressLn1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtAddressLn1" runat="server" OnTextChanged="txtAddressLn1_TextChanged"></asp:TextBox>
                 <br />
                 <asp:Label ID="lblAddressLn2" runat="server" Text="Address Line 2:" Width="200px"></asp:Label>
                 <asp:TextBox ID="txtAddressLn2" runat="server"></asp:TextBox>

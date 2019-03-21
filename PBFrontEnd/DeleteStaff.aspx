@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EditStaff.aspx.cs" Inherits="PBFrontEnd.EditStaff" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DeleteStaff.aspx.cs" Inherits="PBFrontEnd.EditStaff" %>
 
 <!DOCTYPE html>
 

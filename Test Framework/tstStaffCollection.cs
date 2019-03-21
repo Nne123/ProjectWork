@@ -8,7 +8,16 @@ namespace Test_Framework
     [TestClass]
     public class tstStaffCollection
     {
-        Int32 TestCount = 20;
+        private Int32 TestCount = 20;
+        //private object mStaffList;
+
+        private string TestActiveFound = "";
+
+        public List<clsStaff> StaffList { get; private set; }
+        public int Count { get; private set; }
+        public clsStaff ThisStaff { get; private set; }
+
+        //private object mStaffList;
 
         [TestMethod]
         //this is a test class 
@@ -21,6 +30,29 @@ namespace Test_Framework
         }
 
         [TestMethod]
+        //this is a test class 
+        public void TwoRecordsPresent()
+        {
+            //create an instance of the class i want to create
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            //test to see if it exists
+            Assert.AreEqual(AllStaff.Count, 28);
+        }
+
+        //[TestMethod]
+        //public void CountPropertyOK()
+        //{
+        //    // New instance of clsSatffCollection class
+        //    clsStaffCollection AllStaff = new clsStaffCollection();
+        //    // Create some list data to assignt to the property
+        //    Int32 SomeCount = 0;
+        //    //assign the data to the property
+        //    AllStaff.Count = SomeCount;
+        //    //Test to see that the two values are the same
+        //    Assert.AreEqual(AllStaff.Count, SomeCount);
+        //}
+
+        [TestMethod]
         public void CountOK()
         {
             // New instance of clsSatffCollection class
@@ -31,13 +63,13 @@ namespace Test_Framework
             clsStaff TestItem = new clsStaff();
             // Set its properties
             TestItem.Active = true;
-            TestItem.AddressLine1 = "Wainwright Road";
-            TestItem.AddressLine2 = "Leicester";
-            TestItem.StaffID = 1;
-            TestItem.Email = "test41@hotmail.com";
-            TestItem.FirstName = "Shefika";
-            TestItem.LastName = "Sheta";
-            TestItem.PhoneNo = "+079684372653";
+            TestItem.AddressLine1 = "TestAddressLine1";
+            TestItem.AddressLine2 = "TestAddressLine2";
+            TestItem.StaffID = 28;
+            TestItem.Email = "TestEmail";
+            TestItem.FirstName = "TestFirstName";
+            TestItem.LastName = "TestLastName";
+            TestItem.PhoneNo = "12345678910";
             // Add the item to the test list
             TestList.Add(TestItem);
             // Assign the test variable into the real one
@@ -56,22 +88,44 @@ namespace Test_Framework
         public void ThisStaffOK()
         {
             // New instance of clsStaffCollection class
-            clsStaffCollection AllStaffs = new clsStaffCollection();
+            clsStaffCollection AllStaff = new clsStaffCollection();
             // New instance of clsStaff class to create the item of test data
             clsStaff TestStaff = new clsStaff();
             // Set its properties
             TestStaff.Active = true;
-            TestStaff.AddressLine1 = "Wainwright Road";
-            TestStaff.AddressLine2 = "Leicester";
-            TestStaff.StaffID = 2;
-            TestStaff.Email = "test41@hotmail.com";
-            TestStaff.FirstName = "Sheta";
-            TestStaff.LastName = "Shefika";
-            TestStaff.PhoneNo = "+079684372653";
+            TestStaff.AddressLine1 = "TestAddressLine1";
+            TestStaff.AddressLine2 = "TestAddressLine2";
+            TestStaff.StaffID = 28;
+            TestStaff.Email = "TestEmail";
+            TestStaff.FirstName = "TestFirstName";
+            TestStaff.LastName = "TestLastName";
+            TestStaff.PhoneNo = "12345678910";
             // Assign the test variable into the real one
-            AllStaffs.ThisStaff = TestStaff;
+            AllStaff.ThisStaff = TestStaff;
             // Check whether they match
-            Assert.AreEqual(AllStaffs.ThisStaff, TestStaff);
+            Assert.AreEqual(AllStaff.ThisStaff, TestStaff);
+        }
+
+        [TestMethod]
+        public void ThisStaffPropertyOK()
+        {
+            // New instance of clsStaffCollection class
+            clsStaffCollection AllStaff = new clsStaffCollection();
+            // New instance of clsStaff class to create the item of test data
+            clsStaff TestStaff = new clsStaff();
+            // Set its properties
+            TestStaff.Active = true;
+            TestStaff.AddressLine1 = "TestAddressLine1";
+            TestStaff.AddressLine2 = "TestAddressLine2";
+            TestStaff.StaffID = 28;
+            TestStaff.Email = "TestEmail";
+            TestStaff.FirstName = "TestFirstName";
+            TestStaff.LastName = "TestLastName";
+            TestStaff.PhoneNo = "12345678910";
+            // Assign the test variable into the real one
+            AllStaff.ThisStaff = TestStaff;
+            // Check whether they match
+            Assert.AreEqual(AllStaff.ThisStaff, TestStaff);
         }
 
         [TestMethod]
@@ -85,13 +139,13 @@ namespace Test_Framework
             clsStaff TestItem = new clsStaff();
             // Set its properties
             TestItem.Active = true;
-            TestItem.AddressLine1 = "Wainwright Road";
-            TestItem.AddressLine2 = "Leicester";
-            TestItem.StaffID = 1;
-            TestItem.Email = "test41@hotmail.com";
-            TestItem.FirstName = "Shefika";
-            TestItem.LastName = "Sheta";
-            TestItem.PhoneNo = "+079684372653";
+            TestItem.AddressLine1 = "TestAddressLine1";
+            TestItem.AddressLine2 = "TestAddressLine2";
+            TestItem.StaffID = 28;
+            TestItem.Email = "TestEmail";
+            TestItem.FirstName = "TestFirstName";
+            TestItem.LastName = "TestLastName";
+            TestItem.PhoneNo = "12345678910";
             // Add the item to the test list
             TestList.Add(TestItem);
             // Assign the test variable into the real one
@@ -99,6 +153,7 @@ namespace Test_Framework
             // Check whether they match
             Assert.AreEqual(AllStaffs.StaffList, TestList);
         }
+
         [TestMethod]
         public void ListAndCountOK()
         {
@@ -110,13 +165,13 @@ namespace Test_Framework
             clsStaff TestItem = new clsStaff();
             // Set its properties
             TestItem.Active = true;
-            TestItem.AddressLine1 = "Wainwright Road";
-            TestItem.AddressLine2 = "Leicester";
-            TestItem.StaffID = 1;
-            TestItem.Email = "test41@hotmail.com";
-            TestItem.FirstName = "Shefika";
-            TestItem.LastName = "Sheta";
-            TestItem.PhoneNo = "+079684372653";
+            TestItem.AddressLine1 = "TestAddressLine1";
+            TestItem.AddressLine2 = "TestAddressLine2";
+            TestItem.StaffID = 28;
+            TestItem.Email = "TestEmail";
+            TestItem.FirstName = "TestFirstName";
+            TestItem.LastName = "TestLastName";
+            TestItem.PhoneNo = "12345678910";
             // Add the item to the test list
             TestList.Add(TestItem);
             // Assign the test variable into the real one
@@ -136,13 +191,13 @@ namespace Test_Framework
             clsStaff TestItem = new clsStaff();
             // Set its properties
             TestItem.Active = true;
-            TestItem.AddressLine1 = "Wainwright Road";
-            TestItem.AddressLine2 = "Leicester";
-            TestItem.StaffID = 1;
-            TestItem.Email = "test41@hotmail.com";
-            TestItem.FirstName = "Shefika";
-            TestItem.LastName = "Sheta";
-            TestItem.PhoneNo = "+079684372653";
+            TestItem.AddressLine1 = "TestAddressLine1";
+            TestItem.AddressLine2 = "TestAddressLine2";
+            TestItem.StaffID = 28;
+            TestItem.Email = "TestEmail";
+            TestItem.FirstName = "TestFirstName";
+            TestItem.LastName = "TestLastName";
+            TestItem.PhoneNo = "12345678910";
             // Add the item to the test list
             TestList.Add(TestItem);
             // Assign the test variable into the real one
@@ -188,13 +243,13 @@ namespace Test_Framework
             clsStaff TestItem = new clsStaff();
             // Set its properties
             TestItem.Active = true;
-            TestItem.AddressLine1 = "Wainwright Road";
-            TestItem.AddressLine2 = "Leicester";
-            TestItem.StaffID = 1;
-            TestItem.Email = "test41@hotmail.com";
-            TestItem.FirstName = "Shefika";
-            TestItem.LastName = "Sheta";
-            TestItem.PhoneNo = "+079684372653";
+            TestItem.AddressLine1 = "TestAddressLine1";
+            TestItem.AddressLine2 = "TestAddressLine2";
+            TestItem.StaffID = 28;
+            TestItem.Email = "TestEmail";
+            TestItem.FirstName = "TestFirstName";
+            TestItem.LastName = "TestLastName";
+            TestItem.PhoneNo = "12345678910";
             // Add the item to the test list
             TestList.Add(TestItem);
             // Assign the test variable into the real one
@@ -242,18 +297,18 @@ namespace Test_Framework
             // Create a list named TestList
             List<clsStaff> TestList = new List<clsStaff>();
             // New instance of clsStaff class to create the item of test data
-            clsStaff TestItem = new clsStaff();
+            clsStaff TestStaff = new clsStaff();
             // Set its properties
-            TestItem.Active = true;
-            TestItem.AddressLine1 = "Wainwright Road";
-            TestItem.AddressLine2 = "Leicester";
-            TestItem.StaffID = 1;
-            TestItem.Email = "test41@hotmail.com";
-            TestItem.FirstName = "Shefika";
-            TestItem.LastName = "Sheta";
-            TestItem.PhoneNo = "+079684372653";
+            TestStaff.Active = true;
+            TestStaff.AddressLine1 = "TestAddressLine1";
+            TestStaff.AddressLine2 = "TestAddressLine2";
+            TestStaff.StaffID = 28;
+            TestStaff.Email = "TestEmail";
+            TestStaff.FirstName = "TestFirstName";
+            TestStaff.LastName = "TestLastName";
+            TestStaff.PhoneNo = "12345678910";
             // Add the item to the test list
-            TestList.Add(TestItem);
+            //TestList.Add(TestStaff);
             // Assign the test variable into the real one
             AllStaff.StaffList = TestList;
             // Check whether they match
@@ -300,3 +355,4 @@ namespace Test_Framework
         }
     }
 }
+

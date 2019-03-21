@@ -17,11 +17,14 @@
         <asp:Label ID="StaffID" runat="server" Text="Staff ID:" Width="200px"></asp:Label>
         <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
         <br />
+        
         <asp:Label ID="lblFirstName" runat="server" Text="First Name:" Width="200px"></asp:Label>
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                &nbsp;&nbsp;&nbsp;
+        <asp:Label ID="lblError" runat="server" Width="246px" Font-Bold="True" ForeColor="Red" Font-Size="Small" Height="47px"></asp:Label>
         <br />
         <asp:Label ID="lblLastName" runat="server" Text="Last Name:" Width="200px"></asp:Label>
-        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>&nbsp;&nbsp;&nbsp;
         <br />
         <asp:Label ID="lblAddressLn1" runat="server" Text="Address Line 1:" Width="200px"></asp:Label>
         <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
@@ -42,6 +45,8 @@
         <asp:Button ID="btnSave" runat="server" Text="Save" Width="120px" Height="35px" OnClick="btnSave_Click" />
         <br />
         <br />
+    <asp:Label ID="lblSuccess" runat="server" Font-Bold="True" ForeColor="Green" Font-Size="Small"></asp:Label>
+    <p>
 </form>
 </center>
 </body>
