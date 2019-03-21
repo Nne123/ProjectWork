@@ -21,7 +21,7 @@
             <br />
         </div>
             <h2>List Of Parts</h2>
-            <asp:ListBox ID="lstPart" runat="server" Height="189px" Width="301px"></asp:ListBox>
+            <asp:ListBox ID="lstPart" runat="server" Height="189px" Width="301px" OnSelectedIndexChanged="lstPart_SelectedIndexChanged"></asp:ListBox>
                     <br />
         <br />
              <asp:Button ID="btnYes" runat="server" Text="Add" OnClick="btnAdd

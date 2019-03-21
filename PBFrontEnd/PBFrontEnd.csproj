@@ -75,6 +75,7 @@
     <Content Include="EasyFixBank.css" />
     <Content Include="EditStaff.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ProductName.aspx" />
     <Content Include="ListStaff.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Part.aspx" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ProductName.aspx.cs">
+      <DependentUpon>ProductName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductName.aspx.designer.cs">
+      <DependentUpon>ProductName.aspx</DependentUpon>
     </Compile>
     <Compile Include="ListStaff.aspx.cs">
       <DependentUpon>ListStaff.aspx</DependentUpon>
