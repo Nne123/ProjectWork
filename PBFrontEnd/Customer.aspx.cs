@@ -84,5 +84,15 @@ namespace PBFrontEnd
             // Refresh the page to reset the fields
             Response.Redirect("Customer.aspx");
         }
+
+        protected void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtAddressLn1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

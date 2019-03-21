@@ -27,5 +27,10 @@ namespace PBFrontEnd
             // Temporary
             Response.Redirect("AddStaff.aspx");
         }
+
+        protected void txtEMail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
