@@ -5,6 +5,8 @@ namespace Class_Library
 {
     public class clsMOTTimeCollection
     {
+        clsDataConnection MOTTimes = new clsDataConnection();
+
         private List<clsMOTTime> mAllMOTTimes = new List<clsMOTTime>();
 
         // public constructor for the class
@@ -52,16 +54,27 @@ namespace Class_Library
             // getter sends data to requesting code
             get
             {
+                //List<clsMOTTime> mAllMOTTimes = new List<clsMOTTime>();
+                //Int32 Index = 0;
+                //while (Index < MOTTimes.Count)
+                //{
+                //    clsMOTTime NewMOTTime = new clsMOTTime();
+                //    NewMOTTime.MOTTimeID = Convert.ToInt32(MOTTimes.DataTable.Rows[Index]["MOTTimeID"]);
+                //    NewMOTTime.MOTTime = Convert.ToInt32(MOTTimes.DataTable.Rows[Index]["MOTTime"]);
+                //    mAllMOTTimes.Add(NewMOTTime);
+                //    Index++;
+                //}
+
                 // return the private data member
                 return mAllMOTTimes;
             }
-            // setter accepts data from other objects
+            //setter accepts data from other objects
             set
             {
                 // assign the incoming value to the private data member
                 mAllMOTTimes = value;
             }
-        
+
         }
 
     }

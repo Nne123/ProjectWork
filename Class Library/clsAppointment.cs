@@ -232,7 +232,7 @@ namespace Class_Library
             return Error;
         }
 
-        public bool Find(int AppointmentID)
+        public Boolean Find(int AppointmentID)
         {
             // create an instance of the data connection
             clsDataConnection DB = new clsDataConnection();
@@ -251,7 +251,15 @@ namespace Class_Library
                 mJobID = Convert.ToInt32(DB.DataTable.Rows[0]["JobID"]);
                 mMOTDate = Convert.ToDateTime(DB.DataTable.Rows[0]["MOTDate"]);
                 mMOTTimeID = Convert.ToInt32(DB.DataTable.Rows[0]["MOTTimeID"]);
-                mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                // get the active state
+                try
+                {
+                    mActive = Convert.ToBoolean(DB.DataTable.Rows[0]["Active"]);
+                }
+                catch
+                {
+                    mActive = true;
+                }
                 // return that everything worked OK
                 return true; 
             }

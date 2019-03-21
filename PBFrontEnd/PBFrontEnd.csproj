@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="AddStaff.aspx" />
     <Content Include="AnAppointment.aspx" />
+    <Content Include="AppointmentStaffDetails.aspx" />
     <Content Include="Customer_StaffSideConfirm.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
@@ -101,6 +102,13 @@
     </Compile>
     <Compile Include="AnAppointment.aspx.designer.cs">
       <DependentUpon>AnAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentStaffDetails.aspx.cs">
+      <DependentUpon>AppointmentStaffDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointmentStaffDetails.aspx.designer.cs">
+      <DependentUpon>AppointmentStaffDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer_StaffSideConfirm.aspx.cs">
       <DependentUpon>Customer_StaffSideConfirm.aspx</DependentUpon>
@@ -230,6 +238,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

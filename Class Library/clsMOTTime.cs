@@ -4,8 +4,32 @@ namespace Class_Library
 {
     public class clsMOTTime
     {
-        public int MOTTimeID { get; set; }
-        public int MOTTime { get; set; }
+        private Int32 mMOTTimeID;
+
+        public int MOTTimeID
+        {
+            get
+            {
+                return mMOTTimeID;
+            }
+            set
+            {
+                mMOTTimeID = value;
+            }
+        }
+
+        private Int32 mMOTTime;
+        public int MOTTime
+        {
+            get
+            {
+                return mMOTTime;
+            }
+            set
+            {
+                mMOTTime = value;
+            }
+        }
 
         public string Valid(string someMOTTime)
         {

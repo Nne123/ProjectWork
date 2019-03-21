@@ -13,6 +13,15 @@ namespace PBFrontEnd {
     public partial class AddAppointment {
         
         /// <summary>
+        /// lblAppointmentDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAppointmentDetails;
+        
+        /// <summary>
         /// lblMOTDate control.
         /// </summary>
         /// <remarks>
@@ -164,5 +173,14 @@ namespace PBFrontEnd {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancel;
+        
+        /// <summary>
+        /// btnStaffReference control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnStaffReference;
     }
 }

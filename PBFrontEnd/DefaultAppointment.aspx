@@ -1,13 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="DefaultAppointment.aspx.cs" Inherits="PBFrontEnd.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p style="height: 396px">
+
+        <asp:Label ID="lblMainAppointments" runat="server" Font-Bold="True" Font-Size="Larger" Text="Main Appointments"></asp:Label>
+        <br />
+        <br />
         <asp:ListBox ID="lstAppointments" runat="server" Height="189px" Width="301px"></asp:ListBox>
 &nbsp;&nbsp;
         <br />
         <br />
         <asp:Label ID="lblSearchMOTDate" runat="server" Text="Search MOT Date"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox1" runat="server" Width="210px"></asp:TextBox>
+        <asp:TextBox ID="txtMOTDate" runat="server" Width="210px"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="btnApply" runat="server" Text="Apply" Width="130px" OnClick="btnApply_Click" />

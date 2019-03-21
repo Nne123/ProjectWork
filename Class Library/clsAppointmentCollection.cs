@@ -10,7 +10,7 @@ namespace Class_Library
         // private data member thisAppointment
         clsAppointment mThisAppointment = new clsAppointment();
         // private data member to connect to the database
-        private clsDataConnection myDB = new clsDataConnection();
+        clsDataConnection myDB = new clsDataConnection();
         //private data member that stores the count of records found
         private Int32 mRecordCount;
 
@@ -62,9 +62,24 @@ namespace Class_Library
             // getter sends dat to requesting code
             get
             {
+                Int32 Index = 0;
+                while (Index < myDB.Count)
+                {
+                    clsAppointment NewAppointment = new clsAppointment();
+                    NewAppointment.CarRegNo = Convert.ToString(myDB.DataTable.Rows[Index]["CarRegNo"]);
+                    NewAppointment.CustomerID = Convert.ToInt32(myDB.DataTable.Rows[Index]["CustomerID"]);
+                    NewAppointment.StaffID = Convert.ToInt32(myDB.DataTable.Rows[Index]["StaffID"]);
+                    NewAppointment.JobID = Convert.ToInt32(myDB.DataTable.Rows[Index]["JobID"]);
+                    NewAppointment.MOTDate = Convert.ToDateTime(myDB.DataTable.Rows[Index]["MOTDate"]);
+                    NewAppointment.MOTTimeID = Convert.ToInt32(myDB.DataTable.Rows[Index]["MOTTimeID"]);
+                    NewAppointment.Active = Convert.ToBoolean(myDB.DataTable.Rows[Index]["Active"]);
+                    Index++;
+                    mAppointmentList.Add(NewAppointment);
+
+                }
                 // return the private data member
                 return mAppointmentList;
-            }    
+            }
             // setter accepts data from other objects
             set
             {
@@ -79,10 +94,11 @@ namespace Class_Library
             get
             {
                 // return the count property for the private list
-                return mAppointmentList.Count;
+                return mAppointmentList.Count; // mAppointmentList.Count;
             }
             set
             {
+                
                 // we'll come back to
             }
         }
@@ -105,6 +121,7 @@ namespace Class_Library
 
         public int Add()
         {
+            Int32 PrimaryKey;
             // adds a new record to the database based on the values of mAppointment
             // set the primary key value of the new record
             clsDataConnection DB = new clsDataConnection();
@@ -117,18 +134,8 @@ namespace Class_Library
             DB.AddParameter("@JobID", mThisAppointment.JobID);
             DB.AddParameter("@Active", mThisAppointment.Active);
             // execute the query returing the primary key value
-            return DB.Execute("sproc_tblAppointment_Insert");
-        }
-
-        public void Delete()
-        {
-            // deletes the record poined to by thisAppointment
-            // connect to the database
-            clsDataConnection DB = new clsDataConnection();
-            // set the parameters for the stored proecdure
-            DB.AddParameter("@AppointmentID", mThisAppointment.AppointmentID);
-            // execute the stored procedure
-            DB.Execute("sproc_tblAppointment_Delete");
+            PrimaryKey = DB.Execute("sproc_tblAppointment_Insert");
+            return PrimaryKey;
         }
 
         public void Update()
