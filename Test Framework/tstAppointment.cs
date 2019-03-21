@@ -253,6 +253,24 @@ namespace Test_Framework
             Assert.AreNotEqual(Error, "");
         }
 
+        [TestMethod]
+        public void MOTDateNull()
+        {
+            DateTime? testDate = null;
+            Assert.AreEqual(null, testDate);
+        }
+
+        [TestMethod]
+        public void MOTDateNulls()
+        {
+            clsAppointment AnAppointment = new clsAppointment();
+            String Error = "";
+            DateTime? TestDate;
+            TestDate = null;
+            string MOTDate = TestDate.ToString();
+            Error = AnAppointment.Valid(carRegNo, MOTDate, CustomerID, StaffID, JobID);
+            Assert.AreEqual(null, TestDate);
+        }
 
         [TestMethod]
         public void MOTDateMinBoundary() // boundary today + 1
@@ -359,6 +377,8 @@ namespace Test_Framework
             // test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
+
+
 
         [TestMethod]
         public void MOTDateMid()     // middle date, today + 10
@@ -1041,13 +1061,15 @@ namespace Test_Framework
             // invoke the method
             Found = AnAppointment.Find(AppointmentID);
             // check the appointment no
-            if (AnAppointment.MOTDate != Convert.ToDateTime("20/03/2019"))
+            if (AnAppointment.MOTDate != Convert.ToDateTime("23/03/2019"))
             {
                 OK = false;
             }
             // test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+
 
         [TestMethod]
         public void TestActiveFound()

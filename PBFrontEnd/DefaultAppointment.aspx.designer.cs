@@ -13,6 +13,15 @@ namespace PBFrontEnd {
     public partial class Default {
         
         /// <summary>
+        /// lblMainAppointments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMainAppointments;
+        
+        /// <summary>
         /// lstAppointments control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace PBFrontEnd {
         protected global::System.Web.UI.WebControls.Label lblSearchMOTDate;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtMOTDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtMOTDate;
         
         /// <summary>
         /// btnApply control.

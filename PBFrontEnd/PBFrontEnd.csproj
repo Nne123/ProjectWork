@@ -68,6 +68,7 @@
   <ItemGroup>
     <Content Include="AddStaff.aspx" />
     <Content Include="AnAppointment.aspx" />
+    <Content Include="AppointmentCartDetailsStaff.aspx" />
     <Content Include="App_Data\EasyFix.mdf" />
     <Content Include="App_Data\EasyFix_log.ldf">
       <DependentUpon>EasyFix.mdf</DependentUpon>
@@ -80,6 +81,8 @@
     <Content Include="EditStaff.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListStaff.aspx" />
+    <Content Include="CheckoutAppointment.aspx" />
+    <Content Include="MainCartAppointment.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Part.aspx" />
     <Content Include="SaveStaff.aspx" />
@@ -104,6 +107,13 @@
     </Compile>
     <Compile Include="AnAppointment.aspx.designer.cs">
       <DependentUpon>AnAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentCartDetailsStaff.aspx.cs">
+      <DependentUpon>AppointmentCartDetailsStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AppointmentCartDetailsStaff.aspx.designer.cs">
+      <DependentUpon>AppointmentCartDetailsStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Customer_StaffSideConfirm.aspx.cs">
       <DependentUpon>Customer_StaffSideConfirm.aspx</DependentUpon>
@@ -156,6 +166,20 @@
     </Compile>
     <Compile Include="ListStaff.aspx.designer.cs">
       <DependentUpon>ListStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutAppointment.aspx.cs">
+      <DependentUpon>CheckoutAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutAppointment.aspx.designer.cs">
+      <DependentUpon>CheckoutAppointment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MainCartAppointment.aspx.cs">
+      <DependentUpon>MainCartAppointment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MainCartAppointment.aspx.designer.cs">
+      <DependentUpon>MainCartAppointment.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>

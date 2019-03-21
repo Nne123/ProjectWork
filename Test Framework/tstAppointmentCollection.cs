@@ -88,14 +88,14 @@ namespace Test_Framework
             // in this case the data needs to be a list of objects
             List<clsAppointment> TestList = new List<clsAppointment>();
             // add an item to the list
-            // create the item of tets data
+            // create the item of test data
             clsAppointment TestItem = new clsAppointment();
             // set its properties
             TestItem.AppointmentID = 1;
             TestItem.CarRegNo = "1234 9GH";
-            TestItem.CustomerID = 1;
-            TestItem.StaffID = 1;
-            TestItem.JobID = 1;
+            TestItem.CustomerID = 4;
+            TestItem.StaffID = 4;
+            TestItem.JobID = 3;
             TestItem.MOTDate = DateTime.Now.Date.AddDays(1);
             TestItem.MOTTimeID = 10;
             TestItem.Active = true;
@@ -216,7 +216,7 @@ namespace Test_Framework
             // var to store outcome
             Boolean OK = true;
             // apply a mot date that doesnt exist
-            FilteredAppointments.ReportByMOTDate(Convert.ToDateTime("27/02/2019"));
+            FilteredAppointments.ReportByMOTDate(Convert.ToDateTime("27/03/2019"));
             // check that the correct number of records are found
             if (FilteredAppointments.Count == 2)
             {
