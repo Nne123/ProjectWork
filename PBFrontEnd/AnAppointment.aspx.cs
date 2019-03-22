@@ -165,5 +165,16 @@ namespace PBFrontEnd
         {
             Response.Redirect("AppointmentStaffDetails.aspx");
         }
+
+        protected void btnClearFields_Click(object sender, EventArgs e)
+        {
+            // clear the texyt boxes
+            txtMOTDate.Text = "";
+            txtCarRegNo.Text = "";
+            txtCustomerID.Text = "";
+            txtStaffID.Text = "";
+            txtJobID.Text = "";
+            chkActive.Checked = false;
+        }
     }
 }
