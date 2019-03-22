@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/EasyFixBank.Master" AutoEventWireup="true" CodeBehind="AnAppointment.aspx.cs" Inherits="PBFrontEnd.AddAppointment" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <p style="height: 378px">
+    <p style="height: 651px">
 &nbsp;
 
         <asp:Label ID="lblAppointmentDetails" runat="server" Font-Bold="True" Font-Size="Larger" Text="Appointment Details"></asp:Label>
