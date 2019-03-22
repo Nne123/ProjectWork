@@ -119,7 +119,7 @@ namespace Class_Library
             }
         }
 
-        public string Valid(string carRegNo, string mOTDate,   string CustomerID, string StaffID, string JobID)
+        public string Valid(string mOTDate, string carRegNo,  string CustomerID, string StaffID, string JobID)
         {
             // string variable to store the error message
             string Error = "";
@@ -144,7 +144,7 @@ namespace Class_Library
             if (carRegNo.Length < 7)
             {
                 // return an error message
-                Error = "The car reg no must be less than 6 characters";
+                Error = "The car reg no must be less than 7 characters";
             }
 
             if (carRegNo.Length == 0)
