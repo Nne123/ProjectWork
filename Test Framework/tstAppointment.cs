@@ -9,7 +9,7 @@ namespace Test_Framework
     {
         // good test data
         // create some test data to pass the method
-        string carRegNo = "1234 7G6";
+        string carRegNo = "123457G6";
         string MOTDate = DateTime.Now.AddDays(1).ToString();
         string CustomerID = Convert.ToString(25);
         string StaffID = Convert.ToString(35);
@@ -1061,7 +1061,7 @@ namespace Test_Framework
             // invoke the method
             Found = AnAppointment.Find(AppointmentID);
             // check the appointment no
-            if (AnAppointment.MOTDate != Convert.ToDateTime("24/03/2019"))
+            if (AnAppointment.MOTDate != Convert.ToDateTime("25/03/2019"))
             {
                 OK = false;
             }

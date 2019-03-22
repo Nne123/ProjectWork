@@ -119,7 +119,7 @@ namespace Class_Library
             }
         }
 
-        public string Valid(string mOTDate, string carRegNo,  string CustomerID, string StaffID, string JobID)
+        public string Valid(string carRegNo, string mOTDate,   string CustomerID, string StaffID, string JobID)
         {
             // string variable to store the error message
             string Error = "";
@@ -154,6 +154,7 @@ namespace Class_Library
             }
 
 
+            // customer id validation
             try
             {
                 CustomerIDTemp = Convert.ToInt32(CustomerID);
@@ -231,6 +232,7 @@ namespace Class_Library
 
             return Error;
         }
+
 
         public Boolean Find(int AppointmentID)
         {
