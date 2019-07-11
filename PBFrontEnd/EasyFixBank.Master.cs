@@ -24,6 +24,11 @@ namespace PBFrontEnd
             Response.Redirect("Customer_StaffSide.aspx");
         }
 
+        protected void btnManageParts_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Part.aspx");
+        }
+
         protected void btnLogOut_Click(object sender, EventArgs e)
         {
             // Temporary

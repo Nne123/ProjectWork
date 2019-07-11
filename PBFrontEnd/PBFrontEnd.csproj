@@ -66,18 +66,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddStaff.aspx" />
     <Content Include="AnAppointment.aspx" />
     <Content Include="AppointmentStaffDetails.aspx" />
+    <Content Include="App_Data\EasyFixDB.mdf" />
+    <Content Include="App_Data\EasyFixDB_log.ldf">
+      <DependentUpon>EasyFixDB.mdf</DependentUpon>
+    </Content>
     <Content Include="Customer_StaffSideConfirm.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DefaultAppointment.aspx" />
-    <Content Include="DeleteStaff.aspx" />
     <Content Include="EasyFixBank.css" />
-    <Content Include="EditStaff.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ProductName.aspx" />
-    <Content Include="ListStaff.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Part.aspx" />
     <Content Include="SaveStaff.aspx" />
@@ -89,13 +89,6 @@
     <Content Include="CLSPART.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStaff.aspx.cs">
-      <DependentUpon>AddStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddStaff.aspx.designer.cs">
-      <DependentUpon>AddStaff.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AnAppointment.aspx.cs">
       <DependentUpon>AnAppointment.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,26 +124,12 @@
     <Compile Include="DefaultAppointment.aspx.designer.cs">
       <DependentUpon>DefaultAppointment.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DeleteStaff.aspx.cs">
-      <DependentUpon>DeleteStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="DeleteStaff.aspx.designer.cs">
-      <DependentUpon>DeleteStaff.aspx</DependentUpon>
-    </Compile>
     <Compile Include="EasyFixBank.Master.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="EasyFixBank.Master.designer.cs">
       <DependentUpon>EasyFixBank.Master</DependentUpon>
-    </Compile>
-    <Compile Include="EditStaff.aspx.cs">
-      <DependentUpon>EditStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditStaff.aspx.designer.cs">
-      <DependentUpon>EditStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -161,13 +140,6 @@
     </Compile>
     <Compile Include="ProductName.aspx.designer.cs">
       <DependentUpon>ProductName.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ListStaff.aspx.cs">
-      <DependentUpon>ListStaff.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ListStaff.aspx.designer.cs">
-      <DependentUpon>ListStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="MainPage.aspx.cs">
       <DependentUpon>MainPage.aspx</DependentUpon>
@@ -238,7 +210,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

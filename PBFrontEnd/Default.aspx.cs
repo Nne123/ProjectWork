@@ -24,7 +24,7 @@ namespace PBFrontEnd
 
         private void DisplayStaff()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         //void DisplayStaff()
